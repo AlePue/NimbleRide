@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27215A321DD2F6880053799A /* RideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215A311DD2F6880053799A /* RideViewController.swift */; };
 		ED2058B81DD10D1B0029879B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058B71DD10D1B0029879B /* AppDelegate.swift */; };
 		ED2058BA1DD10D1B0029879B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058B91DD10D1B0029879B /* ViewController.swift */; };
 		ED2058BD1DD10D1B0029879B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2058BB1DD10D1B0029879B /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27215A311DD2F6880053799A /* RideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideViewController.swift; sourceTree = "<group>"; };
 		ED2058B41DD10D1B0029879B /* NimbleRide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NimbleRide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2058B71DD10D1B0029879B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED2058B91DD10D1B0029879B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				ED2058BE1DD10D1B0029879B /* Assets.xcassets */,
 				ED2058C01DD10D1B0029879B /* LaunchScreen.storyboard */,
 				ED2058C31DD10D1B0029879B /* Info.plist */,
+				27215A311DD2F6880053799A /* RideViewController.swift */,
 			);
 			path = NimbleRide;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				ED2058BA1DD10D1B0029879B /* ViewController.swift in Sources */,
 				ED2058B81DD10D1B0029879B /* AppDelegate.swift in Sources */,
+				27215A321DD2F6880053799A /* RideViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +518,7 @@
 				ED2058DE1DD10D1B0029879B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED2058DF1DD10D1B0029879B /* Build configuration list for PBXNativeTarget "NimbleRideTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +527,7 @@
 				ED2058E11DD10D1B0029879B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED2058E21DD10D1B0029879B /* Build configuration list for PBXNativeTarget "NimbleRideUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +536,7 @@
 				ED2058E41DD10D1B0029879B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

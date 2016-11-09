@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--History-->
         <scene sceneID="KRh-kW-4tR">
             <objects>
                 <viewController id="7Rt-9O-R1B" sceneMemberID="viewController">
@@ -28,11 +28,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Qgg-4c-hl5"/>
+                    <tabBarItem key="tabBarItem" title="History" id="Qgg-4c-hl5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i88-gq-MEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1073" y="2682"/>
+            <point key="canvasLocation" x="326" y="2330"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="rqb-4H-Ysw">
@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="1072.8" y="1933.5832083958023"/>
         </scene>
-        <!--Item-->
+        <!--Ride Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NimbleRide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Ride Controller" customClass="RideViewController" customModule="NimbleRide" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -74,17 +74,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxP-89-6eP">
-                                <frame key="frameInset" minX="166" minY="323" width="11" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqq-hm-CAx">
+                                <frame key="frameInset" minX="274" minY="580" width="85" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="timerResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6f6-77-NDv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9a-Hu-4Ic">
+                                <frame key="frameInset" minX="42" minY="76" width="298" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ALT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpS-Je-I6T">
+                                <frame key="frameInset" minX="32" minY="255" width="164" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MPH" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sx-3f-1Me">
+                                <frame key="frameInset" minX="214" minY="255" width="137" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXM-S9-cJQ">
+                                <frame key="frameInset" minX="16" minY="580" width="85" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="timerToggleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1EQ-D3-YaX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPk-gD-IRG">
+                                <frame key="frameInset" minX="109" minY="307" width="164" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="qej-mc-arG"/>
+                    <tabBarItem key="tabBarItem" title="Ride" id="qej-mc-arG" userLabel="Ride"/>
+                    <connections>
+                        <outlet property="altitudeLabel" destination="TpS-Je-I6T" id="7a1-dP-35J"/>
+                        <outlet property="distanceLabel" destination="ZPk-gD-IRG" id="Xua-hB-244"/>
+                        <outlet property="speedLabel" destination="0Sx-3f-1Me" id="FnM-qf-Ap3"/>
+                        <outlet property="timerLabel" destination="Y9a-Hu-4Ic" id="bGs-Jh-uL8"/>
+                        <outlet property="timerResetButton" destination="Nqq-hm-CAx" id="FaY-Hc-iuR"/>
+                        <outlet property="timerToggleButton" destination="pXM-S9-cJQ" id="gpq-lC-ZTl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,7 +163,7 @@
             </objects>
             <point key="canvasLocation" x="1074.4000000000001" y="548.27586206896558"/>
         </scene>
-        <!--Item 1-->
+        <!--Account-->
         <scene sceneID="ZKt-0X-Try">
             <objects>
                 <viewController id="F6w-HA-HYe" sceneMemberID="viewController">
@@ -140,7 +185,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="uhg-ij-QuY"/>
+                    <tabBarItem key="tabBarItem" title="Account" id="uhg-ij-QuY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meW-FM-dxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
