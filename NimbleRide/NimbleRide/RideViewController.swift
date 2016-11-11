@@ -86,6 +86,9 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
         altitude = (locations.last!.altitude * 3.28084)
         altitudeLabel.text = String(format: "%.0f ft", altitude)
         speed = (locations.last!.speed * 2.23694)
+        if (speed < 0){
+            speed = 0
+        }
         speedLabel.text = String(format: "%.2f mph", speed)
 
         if (timerToggleButton.title(for: .normal) == "Start"){ //timer has not started
