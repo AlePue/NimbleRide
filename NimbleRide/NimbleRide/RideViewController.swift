@@ -14,6 +14,7 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var altitudeLabel: UILabel!
     @IBOutlet weak var speedLabel: UILabel!
+    @IBOutlet weak var avgSpeedLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var timerResetButton: UIButton!
     @IBOutlet weak var timerToggleButton: UIButton!
@@ -50,15 +51,15 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
     
     
     var bikeTimer = Timer()
-    var count = 0
+    var timerCount = 0, pointsTaken = 0.0
     var timerFlag = 0 //0 = paused, 1 = running
     var nextLocation:CLLocation!
     var previousLocation:CLLocation!
-    var distance = 0.0, speed = 0.0, altitude = 0.0, totalDistance = 0.0
+    var distance = 0.0, speed = 0.0, altitude = 0.0, totalDistance = 0.0, avgSpeed = 0.0, totalSpeed = 0.0
     
     func runTimer () {
-        count += 1
-        timerLabel.text = String (format: "%02d:%02d:%02d", (count/3600)%60, (count/60)%60, count%60)
+        timerCount += 1
+        timerLabel.text = String (format: "%02d:%02d:%02d", (timerCount/3600)%60, (timerCount/60)%60, timerCount%60)
     }
     
     @IBAction func timerToggleButton (_ send: AnyObject){
@@ -76,7 +77,7 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func timerResetButton (_ send: AnyObject){
         timerLabel.text = "00:00:00"
-        count = 0
+        timerCount = 0
         timerFlag = 0
         bikeTimer.invalidate()
         timerToggleButton.setTitle("Start", for: .normal)
@@ -93,12 +94,18 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
 
         if (timerToggleButton.title(for: .normal) == "Start"){ //timer has not started
             distance = 0
+            totalSpeed = 0
+            pointsTaken = 0
+            avgSpeed = 0
             previousLocation = locations.last
         }
 
         else if (timerToggleButton.title(for: .normal) == "Pause"){ //timer is running
             nextLocation = locations.last
+            pointsTaken += 1
             distance += nextLocation.distance(from: previousLocation)
+            totalSpeed += nextLocation.speed
+            avgSpeed = totalSpeed / pointsTaken
             previousLocation = nextLocation
         }
 
@@ -108,6 +115,7 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
 
         totalDistance = distance * 0.000621371
         distanceLabel.text = String(format: "%.2f miles", totalDistance)
+        avgSpeedLabel.text = String(format: "%.2f mph", avgSpeed * 2.23694)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
