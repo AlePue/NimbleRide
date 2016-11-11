@@ -83,8 +83,8 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        altitude = (locations.last!.altitude)
-        altitudeLabel.text = String(format: "%.0f m", altitude)
+        altitude = (locations.last!.altitude * 3.28084)
+        altitudeLabel.text = String(format: "%.0f ft", altitude)
         speed = (locations.last!.speed * 2.23694)
         speedLabel.text = String(format: "%.2f mph", speed)
 
