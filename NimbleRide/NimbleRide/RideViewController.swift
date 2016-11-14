@@ -18,6 +18,7 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var timerResetButton: UIButton!
     @IBOutlet weak var timerToggleButton: UIButton!
+    @IBOutlet weak var calorieLabel: UILabel!
     
     let locationManager = CLLocationManager()
     
