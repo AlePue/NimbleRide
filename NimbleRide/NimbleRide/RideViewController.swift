@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 class RideViewController: UIViewController, CLLocationManagerDelegate {
-    
+
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var altitudeLabel: UILabel!
     @IBOutlet weak var speedLabel: UILabel!
@@ -106,6 +106,9 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
             distance += nextLocation.distance(from: previousLocation)
             totalSpeed += nextLocation.speed
             avgSpeed = totalSpeed / pointsTaken
+            if (avgSpeed < 0){
+                avgSpeed = 0
+            }
             previousLocation = nextLocation
         }
 
