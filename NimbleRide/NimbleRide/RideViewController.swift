@@ -52,7 +52,7 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
     
     
     var bikeTimer = Timer()
-    var timerCount = 0, pointsTaken = 0.0
+    var timerCount = 0, pointsTaken = 0.0, calories = 0.0
     var timerFlag = 0 //0 = paused, 1 = running
     var nextLocation:CLLocation!
     var previousLocation:CLLocation!
@@ -111,6 +111,7 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
                 avgSpeed = 0
             }
             previousLocation = nextLocation
+            calories = distance / 50
         }
 
         else { //timer is paused
@@ -120,6 +121,7 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
         totalDistance = distance * 0.000621371
         distanceLabel.text = String(format: "%.2f miles", totalDistance)
         avgSpeedLabel.text = String(format: "%.2f mph", avgSpeed * 2.23694)
+        calorieLabel.text = String(format: "%.0f", calories)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
