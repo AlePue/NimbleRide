@@ -15,6 +15,7 @@
 		ED2058C21DD10D1B0029879B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2058C01DD10D1B0029879B /* LaunchScreen.storyboard */; };
 		ED2058CD1DD10D1B0029879B /* NimbleRideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058CC1DD10D1B0029879B /* NimbleRideTests.swift */; };
 		ED2058D81DD10D1B0029879B /* NimbleRideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058D71DD10D1B0029879B /* NimbleRideUITests.swift */; };
+		EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		ED2058D31DD10D1B0029879B /* NimbleRideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NimbleRideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2058D71DD10D1B0029879B /* NimbleRideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleRideUITests.swift; sourceTree = "<group>"; };
 		ED2058D91DD10D1B0029879B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		ED2058B61DD10D1B0029879B /* NimbleRide */ = {
 			isa = PBXGroup;
 			children = (
+				EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */,
 				ED2058B71DD10D1B0029879B /* AppDelegate.swift */,
 				ED2058B91DD10D1B0029879B /* ViewController.swift */,
 				ED2058BB1DD10D1B0029879B /* Main.storyboard */,
@@ -267,6 +270,7 @@
 			files = (
 				ED2058BA1DD10D1B0029879B /* ViewController.swift in Sources */,
 				ED2058B81DD10D1B0029879B /* AppDelegate.swift in Sources */,
+				EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */,
 				27215A321DD2F6880053799A /* RideViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
