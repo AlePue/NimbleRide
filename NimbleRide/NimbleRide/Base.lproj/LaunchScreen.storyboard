@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,8 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="NimbleRide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snC-yC-cfO">
-                                <rect key="frame" x="100" y="111" width="182" height="55"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NimbleRide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snC-yC-cfO">
+                                <rect key="frame" x="100" y="111" width="175" height="55"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -31,6 +32,9 @@
                         <color key="backgroundColor" red="0.14080995321273804" green="0.36194610595703125" blue="0.49084055423736572" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="snC-yC-cfO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="C3F-4e-WT0"/>
+                            <constraint firstItem="snC-yC-cfO" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="91" id="eH2-a3-5tt"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="snC-yC-cfO" secondAttribute="bottom" constant="501" id="wKV-Lh-YUN"/>
+                            <constraint firstItem="snC-yC-cfO" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="84" id="yip-TW-sxb"/>
                         </constraints>
                     </view>
                 </viewController>
