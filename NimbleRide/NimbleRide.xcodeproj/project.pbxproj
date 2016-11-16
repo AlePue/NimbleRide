@@ -199,7 +199,7 @@
 				TargetAttributes = {
 					ED2058B31DD10D1B0029879B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = QZ95ZE7XL3;
+						DevelopmentTeam = LAPKZ7JHB5;
 						ProvisioningStyle = Automatic;
 					};
 					ED2058C71DD10D1B0029879B = {
@@ -423,7 +423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QZ95ZE7XL3;
+				DEVELOPMENT_TEAM = LAPKZ7JHB5;
 				INFOPLIST_FILE = NimbleRide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = noneForNow.NimbleRide;
@@ -436,7 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QZ95ZE7XL3;
+				DEVELOPMENT_TEAM = LAPKZ7JHB5;
 				INFOPLIST_FILE = NimbleRide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = noneForNow.NimbleRide;
