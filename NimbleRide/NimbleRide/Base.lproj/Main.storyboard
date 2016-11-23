@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--History-->
+        <!--More-->
         <scene sceneID="KRh-kW-4tR">
             <objects>
                 <viewController id="7Rt-9O-R1B" sceneMemberID="viewController">
@@ -28,7 +28,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="History" id="Qgg-4c-hl5"/>
+                    <tabBarItem key="tabBarItem" title="More" id="Qgg-4c-hl5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i88-gq-MEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -186,10 +186,10 @@
             </objects>
             <point key="canvasLocation" x="1072.8" y="1237.3313343328336"/>
         </scene>
-        <!--Item 2-->
+        <!--Feed-->
         <scene sceneID="R25-jN-Hvy">
             <objects>
-                <viewController id="BeA-0y-25d" sceneMemberID="viewController">
+                <viewController id="BeA-0y-25d" userLabel="Feed" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DJs-Yo-zwU"/>
                         <viewControllerLayoutGuide type="bottom" id="yIM-uO-aL9"/>
@@ -208,7 +208,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="KX7-Mw-gNC"/>
+                    <tabBarItem key="tabBarItem" title="Feed" id="KX7-Mw-gNC" userLabel="Feed"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gG9-Te-zCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -226,13 +226,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zR2-8b-aWF">
-                                <frame key="frameInset" minX="166" minY="323" width="8" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dy2-AY-Sxe">
                                 <frame key="frameInset" minX="165" minY="564" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -241,6 +234,39 @@
                                     <action selector="record:" destination="F6w-HA-HYe" eventType="touchDown" id="TmN-sT-3kE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="fName?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Pv-Sh-UVE">
+                                <frame key="frameInset" minX="161" minY="20" width="198" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVD-kO-KuR">
+                                <frame key="frameInset" minX="16" minY="20" width="125" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuV-7p-WaU">
+                                <frame key="frameInset" minY="153" width="125" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iML-AL-sM1">
+                                <frame key="frameInset" minX="133" minY="153" width="125" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHy-nE-in7">
+                                <frame key="frameInset" minX="250" minY="153" width="125" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lName?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIo-Oy-47J">
+                                <frame key="frameInset" minX="161" minY="73" width="198" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -263,10 +289,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="F6w-HA-HYe" kind="relationship" relationship="viewControllers" id="wEw-gq-FKE"/>
                         <segue destination="BeA-0y-25d" kind="relationship" relationship="viewControllers" id="Wip-py-qlp"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="mDM-kl-1IW"/>
                         <segue destination="6BS-XU-4bn" kind="relationship" relationship="viewControllers" id="y1O-VL-Vx9"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="mDM-kl-1IW"/>
+                        <segue destination="F6w-HA-HYe" kind="relationship" relationship="viewControllers" id="wEw-gq-FKE"/>
                         <segue destination="7Rt-9O-R1B" kind="relationship" relationship="viewControllers" id="PlE-P9-9uF"/>
                     </connections>
                 </tabBarController>
