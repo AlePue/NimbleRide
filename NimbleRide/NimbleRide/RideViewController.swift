@@ -56,7 +56,7 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
     var timerFlag = 0 //0 = paused, 1 = running
     var nextLocation:CLLocation!
     var previousLocation:CLLocation!
-    var distance = 0.0, speed = 0.0, altitude = 0.0, totalDistance = 0.0, avgSpeed = 0.0, totalSpeed = 0.0
+    var distance = 0.0, speed = 0.0, altitude = 0.0, totalDistance = 0.0, avgSpeed = 0.0, totalSpeed = 0.0, weight = 160
     
     func runTimer () {
         timerCount += 1
@@ -82,6 +82,31 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
         timerFlag = 0
         bikeTimer.invalidate()
         timerToggleButton.setTitle("Start", for: .normal)
+    }
+    
+    func addCalorie (speed: Double, calorie: Double) -> Double {
+        var count: Double
+        switch speed {
+        case 0..<10:    // speed < 10
+            count = calorie + calcCalorie(MET: 4.0, weight: Double(weight))
+        case 10..<12:   // speed 10 < x < 12
+            count = calorie + calcCalorie(MET: 6.0, weight: Double(weight))
+        case 12..<14:   // speed 12 < x < 14
+            count = calorie + calcCalorie(MET: 8.0, weight: Double(weight))
+        case 14..<16:   // speed 14 < x < 16
+            count = calorie + calcCalorie(MET: 10.0, weight: Double(weight))
+        case 16..<20:   // speed 16 < x < 20
+            count = calorie + calcCalorie(MET: 12.0, weight: Double(weight))
+        case 20..<100:     // speed 20 < x
+            count = calorie + calcCalorie(MET: 16.0, weight: Double(weight))
+        default:
+            count = calorie
+        }
+        return count
+    }
+    
+    func calcCalorie (MET: Double, weight: Double) -> Double {
+        return MET * (weight * 0.45359237) * (1/3600) // calorie burn = MET * weight in kgs * time in hours
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -111,7 +136,8 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
                 avgSpeed = 0
             }
             previousLocation = nextLocation
-            calories = distance / 50
+            //calories = distance / 50
+            calories = addCalorie(speed: speed, calorie: calories)
         }
 
         else { //timer is paused

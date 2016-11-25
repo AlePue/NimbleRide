@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27215A321DD2F6880053799A /* RideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215A311DD2F6880053799A /* RideViewController.swift */; };
+		077C1BB11DE8CF4100B1F774 /* RideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215A311DD2F6880053799A /* RideViewController.swift */; };
 		ED2058B81DD10D1B0029879B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058B71DD10D1B0029879B /* AppDelegate.swift */; };
 		ED2058BA1DD10D1B0029879B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058B91DD10D1B0029879B /* ViewController.swift */; };
 		ED2058BD1DD10D1B0029879B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2058BB1DD10D1B0029879B /* Main.storyboard */; };
@@ -270,8 +270,8 @@
 			files = (
 				ED2058BA1DD10D1B0029879B /* ViewController.swift in Sources */,
 				ED2058B81DD10D1B0029879B /* AppDelegate.swift in Sources */,
+				077C1BB11DE8CF4100B1F774 /* RideViewController.swift in Sources */,
 				EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */,
-				27215A321DD2F6880053799A /* RideViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
