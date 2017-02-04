@@ -98,6 +98,7 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
             totalSpeed = 0
             pointsTaken = 0
             avgSpeed = 0
+            calories = 0
             previousLocation = locations.last
         }
 
