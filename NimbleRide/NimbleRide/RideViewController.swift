@@ -332,7 +332,6 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
             textToSpeak = "Command not supported"
         }
 
-        print(textToSpeak)
         _ = session?.speak(textToSpeak, withLanguage: "eng-USA", delegate: self)
         voiceCommandFunc()
     }
