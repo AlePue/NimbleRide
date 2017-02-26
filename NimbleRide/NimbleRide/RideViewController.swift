@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreLocation
+import SpeechKit
 
-class RideViewController: UIViewController, CLLocationManagerDelegate {
+class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransactionDelegate{
 
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var altitudeLabel: UILabel!
@@ -19,7 +20,8 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var timerResetButton: UIButton!
     @IBOutlet weak var timerToggleButton: UIButton!
     @IBOutlet weak var calorieLabel: UILabel!
-    
+    @IBOutlet weak var voiceCommandButton: UIButton!
+
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -53,10 +55,12 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
     
     var bikeTimer = Timer()
     var timerCount = 0, pointsTaken = 0.0, calories = 0.0
-    var timerFlag = 0 //0 = paused, 1 = running
+    var timerFlag = 0, voiceFlag = 0 //0 = paused, 1 = running
     var nextLocation:CLLocation!
     var previousLocation:CLLocation!
     var distance = 0.0, speed = 0.0, altitude = 0.0, totalDistance = 0.0, avgSpeed = 0.0, totalSpeed = 0.0
+    let session = SKSession(url: NSURL(string: "nmsps://NMDPTRIAL_nrandhawa01_yahoo_com20170225163344@sslsandbox-nmdp.nuancemobility.net:443") as URL!, appToken: "1b3110f8b753718ce8567d91dbe23f52297406693752658592da9142b36177ce9288c749db38d5c38e53546a3594bc5e08c2c840142dc5a70856e9bbb761894a")
+    var textToSpeak = "No input received"
     
     func runTimer () {
         timerCount += 1
@@ -64,19 +68,27 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func timerToggleButton (_ send: AnyObject){
+        timerToggleFunc()
+    }
+    
+    func timerToggleFunc() {
         if (timerFlag == 0){
-            timerFlag = 1
             timerToggleButton.setTitle("Pause", for: .normal)
             bikeTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: NSSelectorFromString("runTimer"), userInfo: nil, repeats: true)
         }
         else {
-            timerFlag = 0
             timerToggleButton.setTitle("Resume", for: .normal)
             bikeTimer.invalidate()
         }
+        timerFlag = ~timerFlag
+
     }
     
     @IBAction func timerResetButton (_ send: AnyObject){
+        timerResetFunc()
+    }
+    
+    func timerResetFunc() {
         timerLabel.text = "00:00:00"
         timerCount = 0
         timerFlag = 0
@@ -124,9 +136,205 @@ class RideViewController: UIViewController, CLLocationManagerDelegate {
         avgSpeedLabel.text = String(format: "%.2f mph", avgSpeed * 2.23694)
         calorieLabel.text = String(format: "%.0f", calories)
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error" + error.localizedDescription)
     }
-}
 
+    @IBAction func voiceCommandButton (_ send: AnyObject){
+            voiceCommandFunc()
+            session!.recognize(withType: SKTransactionSpeechTypeDictation, detection: .long, language: "eng-USA", delegate: self)
+    }
+
+    func voiceCommandFunc () {
+        voiceFlag = ~voiceFlag
+        if (voiceFlag == 0){
+            voiceCommandButton.setTitle("Voice Command", for: .normal)
+            self.voiceCommandButton.setTitleColor(UIColor.red, for: .normal)
+            self.voiceCommandButton.sizeToFit()
+            self.voiceCommandButton.center.x = self.view.center.x
+        }
+        else{
+            voiceCommandButton.setTitle("Command Running", for: .normal)
+            self.voiceCommandButton.setTitleColor(UIColor.green, for: .normal)
+            self.voiceCommandButton.sizeToFit()
+            self.voiceCommandButton.center.x = self.view.center.x
+        }
+    }
+
+    func transaction(_ transaction: SKTransaction!, didReceive recognition: SKRecognition!) {
+        if recognition.text.lowercased().range(of: "altitude") != nil{
+            let alt = altitudeLabel.text?.components(separatedBy: " ")
+            let altitudeStatus = alt?[0]
+            
+            if(altitudeStatus == "1"){
+                textToSpeak = "Your current altitude is 1 foot"
+            }
+            else{
+                textToSpeak = "Your current altitude is" + altitudeStatus! + "feet"
+            }
+        }
+
+        else if recognition.text.lowercased().range(of: "time") != nil{
+            let time = timerLabel.text?.components(separatedBy: ":")
+            let hour = time?[0]
+            let minute = time?[1]
+            let second = time?[2]
+
+            if (hour == "00"){ // 00:00:XX
+                if (minute == "00"){ // 00:00:XX
+                    if(second == "01"){ // 00:00:01
+                        textToSpeak = "Your current time is 1 second"
+                    }
+                    else{ // 00:00:!1
+                        textToSpeak = "Your current time is" + second! + "seconds"
+                    }
+                }
+                else{
+                    if(minute == "01"){ // 00:01:XX
+                        if(second == "01"){ // 00:01:01
+                            textToSpeak = "Your current time is 1 minute and 1 second"
+                        }
+                        else{ // 00:01:!1
+                            textToSpeak = "Your current time is 1 minute and" + second! + "seconds"
+                        }
+                    }
+                    else{ // 00:>1:01
+                        if(second == "01"){
+                            textToSpeak = "Your current time is" + minute! + "minutes and 1 second"
+                        }
+                        else{ // 00:>1:!1
+                            textToSpeak = "Your current time is" + minute! + "minutes and" + second! + "seconds"
+                        }
+                    }
+                }
+            }
+            else if (hour == "01"){ // 01:XX:XX
+                if(minute == "01"){ // 01:01:XX
+                    if(second == "01"){ // 01:01:01
+                        textToSpeak = "Your current time is 1 hour 1 minute and 1 second"
+                    }
+                    else{ // 01:01:!1
+                        textToSpeak = "Your current time is 1 hour 1 minute and" + second! + "seconds"
+                    }
+                }
+                else{ // 01:!1:01
+                    if(second == "01"){
+                        textToSpeak = "Your current time is" + minute! + "minutes and 1 second"
+                    }
+                    else{ // 01:!1:!1
+                        textToSpeak = "Your current time is" + minute! + "minutes and" + second! + "seconds"
+                    }
+                }
+
+                textToSpeak = "Your current time is 1 hour and" + minute! + "minutes and" + second! + "seconds"
+            }
+            else{ // >1:XX:XX
+                if(minute == "01"){ // >1:01:XX
+                    if(second == "01"){ // >1:01:01
+                        textToSpeak = "Your current time is" + hour! + "hours 1 minute and 1 second"
+                    }
+                    else{ // >1:01:!1
+                        textToSpeak = "Your current time is " + hour! + "hours 1 minute and" + second! + "seconds"
+                    }
+                }
+                else{ // 01:!1:01
+                    if(second == "01"){
+                        textToSpeak = "Your current time is" + hour! + "hours" + minute! + "minutes and 1 second"
+                    }
+                    else{ // >1:!1:!1
+                        textToSpeak = "Your current time is" + timerLabel.text!
+                    }
+                }
+            }
+        }
+
+        else if recognition.text.lowercased().range(of: "speed") != nil{
+            if recognition.text.lowercased().range(of: "average") != nil{
+                let spd = avgSpeedLabel.text?.components(separatedBy: " ")
+                let speedStatus = spd?[0]
+
+                if(speedStatus == "1"){
+                    textToSpeak = "Your average speed is 1 mile per hour"
+                }
+                else{
+                    textToSpeak = "Your average speed is" + speedStatus! + "miles per hour"
+                }
+
+            }
+            else{
+                let spd = speedLabel.text?.components(separatedBy: " ")
+                let speedStatus = spd?[0]
+
+                if(speedStatus == "1"){
+                    textToSpeak = "Your current speed is 1 mile per hour"
+                }
+                else{
+                    textToSpeak = "Your current speed is" + speedStatus! + "miles per hour"
+                }
+            }
+            
+        }
+
+        else if recognition.text.lowercased().range(of: "calories") != nil{
+            if (calorieLabel.text == "1"){
+                textToSpeak = "You've burned 1 calorie"
+            }
+            else{
+                textToSpeak = "You've burned" + calorieLabel.text! + "calories"
+            }
+        }
+
+        else if recognition.text.lowercased().range(of: "distance") != nil ||
+            (recognition.text.lowercased().range(of: "far") != nil){
+            let dist = distanceLabel.text?.components(separatedBy: " ")
+            let distanceStatus = dist?[0]
+            
+            if(distanceStatus == "1.00"){
+                textToSpeak = "Your traveled distance is 1 mile"
+            }
+            else{
+                textToSpeak = "Your traveled distance is" + distanceStatus! + "miles"
+            }
+        }
+
+        else if (recognition.text.lowercased().range(of: "start") != nil) ||
+                (recognition.text.lowercased().range(of: "begin") != nil) ||
+                (recognition.text.lowercased().range(of: "continue") != nil) ||
+                (recognition.text.lowercased().range(of: "resume") != nil){
+            if (timerToggleButton.titleLabel?.text == "Start"){
+                textToSpeak = "Workout started. Good luck!"
+                timerToggleFunc()
+            }
+            else if (timerFlag == 0){
+                textToSpeak = "Workout resuming. Breaks are for the weak"
+                timerToggleFunc()
+            }
+            else{
+                textToSpeak = "Workout already going"
+            }
+        }
+
+        else if recognition.text.lowercased().range(of: "pause") != nil{
+            textToSpeak = "Workout paused. Enjoy your break"
+            timerToggleFunc()
+        }
+
+        else if (recognition.text.lowercased().range(of: "end") != nil) ||
+                (recognition.text.lowercased().range(of: "stop") != nil) ||
+                (recognition.text.lowercased().range(of: "complete") != nil) ||
+                (recognition.text.lowercased().range(of: "finish") != nil){
+            textToSpeak = "Workout ended. Thank you for using Nimble Ride"
+            timerResetFunc()
+        }
+
+        else {
+            textToSpeak = "Command not supported"
+        }
+
+        print(textToSpeak)
+        _ = session?.speak(textToSpeak, withLanguage: "eng-USA", delegate: self)
+        voiceCommandFunc()
+    }
+
+}
