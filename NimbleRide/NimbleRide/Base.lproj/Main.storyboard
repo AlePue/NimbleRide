@@ -279,11 +279,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eL-Ah-ay7">
+                                <rect key="frame" x="49" y="191" width="292" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="FaceBook Login"/>
+                                <connections>
+                                    <action selector="FBloginButton:" destination="F6w-HA-HYe" eventType="touchDown" id="6gh-JM-ESq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Account" id="uhg-ij-QuY"/>
                     <connections>
+                        <outlet property="FBloginButton" destination="1eL-Ah-ay7" id="AXR-vF-h2X"/>
+                        <outlet property="firstNameLabel" destination="9Pv-Sh-UVE" id="kbg-RH-fnq"/>
+                        <outlet property="lastNameLabel" destination="QIo-Oy-47J" id="Waa-Ag-OPK"/>
+                        <outlet property="profilePictureView" destination="GVD-kO-KuR" id="k1Y-sX-EuT"/>
                         <outlet property="recordButton" destination="Dy2-AY-Sxe" id="X6X-v7-oCL"/>
                     </connections>
                 </viewController>
