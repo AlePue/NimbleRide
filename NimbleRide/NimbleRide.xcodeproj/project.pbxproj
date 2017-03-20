@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		27215A321DD2F6880053799A /* RideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215A311DD2F6880053799A /* RideViewController.swift */; };
 		27CA86D11E6385F400CA8661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27CA86CF1E6385F400CA8661 /* Main.storyboard */; };
+		5A2E4DC9C8DB686E13FD8417 /* Pods_NimbleRideUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E102AF0B9F0C2F21240BEDFE /* Pods_NimbleRideUITests.framework */; };
+		E04082AD6598E4AD8844A45F /* Pods_NimbleRide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD2BD88A65ADE2549075899 /* Pods_NimbleRide.framework */; };
 		ED2058B81DD10D1B0029879B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058B71DD10D1B0029879B /* AppDelegate.swift */; };
 		ED2058BA1DD10D1B0029879B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058B91DD10D1B0029879B /* ViewController.swift */; };
 		ED2058BF1DD10D1B0029879B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2058BE1DD10D1B0029879B /* Assets.xcassets */; };
@@ -16,6 +18,7 @@
 		ED2058CD1DD10D1B0029879B /* NimbleRideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058CC1DD10D1B0029879B /* NimbleRideTests.swift */; };
 		ED2058D81DD10D1B0029879B /* NimbleRideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058D71DD10D1B0029879B /* NimbleRideUITests.swift */; };
 		EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */; };
+		FDD3ADFD6970ADFBB0B70A13 /* Pods_NimbleRideTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C55CE8595DFF6E44AC404F8 /* Pods_NimbleRideTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04082AD6598E4AD8844A45F /* Pods_NimbleRide.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDD3ADFD6970ADFBB0B70A13 /* Pods_NimbleRideTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A2E4DC9C8DB686E13FD8417 /* Pods_NimbleRideUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
