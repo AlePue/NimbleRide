@@ -56,24 +56,18 @@ class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
 //                        picture =     {
 //                            data =         {
 //                                "is_silhouette" = 0;
-//                                url = "https://scontent.xx.fbcdn.net/v/t1.0-1/p200x200/10616212_810595085656784_6649283448814146059_n.jpg?oh=94758241ed6a922c90fdd3b96f59bb01&oe=5964FD3A";
+//                                url = "www.picture_url.com";
 //                            };
 //                        };
 //                    }
 
 
                     self.userData = FBuserData as! NSDictionary
-//                    for (key, value) in self.userData {
-//                        print("\(key) -> \(value)")
-//                    }
-//                    print(self.userData["first_name"]!)
-////                    print(self.userData)
                     self.firstNameLabel.text = String (describing: self.userData["first_name"]!)
                     self.lastNameLabel.text = String (describing: self.userData["last_name"]!)
                     let FBid = self.userData["id"] as? String
                     let url = NSURL(string: "https://graph.facebook.com/\(FBid!)/picture?type=large&return_ssl_resources=1")
                     self.profilePictureView.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
-//                    self.profilePictureView.image = UIImage (data: self.userData[data]!)
                 }
             })
         }
