@@ -65,5 +65,31 @@
         <string>fbauth2</string>
         <string>fbshareextension</string>
     </array>
+    <key>AWS</key>
+    <dict>
+        <key>IdentityManager</key>
+        <dict>
+            <key>Default</key>
+            <dict/>
+        </dict>
+        <key>CredentialsProvider</key>
+        <dict>
+            <key>CognitoIdentity</key>
+            <dict>
+                <key>Default</key>
+                <dict>
+                    <key>PoolId</key>
+                    <string>us-east-1:26e5620e-1c29-4dbc-b413-ea22faeff04c</string>
+                    <key>Region</key>
+                    <string>us-east-1</string>
+                </dict>
+            </dict>
+        </dict>
+        <key>MobileHub</key>
+        <dict>
+            <key>ProjectClientId</key>
+            <string>MobileHub b1c68e8e-c98f-45e4-9f2b-979a1543b8b2 aws-my-sample-app-ios-swift-v0.12</string>
+        </dict>
+    </dict>
 </dict>
 </plist>

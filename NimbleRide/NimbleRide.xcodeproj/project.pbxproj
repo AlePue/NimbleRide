@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		073F2B9D1E8CD70300966FDD /* AmazonAws in Resources */ = {isa = PBXBuildFile; fileRef = 073F2B9C1E8CD70300966FDD /* AmazonAws */; };
+		073F2BB01E8CDE7500966FDD /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073F2BAE1E8CDE7500966FDD /* AWSCognito.framework */; };
+		073F2BB11E8CDE7500966FDD /* AWSCognitoIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073F2BAF1E8CDE7500966FDD /* AWSCognitoIdentityProvider.framework */; };
+		073F2BB31E8CDE8000966FDD /* AWSCognito.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 073F2BAE1E8CDE7500966FDD /* AWSCognito.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		073F2BB51E8CDE8000966FDD /* AWSCognitoIdentityProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 073F2BAF1E8CDE7500966FDD /* AWSCognitoIdentityProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		073F2BBB1E8DDB6E00966FDD /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073F2BBA1E8DDB6E00966FDD /* History.swift */; };
+		073F2BBD1E8DDBF600966FDD /* AWSMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073F2BBC1E8DDBF600966FDD /* AWSMobileClient.swift */; };
+		073F2BBF1E8DDEB400966FDD /* AWSMobileHubHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073F2BBE1E8DDEB400966FDD /* AWSMobileHubHelper.framework */; };
+		07BDCA921E8C694B00103153 /* Sdk in Resources */ = {isa = PBXBuildFile; fileRef = 07BDCA911E8C694B00103153 /* Sdk */; };
+		07BDCA951E8C6C6600103153 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BDCA931E8C6C6600103153 /* AWSCore.framework */; };
+		07BDCA961E8C6C6600103153 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07BDCA931E8C6C6600103153 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07BDCA971E8C6C6600103153 /* AWSDynamoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BDCA941E8C6C6600103153 /* AWSDynamoDB.framework */; };
+		07BDCA981E8C6C6600103153 /* AWSDynamoDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07BDCA941E8C6C6600103153 /* AWSDynamoDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07BDCA9E1E8C80F700103153 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BDCA9C1E8C80F700103153 /* libsqlite3.tbd */; };
+		07BDCA9F1E8C80F700103153 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BDCA9D1E8C80F700103153 /* libz.tbd */; };
 		27215A321DD2F6880053799A /* RideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215A311DD2F6880053799A /* RideViewController.swift */; };
 		27CA86D11E6385F400CA8661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27CA86CF1E6385F400CA8661 /* Main.storyboard */; };
 		5A2E4DC9C8DB686E13FD8417 /* Pods_NimbleRideUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E102AF0B9F0C2F21240BEDFE /* Pods_NimbleRideUITests.framework */; };
@@ -38,7 +53,35 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		07BDCA991E8C6C6600103153 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				073F2BB31E8CDE8000966FDD /* AWSCognito.framework in Embed Frameworks */,
+				07BDCA981E8C6C6600103153 /* AWSDynamoDB.framework in Embed Frameworks */,
+				07BDCA961E8C6C6600103153 /* AWSCore.framework in Embed Frameworks */,
+				073F2BB51E8CDE8000966FDD /* AWSCognitoIdentityProvider.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		073F2B9C1E8CD70300966FDD /* AmazonAws */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AmazonAws; path = ../AmazonAws; sourceTree = "<group>"; };
+		073F2BAE1E8CDE7500966FDD /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCognito.framework; sourceTree = "<group>"; };
+		073F2BAF1E8CDE7500966FDD /* AWSCognitoIdentityProvider.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCognitoIdentityProvider.framework; sourceTree = "<group>"; };
+		073F2BBA1E8DDB6E00966FDD /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		073F2BBC1E8DDBF600966FDD /* AWSMobileClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSMobileClient.swift; sourceTree = "<group>"; };
+		073F2BBE1E8DDEB400966FDD /* AWSMobileHubHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSMobileHubHelper.framework; path = AmazonAws/AWSMobileHubHelper.framework; sourceTree = "<group>"; };
+		07BDCA911E8C694B00103153 /* Sdk */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sdk; sourceTree = "<group>"; };
+		07BDCA931E8C6C6600103153 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = Sdk/Aws/AWSCore.framework; sourceTree = "<group>"; };
+		07BDCA941E8C6C6600103153 /* AWSDynamoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSDynamoDB.framework; path = Sdk/Aws/AWSDynamoDB.framework; sourceTree = "<group>"; };
+		07BDCA9C1E8C80F700103153 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		07BDCA9D1E8C80F700103153 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		0B6A8BC346991BC4337B6062 /* Pods-NimbleRide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRide/Pods-NimbleRide.debug.xcconfig"; sourceTree = "<group>"; };
 		1553C7D9C7683D4A696A15B6 /* Pods-NimbleRideUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRideUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRideUITests/Pods-NimbleRideUITests.release.xcconfig"; sourceTree = "<group>"; };
 		270A745F1E7A32D000920FEE /* NimbleRide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NimbleRide.entitlements; sourceTree = "<group>"; };
@@ -74,7 +117,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073F2BBF1E8DDEB400966FDD /* AWSMobileHubHelper.framework in Frameworks */,
+				073F2BB01E8CDE7500966FDD /* AWSCognito.framework in Frameworks */,
+				07BDCA9E1E8C80F700103153 /* libsqlite3.tbd in Frameworks */,
+				07BDCA9F1E8C80F700103153 /* libz.tbd in Frameworks */,
+				073F2BB11E8CDE7500966FDD /* AWSCognitoIdentityProvider.framework in Frameworks */,
 				E04082AD6598E4AD8844A45F /* Pods_NimbleRide.framework in Frameworks */,
+				07BDCA971E8C6C6600103153 /* AWSDynamoDB.framework in Frameworks */,
+				07BDCA951E8C6C6600103153 /* AWSCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +150,13 @@
 		99806B09DDE8BF9E4DC41390 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				073F2BBE1E8DDEB400966FDD /* AWSMobileHubHelper.framework */,
+				073F2BAE1E8CDE7500966FDD /* AWSCognito.framework */,
+				073F2BAF1E8CDE7500966FDD /* AWSCognitoIdentityProvider.framework */,
+				07BDCA931E8C6C6600103153 /* AWSCore.framework */,
+				07BDCA941E8C6C6600103153 /* AWSDynamoDB.framework */,
+				07BDCA9C1E8C80F700103153 /* libsqlite3.tbd */,
+				07BDCA9D1E8C80F700103153 /* libz.tbd */,
 				27CA86C91E63769300CA8661 /* FBSDKCoreKit.framework */,
 				27CA86CA1E63769300CA8661 /* FBSDKLoginKit.framework */,
 				27CA86CB1E63769300CA8661 /* FBSDKShareKit.framework */,
@@ -113,6 +170,7 @@
 		ED2058AB1DD10D1B0029879B = {
 			isa = PBXGroup;
 			children = (
+				07BDCA911E8C694B00103153 /* Sdk */,
 				ED2058B61DD10D1B0029879B /* NimbleRide */,
 				ED2058CB1DD10D1B0029879B /* NimbleRideTests */,
 				ED2058D61DD10D1B0029879B /* NimbleRideUITests */,
@@ -135,12 +193,15 @@
 		ED2058B61DD10D1B0029879B /* NimbleRide */ = {
 			isa = PBXGroup;
 			children = (
+				073F2B9C1E8CD70300966FDD /* AmazonAws */,
 				270A745F1E7A32D000920FEE /* NimbleRide.entitlements */,
 				27CA86CF1E6385F400CA8661 /* Main.storyboard */,
 				EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */,
 				ED2058B71DD10D1B0029879B /* AppDelegate.swift */,
+				073F2BBC1E8DDBF600966FDD /* AWSMobileClient.swift */,
 				ED2058B91DD10D1B0029879B /* ViewController.swift */,
 				ED2058BE1DD10D1B0029879B /* Assets.xcassets */,
+				073F2BBA1E8DDB6E00966FDD /* History.swift */,
 				ED2058C01DD10D1B0029879B /* LaunchScreen.storyboard */,
 				ED2058C31DD10D1B0029879B /* Info.plist */,
 				27215A311DD2F6880053799A /* RideViewController.swift */,
@@ -192,6 +253,8 @@
 				ED2058B21DD10D1B0029879B /* Resources */,
 				FB69F78DF39A5403BE66F291 /* [CP] Embed Pods Frameworks */,
 				6CA887393D619EDEC907152E /* [CP] Copy Pods Resources */,
+				07BDCA991E8C6C6600103153 /* Embed Frameworks */,
+				07BDCA9A1E8C6C7A00103153 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -251,7 +314,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Alejandro Puente";
 				TargetAttributes = {
 					ED2058B31DD10D1B0029879B = {
@@ -304,8 +367,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				27CA86D11E6385F400CA8661 /* Main.storyboard in Resources */,
+				07BDCA921E8C694B00103153 /* Sdk in Resources */,
 				ED2058C21DD10D1B0029879B /* LaunchScreen.storyboard in Resources */,
 				ED2058BF1DD10D1B0029879B /* Assets.xcassets in Resources */,
+				073F2B9D1E8CD70300966FDD /* AmazonAws in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +391,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		07BDCA9A1E8C6C7A00103153 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework/strip-frameworks.sh\"";
+		};
 		1DF066980864890C3D60AD5F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -468,7 +546,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073F2BBB1E8DDB6E00966FDD /* History.swift in Sources */,
 				ED2058BA1DD10D1B0029879B /* ViewController.swift in Sources */,
+				073F2BBD1E8DDBF600966FDD /* AWSMobileClient.swift in Sources */,
 				ED2058B81DD10D1B0029879B /* AppDelegate.swift in Sources */,
 				EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */,
 				27215A321DD2F6880053799A /* RideViewController.swift in Sources */,
@@ -633,6 +713,10 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKLoginKit",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKShareKit",
+					"$(PROJECT_DIR)/Sdk/Aws",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/NimbleRide",
+					"$(PROJECT_DIR)/AmazonAws",
 				);
 				INFOPLIST_FILE = NimbleRide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -654,6 +738,10 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKLoginKit",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKShareKit",
+					"$(PROJECT_DIR)/Sdk/Aws",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/NimbleRide",
+					"$(PROJECT_DIR)/AmazonAws",
 				);
 				INFOPLIST_FILE = NimbleRide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
