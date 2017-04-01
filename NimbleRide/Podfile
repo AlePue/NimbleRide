@@ -10,6 +10,7 @@ target 'NimbleRide' do
   pod 'FBSDKCoreKit'
   pod 'FBSDKShareKit'
   pod 'FBSDKLoginKit'
+  pod 'AWSDynamoDB'
 
   target 'NimbleRideTests' do
     inherit! :search_paths
@@ -19,6 +20,7 @@ target 'NimbleRide' do
     pod 'FBSDKCoreKit'
     pod 'FBSDKShareKit'
     pod 'FBSDKLoginKit'
+    pod 'AWSDynamoDB'
   end
 
   target 'NimbleRideUITests' do
@@ -29,6 +31,7 @@ target 'NimbleRide' do
     pod 'FBSDKCoreKit'
     pod 'FBSDKShareKit'
     pod 'FBSDKLoginKit'
+    pod 'AWSDynamoDB'
   end
 
 end
