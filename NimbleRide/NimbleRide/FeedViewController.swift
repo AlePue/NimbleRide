@@ -1,4 +1,5 @@
 //
+<<<<<<< HEAD
 //  feedViewController.swift
 //  NimbleRide
 //
@@ -19,6 +20,24 @@ class FeedViewController: UIViewController {
         
         
         
+=======
+//  FeedViewController.swift
+//  NimbleRide
+//
+//  Created by Nicholas Randhawa on 03/22/17.
+//  Copyright © 2016 Alejandro Puente. All rights reserved.
+//
+
+import UIKit
+import AWSDynamoDB
+
+class FeedViewController: UIViewController {
+
+    @IBOutlet weak var nameLabel: UILabel!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+>>>>>>> f62b6580673ae7711af8f1bf26dc20964d1452f8
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -26,6 +45,19 @@ class FeedViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+<<<<<<< HEAD
     
     
 }
+=======
+
+    override func viewWillAppear(_ animated: Bool) {
+        if !(AccountViewController.FBuser.firstName.isEmpty){
+            let name = AccountViewController.FBuser.firstName + " " + AccountViewController.FBuser.lastName
+            self.nameLabel.text = name + "'s Feed"
+        }
+    }
+    
+}
+
+>>>>>>> f62b6580673ae7711af8f1bf26dc20964d1452f8

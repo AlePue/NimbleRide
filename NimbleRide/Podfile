@@ -7,12 +7,20 @@ target 'NimbleRide' do
 
   # Pods for NimbleRide
   pod 'SpeechKit'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKShareKit'
+  pod 'FBSDKLoginKit'
+  pod 'AWSDynamoDB'
 
   target 'NimbleRideTests' do
     inherit! :search_paths
     
     # Pods for testing
     pod 'SpeechKit'
+    pod 'FBSDKCoreKit'
+    pod 'FBSDKShareKit'
+    pod 'FBSDKLoginKit'
+    pod 'AWSDynamoDB'
   end
 
   target 'NimbleRideUITests' do
@@ -20,6 +28,10 @@ target 'NimbleRide' do
 
     # Pods for testing
     pod 'SpeechKit'
+    pod 'FBSDKCoreKit'
+    pod 'FBSDKShareKit'
+    pod 'FBSDKLoginKit'
+    pod 'AWSDynamoDB'
   end
 
 end

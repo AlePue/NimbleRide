@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		007E7A4E5452C498F09CF481 /* Pods_NimbleRideTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1059FCB97BB9A0489C75C8E0 /* Pods_NimbleRideTests.framework */; };
-		077C1BB11DE8CF4100B1F774 /* RideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215A311DD2F6880053799A /* RideViewController.swift */; };
-		343B70F2AC0073F045D310B0 /* Pods_NimbleRide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98DF6F4BDF41C42F7CB83BCA /* Pods_NimbleRide.framework */; };
-		7E0C7A476EF3AE0F963602EA /* Pods_NimbleRideUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C157C8E6D3AB14E90BDE5D8 /* Pods_NimbleRideUITests.framework */; };
+		27215A321DD2F6880053799A /* RideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215A311DD2F6880053799A /* RideViewController.swift */; };
+		2744E5CF1E83636C00C04A01 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2744E5CE1E83636C00C04A01 /* FeedViewController.swift */; };
+		27CA86D11E6385F400CA8661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27CA86CF1E6385F400CA8661 /* Main.storyboard */; };
+		5A2E4DC9C8DB686E13FD8417 /* Pods_NimbleRideUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E102AF0B9F0C2F21240BEDFE /* Pods_NimbleRideUITests.framework */; };
+		E04082AD6598E4AD8844A45F /* Pods_NimbleRide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD2BD88A65ADE2549075899 /* Pods_NimbleRide.framework */; };
 		ED2058B81DD10D1B0029879B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058B71DD10D1B0029879B /* AppDelegate.swift */; };
 		ED2058BA1DD10D1B0029879B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058B91DD10D1B0029879B /* ViewController.swift */; };
-		ED2058BD1DD10D1B0029879B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2058BB1DD10D1B0029879B /* Main.storyboard */; };
 		ED2058BF1DD10D1B0029879B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2058BE1DD10D1B0029879B /* Assets.xcassets */; };
 		ED2058C21DD10D1B0029879B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2058C01DD10D1B0029879B /* LaunchScreen.storyboard */; };
 		ED2058CD1DD10D1B0029879B /* NimbleRideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058CC1DD10D1B0029879B /* NimbleRideTests.swift */; };
 		ED2058D81DD10D1B0029879B /* NimbleRideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058D71DD10D1B0029879B /* NimbleRideUITests.swift */; };
 		ED2BCFBF1E7F2DCD00967A2D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2BCFBE1E7F2DCD00967A2D /* FeedViewController.swift */; };
 		EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */; };
+		FDD3ADFD6970ADFBB0B70A13 /* Pods_NimbleRideTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C55CE8595DFF6E44AC404F8 /* Pods_NimbleRideTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,20 +41,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1059FCB97BB9A0489C75C8E0 /* Pods_NimbleRideTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NimbleRideTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B6A8BC346991BC4337B6062 /* Pods-NimbleRide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRide/Pods-NimbleRide.debug.xcconfig"; sourceTree = "<group>"; };
+		1553C7D9C7683D4A696A15B6 /* Pods-NimbleRideUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRideUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRideUITests/Pods-NimbleRideUITests.release.xcconfig"; sourceTree = "<group>"; };
+		270A745F1E7A32D000920FEE /* NimbleRide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NimbleRide.entitlements; sourceTree = "<group>"; };
 		27215A311DD2F6880053799A /* RideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideViewController.swift; sourceTree = "<group>"; };
-		2F27CA5AD6C0F05FC7C54E9D /* Pods-NimbleRideTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRideTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRideTests/Pods-NimbleRideTests.debug.xcconfig"; sourceTree = "<group>"; };
-		596AB0E9E0656B824BAF207F /* Pods-NimbleRideUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRideUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRideUITests/Pods-NimbleRideUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		5F5723F48AB7A4133B7D6A70 /* Pods-NimbleRide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRide/Pods-NimbleRide.debug.xcconfig"; sourceTree = "<group>"; };
-		68966610C4988F332D5D75A3 /* Pods-NimbleRideUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRideUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRideUITests/Pods-NimbleRideUITests.release.xcconfig"; sourceTree = "<group>"; };
-		7C157C8E6D3AB14E90BDE5D8 /* Pods_NimbleRideUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NimbleRideUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		98DF6F4BDF41C42F7CB83BCA /* Pods_NimbleRide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NimbleRide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2735AFD2D591A4E75209F60 /* Pods-NimbleRide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRide.release.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRide/Pods-NimbleRide.release.xcconfig"; sourceTree = "<group>"; };
-		DBDD2C0B786FC95D4AB54FB4 /* Pods-NimbleRideTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRideTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRideTests/Pods-NimbleRideTests.release.xcconfig"; sourceTree = "<group>"; };
+		2744E5CE1E83636C00C04A01 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		27CA86C91E63769300CA8661 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKCoreKit/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		27CA86CA1E63769300CA8661 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKLoginKit/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		27CA86CB1E63769300CA8661 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKShareKit/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		27CA86D01E6385F400CA8661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		378F7992FF3A92932C16FA7B /* Pods-NimbleRide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRide.release.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRide/Pods-NimbleRide.release.xcconfig"; sourceTree = "<group>"; };
+		5C55CE8595DFF6E44AC404F8 /* Pods_NimbleRideTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NimbleRideTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CA89EC3B8BA531DFFBEE78A /* Pods-NimbleRideUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRideUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRideUITests/Pods-NimbleRideUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BAD2BD88A65ADE2549075899 /* Pods_NimbleRide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NimbleRide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4D6CA99DAF95E09BE7DD921 /* Pods-NimbleRideTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRideTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRideTests/Pods-NimbleRideTests.release.xcconfig"; sourceTree = "<group>"; };
+		E102AF0B9F0C2F21240BEDFE /* Pods_NimbleRideUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NimbleRideUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2058B41DD10D1B0029879B /* NimbleRide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NimbleRide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2058B71DD10D1B0029879B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED2058B91DD10D1B0029879B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ED2058BC1DD10D1B0029879B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED2058BE1DD10D1B0029879B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED2058C11DD10D1B0029879B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED2058C31DD10D1B0029879B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,6 +70,7 @@
 		ED2058D91DD10D1B0029879B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED2BCFBE1E7F2DCD00967A2D /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		EE0C654AA8533192193238D7 /* Pods-NimbleRideTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRideTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRideTests/Pods-NimbleRideTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				343B70F2AC0073F045D310B0 /* Pods_NimbleRide.framework in Frameworks */,
+				E04082AD6598E4AD8844A45F /* Pods_NimbleRide.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				007E7A4E5452C498F09CF481 /* Pods_NimbleRideTests.framework in Frameworks */,
+				FDD3ADFD6970ADFBB0B70A13 /* Pods_NimbleRideTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,24 +94,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E0C7A476EF3AE0F963602EA /* Pods_NimbleRideUITests.framework in Frameworks */,
+				5A2E4DC9C8DB686E13FD8417 /* Pods_NimbleRideUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A2AFFA2078E0E2D2B2A4D53C /* Pods */ = {
+		99806B09DDE8BF9E4DC41390 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5F5723F48AB7A4133B7D6A70 /* Pods-NimbleRide.debug.xcconfig */,
-				B2735AFD2D591A4E75209F60 /* Pods-NimbleRide.release.xcconfig */,
-				2F27CA5AD6C0F05FC7C54E9D /* Pods-NimbleRideTests.debug.xcconfig */,
-				DBDD2C0B786FC95D4AB54FB4 /* Pods-NimbleRideTests.release.xcconfig */,
-				596AB0E9E0656B824BAF207F /* Pods-NimbleRideUITests.debug.xcconfig */,
-				68966610C4988F332D5D75A3 /* Pods-NimbleRideUITests.release.xcconfig */,
+				27CA86C91E63769300CA8661 /* FBSDKCoreKit.framework */,
+				27CA86CA1E63769300CA8661 /* FBSDKLoginKit.framework */,
+				27CA86CB1E63769300CA8661 /* FBSDKShareKit.framework */,
+				BAD2BD88A65ADE2549075899 /* Pods_NimbleRide.framework */,
+				5C55CE8595DFF6E44AC404F8 /* Pods_NimbleRideTests.framework */,
+				E102AF0B9F0C2F21240BEDFE /* Pods_NimbleRideUITests.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		ED2058AB1DD10D1B0029879B = {
@@ -115,8 +121,8 @@
 				ED2058CB1DD10D1B0029879B /* NimbleRideTests */,
 				ED2058D61DD10D1B0029879B /* NimbleRideUITests */,
 				ED2058B51DD10D1B0029879B /* Products */,
-				A2AFFA2078E0E2D2B2A4D53C /* Pods */,
-				F36BC42A1BBDCAF05C2ABC56 /* Frameworks */,
+				F8352209F7021EB8889A697D /* Pods */,
+				99806B09DDE8BF9E4DC41390 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,15 +139,20 @@
 		ED2058B61DD10D1B0029879B /* NimbleRide */ = {
 			isa = PBXGroup;
 			children = (
+				270A745F1E7A32D000920FEE /* NimbleRide.entitlements */,
+				27CA86CF1E6385F400CA8661 /* Main.storyboard */,
 				EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */,
 				ED2058B71DD10D1B0029879B /* AppDelegate.swift */,
 				ED2058B91DD10D1B0029879B /* ViewController.swift */,
-				ED2058BB1DD10D1B0029879B /* Main.storyboard */,
 				ED2058BE1DD10D1B0029879B /* Assets.xcassets */,
 				ED2058C01DD10D1B0029879B /* LaunchScreen.storyboard */,
 				ED2058C31DD10D1B0029879B /* Info.plist */,
 				27215A311DD2F6880053799A /* RideViewController.swift */,
+<<<<<<< HEAD
 				ED2BCFBE1E7F2DCD00967A2D /* FeedViewController.swift */,
+=======
+				2744E5CE1E83636C00C04A01 /* FeedViewController.swift */,
+>>>>>>> f62b6580673ae7711af8f1bf26dc20964d1452f8
 			);
 			path = NimbleRide;
 			sourceTree = "<group>";
@@ -164,14 +175,17 @@
 			path = NimbleRideUITests;
 			sourceTree = "<group>";
 		};
-		F36BC42A1BBDCAF05C2ABC56 /* Frameworks */ = {
+		F8352209F7021EB8889A697D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				98DF6F4BDF41C42F7CB83BCA /* Pods_NimbleRide.framework */,
-				1059FCB97BB9A0489C75C8E0 /* Pods_NimbleRideTests.framework */,
-				7C157C8E6D3AB14E90BDE5D8 /* Pods_NimbleRideUITests.framework */,
+				0B6A8BC346991BC4337B6062 /* Pods-NimbleRide.debug.xcconfig */,
+				378F7992FF3A92932C16FA7B /* Pods-NimbleRide.release.xcconfig */,
+				EE0C654AA8533192193238D7 /* Pods-NimbleRideTests.debug.xcconfig */,
+				C4D6CA99DAF95E09BE7DD921 /* Pods-NimbleRideTests.release.xcconfig */,
+				7CA89EC3B8BA531DFFBEE78A /* Pods-NimbleRideUITests.debug.xcconfig */,
+				1553C7D9C7683D4A696A15B6 /* Pods-NimbleRideUITests.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,12 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED2058DC1DD10D1B0029879B /* Build configuration list for PBXNativeTarget "NimbleRide" */;
 			buildPhases = (
-				6CCE17ABA25B9EA6227DBA85 /* [CP] Check Pods Manifest.lock */,
+				73E5B4C5DFCFF1F3A5FCFC73 /* [CP] Check Pods Manifest.lock */,
 				ED2058B01DD10D1B0029879B /* Sources */,
 				ED2058B11DD10D1B0029879B /* Frameworks */,
 				ED2058B21DD10D1B0029879B /* Resources */,
-				03F1BACEB5F5DD8B44AFF903 /* [CP] Embed Pods Frameworks */,
-				40DFC6BE2055F4B53AF66031 /* [CP] Copy Pods Resources */,
+				FB69F78DF39A5403BE66F291 /* [CP] Embed Pods Frameworks */,
+				6CA887393D619EDEC907152E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,12 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED2058DF1DD10D1B0029879B /* Build configuration list for PBXNativeTarget "NimbleRideTests" */;
 			buildPhases = (
-				8CBE07F1391C3F5237BBAFF8 /* [CP] Check Pods Manifest.lock */,
+				A866D8AC904D44D1ABF1A407 /* [CP] Check Pods Manifest.lock */,
 				ED2058C41DD10D1B0029879B /* Sources */,
 				ED2058C51DD10D1B0029879B /* Frameworks */,
 				ED2058C61DD10D1B0029879B /* Resources */,
-				DBDC0BB0C75FBEBD59256A2E /* [CP] Embed Pods Frameworks */,
-				299BDD6D3FC61C5C031C5F65 /* [CP] Copy Pods Resources */,
+				636A38EB46E85A5C6779325C /* [CP] Embed Pods Frameworks */,
+				556733D24A60C7BAC0178F67 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -222,12 +236,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED2058E21DD10D1B0029879B /* Build configuration list for PBXNativeTarget "NimbleRideUITests" */;
 			buildPhases = (
-				A84AC59E3CFD75DFB8FC73A9 /* [CP] Check Pods Manifest.lock */,
+				1DF066980864890C3D60AD5F /* [CP] Check Pods Manifest.lock */,
 				ED2058CF1DD10D1B0029879B /* Sources */,
 				ED2058D01DD10D1B0029879B /* Frameworks */,
 				ED2058D11DD10D1B0029879B /* Resources */,
-				BDD4494317893B87848CA906 /* [CP] Embed Pods Frameworks */,
-				2CFA81913B4A4E0F180E8E91 /* [CP] Copy Pods Resources */,
+				AE483FBE6A3D75CBCC8A4A3B /* [CP] Embed Pods Frameworks */,
+				9AE3013607CA9221B6985525 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,8 +265,13 @@
 				TargetAttributes = {
 					ED2058B31DD10D1B0029879B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 97E8A4AYGV;
+						DevelopmentTeam = 298XXK9CF2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					ED2058C71DD10D1B0029879B = {
 						CreatedOnToolsVersion = 8.0;
@@ -293,9 +312,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27CA86D11E6385F400CA8661 /* Main.storyboard in Resources */,
 				ED2058C21DD10D1B0029879B /* LaunchScreen.storyboard in Resources */,
 				ED2058BF1DD10D1B0029879B /* Assets.xcassets in Resources */,
-				ED2058BD1DD10D1B0029879B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,22 +335,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		03F1BACEB5F5DD8B44AFF903 /* [CP] Embed Pods Frameworks */ = {
+		1DF066980864890C3D60AD5F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NimbleRide/Pods-NimbleRide-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		299BDD6D3FC61C5C031C5F65 /* [CP] Copy Pods Resources */ = {
+		556733D24A60C7BAC0178F67 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -346,97 +365,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NimbleRideTests/Pods-NimbleRideTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2CFA81913B4A4E0F180E8E91 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NimbleRideUITests/Pods-NimbleRideUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		40DFC6BE2055F4B53AF66031 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NimbleRide/Pods-NimbleRide-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6CCE17ABA25B9EA6227DBA85 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		8CBE07F1391C3F5237BBAFF8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A84AC59E3CFD75DFB8FC73A9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		BDD4494317893B87848CA906 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NimbleRideUITests/Pods-NimbleRideUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DBDC0BB0C75FBEBD59256A2E /* [CP] Embed Pods Frameworks */ = {
+		636A38EB46E85A5C6779325C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -451,6 +380,96 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NimbleRideTests/Pods-NimbleRideTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6CA887393D619EDEC907152E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NimbleRide/Pods-NimbleRide-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73E5B4C5DFCFF1F3A5FCFC73 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9AE3013607CA9221B6985525 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NimbleRideUITests/Pods-NimbleRideUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A866D8AC904D44D1ABF1A407 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AE483FBE6A3D75CBCC8A4A3B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NimbleRideUITests/Pods-NimbleRideUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB69F78DF39A5403BE66F291 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NimbleRide/Pods-NimbleRide-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -461,8 +480,9 @@
 				ED2BCFBF1E7F2DCD00967A2D /* FeedViewController.swift in Sources */,
 				ED2058BA1DD10D1B0029879B /* ViewController.swift in Sources */,
 				ED2058B81DD10D1B0029879B /* AppDelegate.swift in Sources */,
-				077C1BB11DE8CF4100B1F774 /* RideViewController.swift in Sources */,
+				2744E5CF1E83636C00C04A01 /* FeedViewController.swift in Sources */,
 				EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */,
+				27215A321DD2F6880053799A /* RideViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,10 +518,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		ED2058BB1DD10D1B0029879B /* Main.storyboard */ = {
+		27CA86CF1E6385F400CA8661 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				ED2058BC1DD10D1B0029879B /* Base */,
+				27CA86D01E6385F400CA8661 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -614,13 +634,20 @@
 		};
 		ED2058DD1DD10D1B0029879B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F5723F48AB7A4133B7D6A70 /* Pods-NimbleRide.debug.xcconfig */;
+			baseConfigurationReference = 0B6A8BC346991BC4337B6062 /* Pods-NimbleRide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 97E8A4AYGV;
+				CODE_SIGN_ENTITLEMENTS = NimbleRide/NimbleRide.entitlements;
+				DEVELOPMENT_TEAM = 298XXK9CF2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKLoginKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKShareKit",
+				);
 				INFOPLIST_FILE = NimbleRide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = noneForNow.NimbleRide;
+				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -628,13 +655,20 @@
 		};
 		ED2058DE1DD10D1B0029879B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2735AFD2D591A4E75209F60 /* Pods-NimbleRide.release.xcconfig */;
+			baseConfigurationReference = 378F7992FF3A92932C16FA7B /* Pods-NimbleRide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 97E8A4AYGV;
+				CODE_SIGN_ENTITLEMENTS = NimbleRide/NimbleRide.entitlements;
+				DEVELOPMENT_TEAM = 298XXK9CF2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKLoginKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKShareKit",
+				);
 				INFOPLIST_FILE = NimbleRide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = noneForNow.NimbleRide;
+				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -642,7 +676,7 @@
 		};
 		ED2058E01DD10D1B0029879B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F27CA5AD6C0F05FC7C54E9D /* Pods-NimbleRideTests.debug.xcconfig */;
+			baseConfigurationReference = EE0C654AA8533192193238D7 /* Pods-NimbleRideTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -658,7 +692,7 @@
 		};
 		ED2058E11DD10D1B0029879B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBDD2C0B786FC95D4AB54FB4 /* Pods-NimbleRideTests.release.xcconfig */;
+			baseConfigurationReference = C4D6CA99DAF95E09BE7DD921 /* Pods-NimbleRideTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -674,7 +708,7 @@
 		};
 		ED2058E31DD10D1B0029879B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 596AB0E9E0656B824BAF207F /* Pods-NimbleRideUITests.debug.xcconfig */;
+			baseConfigurationReference = 7CA89EC3B8BA531DFFBEE78A /* Pods-NimbleRideUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 97E8A4AYGV;
@@ -689,7 +723,7 @@
 		};
 		ED2058E41DD10D1B0029879B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68966610C4988F332D5D75A3 /* Pods-NimbleRideUITests.release.xcconfig */;
+			baseConfigurationReference = 1553C7D9C7683D4A696A15B6 /* Pods-NimbleRideUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 97E8A4AYGV;
