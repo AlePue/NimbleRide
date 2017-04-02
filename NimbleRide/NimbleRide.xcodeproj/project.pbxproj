@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		27215A321DD2F6880053799A /* RideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215A311DD2F6880053799A /* RideViewController.swift */; };
-		2744E5CF1E83636C00C04A01 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2744E5CE1E83636C00C04A01 /* FeedViewController.swift */; };
 		27CA86D11E6385F400CA8661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27CA86CF1E6385F400CA8661 /* Main.storyboard */; };
 		5A2E4DC9C8DB686E13FD8417 /* Pods_NimbleRideUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E102AF0B9F0C2F21240BEDFE /* Pods_NimbleRideUITests.framework */; };
 		E04082AD6598E4AD8844A45F /* Pods_NimbleRide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD2BD88A65ADE2549075899 /* Pods_NimbleRide.framework */; };
@@ -18,7 +17,7 @@
 		ED2058C21DD10D1B0029879B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2058C01DD10D1B0029879B /* LaunchScreen.storyboard */; };
 		ED2058CD1DD10D1B0029879B /* NimbleRideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058CC1DD10D1B0029879B /* NimbleRideTests.swift */; };
 		ED2058D81DD10D1B0029879B /* NimbleRideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058D71DD10D1B0029879B /* NimbleRideUITests.swift */; };
-		ED2BCFBF1E7F2DCD00967A2D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2BCFBE1E7F2DCD00967A2D /* FeedViewController.swift */; };
+		ED43C6171E91A88800DE2AB5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43C6161E91A88800DE2AB5 /* FeedViewController.swift */; };
 		EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */; };
 		FDD3ADFD6970ADFBB0B70A13 /* Pods_NimbleRideTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C55CE8595DFF6E44AC404F8 /* Pods_NimbleRideTests.framework */; };
 /* End PBXBuildFile section */
@@ -45,7 +44,6 @@
 		1553C7D9C7683D4A696A15B6 /* Pods-NimbleRideUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRideUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRideUITests/Pods-NimbleRideUITests.release.xcconfig"; sourceTree = "<group>"; };
 		270A745F1E7A32D000920FEE /* NimbleRide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NimbleRide.entitlements; sourceTree = "<group>"; };
 		27215A311DD2F6880053799A /* RideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideViewController.swift; sourceTree = "<group>"; };
-		2744E5CE1E83636C00C04A01 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		27CA86C91E63769300CA8661 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKCoreKit/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		27CA86CA1E63769300CA8661 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKLoginKit/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		27CA86CB1E63769300CA8661 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKShareKit/FBSDKShareKit.framework"; sourceTree = "<group>"; };
@@ -68,7 +66,7 @@
 		ED2058D31DD10D1B0029879B /* NimbleRideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NimbleRideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2058D71DD10D1B0029879B /* NimbleRideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleRideUITests.swift; sourceTree = "<group>"; };
 		ED2058D91DD10D1B0029879B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED2BCFBE1E7F2DCD00967A2D /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		ED43C6161E91A88800DE2AB5 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		EE0C654AA8533192193238D7 /* Pods-NimbleRideTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRideTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRideTests/Pods-NimbleRideTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,12 +145,8 @@
 				ED2058BE1DD10D1B0029879B /* Assets.xcassets */,
 				ED2058C01DD10D1B0029879B /* LaunchScreen.storyboard */,
 				ED2058C31DD10D1B0029879B /* Info.plist */,
+				ED43C6161E91A88800DE2AB5 /* FeedViewController.swift */,
 				27215A311DD2F6880053799A /* RideViewController.swift */,
-<<<<<<< HEAD
-				ED2BCFBE1E7F2DCD00967A2D /* FeedViewController.swift */,
-=======
-				2744E5CE1E83636C00C04A01 /* FeedViewController.swift */,
->>>>>>> f62b6580673ae7711af8f1bf26dc20964d1452f8
 			);
 			path = NimbleRide;
 			sourceTree = "<group>";
@@ -477,11 +471,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED2BCFBF1E7F2DCD00967A2D /* FeedViewController.swift in Sources */,
 				ED2058BA1DD10D1B0029879B /* ViewController.swift in Sources */,
 				ED2058B81DD10D1B0029879B /* AppDelegate.swift in Sources */,
-				2744E5CF1E83636C00C04A01 /* FeedViewController.swift in Sources */,
 				EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */,
+				ED43C6171E91A88800DE2AB5 /* FeedViewController.swift in Sources */,
 				27215A321DD2F6880053799A /* RideViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
