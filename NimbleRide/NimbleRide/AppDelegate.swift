@@ -8,16 +8,19 @@
 
 import UIKit
 import FBSDKCoreKit
+import AWSCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.usWest2, identityPoolId: "us-west-2:65cfe052-04de-4a1d-bab7-51724260ea91")
+        let configuration = AWSServiceConfiguration(region: .usWest2, credentialsProvider:credentialsProvider)
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         return true
     }
