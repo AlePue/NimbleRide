@@ -35,7 +35,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i88-gq-MEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="326" y="2330"/>
+            <point key="canvasLocation" x="905" y="2197"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="rqb-4H-Ysw">
@@ -63,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b30-Jr-STO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072.8" y="1933.5832083958023"/>
+            <point key="canvasLocation" x="905" y="753"/>
         </scene>
         <!--Ride Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -196,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072.8" y="1237.3313343328336"/>
+            <point key="canvasLocation" x="905" y="1430"/>
         </scene>
         <!--Feed-->
         <scene sceneID="R25-jN-Hvy">
@@ -234,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gG9-Te-zCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1074.4000000000001" y="548.27586206896558"/>
+            <point key="canvasLocation" x="906" y="52"/>
         </scene>
         <!--Account-->
         <scene sceneID="ZKt-0X-Try">
@@ -311,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meW-FM-dxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072.8" y="-106.59670164917542"/>
+            <point key="canvasLocation" x="2034" y="1433"/>
         </scene>
         <!--Ftue View Controller-->
         <scene sceneID="T2Z-m3-NZ4">
@@ -325,16 +325,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZb-xb-o79">
-                                <rect key="frame" x="48" y="305" width="252" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login with Facebook"/>
-                                <connections>
-                                    <segue destination="54H-hE-s5z" kind="show" id="szM-ng-D4G"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="td8-Xr-upY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZb-xb-o79">
+                                        <rect key="frame" x="61" y="551" width="252" height="56"/>
+                                        <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="PZK-oF-phr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Login with Facebook">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="54H-hE-s5z" kind="show" id="szM-ng-D4G"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NimbleRide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0Y-mO-jl2">
+                                        <rect key="frame" x="100" y="91" width="175" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="t08-KG-GOI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NimbleRideLogo" translatesAutoresizingMaskIntoConstraints="NO" id="LWj-xP-i0R">
+                                        <rect key="frame" x="35" y="192" width="305" height="283"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.32549019607843138" green="0.45098039215686275" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="LWj-xP-i0R" secondAttribute="bottom" constant="192" id="16J-R0-R5o"/>
+                                    <constraint firstItem="e0Y-mO-jl2" firstAttribute="top" secondItem="td8-Xr-upY" secondAttribute="top" constant="91" id="7Gs-as-mUf"/>
+                                    <constraint firstAttribute="trailing" secondItem="LWj-xP-i0R" secondAttribute="trailing" constant="35" id="Ltx-Yr-vqh"/>
+                                    <constraint firstItem="e0Y-mO-jl2" firstAttribute="centerX" secondItem="td8-Xr-upY" secondAttribute="centerX" id="Rk4-NX-Hw5"/>
+                                    <constraint firstItem="GZb-xb-o79" firstAttribute="leading" secondItem="td8-Xr-upY" secondAttribute="leading" constant="61" id="Sks-Kn-xmq"/>
+                                    <constraint firstItem="LWj-xP-i0R" firstAttribute="leading" secondItem="td8-Xr-upY" secondAttribute="leading" constant="35" id="VJe-9D-A6l"/>
+                                    <constraint firstAttribute="bottom" secondItem="GZb-xb-o79" secondAttribute="bottom" constant="60" id="XcL-cF-fIo"/>
+                                    <constraint firstAttribute="trailing" secondItem="GZb-xb-o79" secondAttribute="trailing" constant="62" id="YAJ-Dc-1e1"/>
+                                    <constraint firstItem="LWj-xP-i0R" firstAttribute="top" secondItem="td8-Xr-upY" secondAttribute="top" constant="192" id="mbR-XH-dBD"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="td8-Xr-upY" firstAttribute="top" secondItem="QvP-GW-uJh" secondAttribute="top" id="LMT-RG-aYi"/>
+                            <constraint firstAttribute="trailing" secondItem="td8-Xr-upY" secondAttribute="trailing" id="TIA-ed-DLo"/>
+                            <constraint firstItem="td8-Xr-upY" firstAttribute="bottom" secondItem="aeX-ah-us8" secondAttribute="top" id="d80-TW-fc4"/>
+                            <constraint firstItem="td8-Xr-upY" firstAttribute="leading" secondItem="QvP-GW-uJh" secondAttribute="leading" id="oS9-JS-cvh"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZeJ-k5-AdC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -364,4 +405,7 @@
             <point key="canvasLocation" x="-993" y="1430"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NimbleRideLogo" width="700" height="700"/>
+    </resources>
 </document>
