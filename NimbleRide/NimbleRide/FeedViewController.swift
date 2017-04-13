@@ -18,13 +18,36 @@ class FeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // ============================================ TEST SAVE FUNCTION ============================================
         myHistory?.userId = "Test User ID"
         myHistory?.RideID = "Test Ride ID"
-        dynamoDBObjectMapper.save(myHistory!).continue({ (AWSTask: AnyObject) -> Any? in
+
+        dynamoDBObjectMapper.save(myHistory!).continue({ (task:AWSTask!) -> Any? in
+            if let error = task.error as NSError? {
+                print("\nThe save request failed. \nError: \(error)\n")
+            }
+            else{
             print("saved")
+            }
+            return nil
         })
-//        dynamoDBObjectMapper.save(myHistory!).continue(block: (task:AWSTask<AnyObject>!) -> Any?)
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // ============================================ TEST SCAN FUNCTION ============================================
+        let scanExpression = AWSDynamoDBScanExpression()
+        scanExpression.limit = 20
+        
+        dynamoDBObjectMapper.scan(History.self, expression: scanExpression).continue({ (task:AWSTask!) -> Any? in
+            if let error = task.error as NSError? {
+                print("\nThe scan request failed. \nError: \(error)\n")
+            }
+            else if let paginatedOutput = task.result {
+                for ride in paginatedOutput.items {
+                    print (ride)
+                }
+            }
+            return nil
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +70,7 @@ class History : AWSDynamoDBObjectModel, AWSDynamoDBModeling  {
     var userId:String?
 
     class func dynamoDBTableName() -> String {
-        return "History"
+        return "nimbleride-mobilehub-95138682-History"
     }
 
     class func hashKeyAttribute() -> String {
