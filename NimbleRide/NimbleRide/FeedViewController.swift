@@ -20,9 +20,17 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        myHistory?.userId = "3"
-        myHistory?.RideID = "Test Ride ID"
+        myHistory?.userId = "4"
+        myHistory?.RideID = "2"
         saveDB()
+        
+//        dynamoDBObjectMapper.load(hash: (myHistory?.userId)!, range:(myHistory?.RideID)!).continue({ (task:AWSTask!) -> Any? in
+//            NSLog("Load one value - success")
+//            let item = task.result as Item
+//            print(item)
+//            return nil
+//        })
+        loadDB()
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,6 +85,16 @@ class FeedViewController: UIViewController {
             return nil
         })
         
+    }
+    
+    func loadDB(){
+        
+        dynamoDBObjectMapper.load(History.self, hashKey: myHistory?.userId ?? 1, rangeKey: myHistory?.RideID).continue({ (task:AWSTask!) -> Any? in
+            NSLog("Load one value - success")
+            let item = task.result as! History
+            print(item)
+            return nil
+        })
     }
     
 }
