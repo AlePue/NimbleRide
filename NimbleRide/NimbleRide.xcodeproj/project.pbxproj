@@ -19,9 +19,10 @@
 		ED2058C21DD10D1B0029879B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2058C01DD10D1B0029879B /* LaunchScreen.storyboard */; };
 		ED2058CD1DD10D1B0029879B /* NimbleRideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058CC1DD10D1B0029879B /* NimbleRideTests.swift */; };
 		ED2058D81DD10D1B0029879B /* NimbleRideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058D71DD10D1B0029879B /* NimbleRideUITests.swift */; };
+		ED2D8EF51EAD51D4002BDE07 /* MoreTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2D8EF41EAD51D4002BDE07 /* MoreTabTableViewController.swift */; };
 		ED43C6171E91A88800DE2AB5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43C6161E91A88800DE2AB5 /* FeedViewController.swift */; };
 		EDBC49131E91B93D009C2FF4 /* FtueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC49121E91B93D009C2FF4 /* FtueViewController.swift */; };
-		EDCEDA021E91EE0A009799A1 /* MoreTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCEDA011E91EE0A009799A1 /* MoreTabViewController.swift */; };
+		EDCEDA021E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCEDA011E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift */; };
 		EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */; };
 		FDD3ADFD6970ADFBB0B70A13 /* Pods_NimbleRideTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C55CE8595DFF6E44AC404F8 /* Pods_NimbleRideTests.framework */; };
 /* End PBXBuildFile section */
@@ -72,9 +73,10 @@
 		ED2058D31DD10D1B0029879B /* NimbleRideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NimbleRideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2058D71DD10D1B0029879B /* NimbleRideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleRideUITests.swift; sourceTree = "<group>"; };
 		ED2058D91DD10D1B0029879B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED2D8EF41EAD51D4002BDE07 /* MoreTabTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTabTableViewController.swift; sourceTree = "<group>"; };
 		ED43C6161E91A88800DE2AB5 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		EDBC49121E91B93D009C2FF4 /* FtueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FtueViewController.swift; sourceTree = "<group>"; };
-		EDCEDA011E91EE0A009799A1 /* MoreTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTabViewController.swift; sourceTree = "<group>"; };
+		EDCEDA011E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTabTableViewControllerViewCell.swift; sourceTree = "<group>"; };
 		EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		EE0C654AA8533192193238D7 /* Pods-NimbleRideTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRideTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRideTests/Pods-NimbleRideTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,11 +154,12 @@
 				ED2058B71DD10D1B0029879B /* AppDelegate.swift */,
 				ED2058B91DD10D1B0029879B /* ViewController.swift */,
 				ED1B186B1E92131E007D0FD9 /* SettingsViewController.swift */,
-				EDCEDA011E91EE0A009799A1 /* MoreTabViewController.swift */,
 				EDBC49121E91B93D009C2FF4 /* FtueViewController.swift */,
 				ED2058BE1DD10D1B0029879B /* Assets.xcassets */,
 				ED2058C01DD10D1B0029879B /* LaunchScreen.storyboard */,
 				ED2058C31DD10D1B0029879B /* Info.plist */,
+				ED2D8EF41EAD51D4002BDE07 /* MoreTabTableViewController.swift */,
+				EDCEDA011E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift */,
 				ED43C6161E91A88800DE2AB5 /* FeedViewController.swift */,
 				27215A311DD2F6880053799A /* RideViewController.swift */,
 			);
@@ -484,13 +487,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDBC49131E91B93D009C2FF4 /* FtueViewController.swift in Sources */,
-				EDCEDA021E91EE0A009799A1 /* MoreTabViewController.swift in Sources */,
+				EDCEDA021E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift in Sources */,
 				ED2058BA1DD10D1B0029879B /* ViewController.swift in Sources */,
 				ED2058B81DD10D1B0029879B /* AppDelegate.swift in Sources */,
 				EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */,
 				ED43C6171E91A88800DE2AB5 /* FeedViewController.swift in Sources */,
 				27215A321DD2F6880053799A /* RideViewController.swift in Sources */,
 				ED1B186E1E92138E007D0FD9 /* PairingViewController.swift in Sources */,
+				ED2D8EF51EAD51D4002BDE07 /* MoreTabTableViewController.swift in Sources */,
 				ED1B186C1E92131E007D0FD9 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
