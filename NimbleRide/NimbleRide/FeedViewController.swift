@@ -22,7 +22,7 @@ class FeedViewController: UIViewController {
 
         myHistory?.userId = "3"
         myHistory?.RideID = "Test Ride ID"
-        saveDB()
+        deleteDB()
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +35,29 @@ class FeedViewController: UIViewController {
             let name = AccountViewController.FBuser.firstName + " " + AccountViewController.FBuser.lastName
             self.nameLabel.text = name + "'s Feed"
         }
+    }
+
+    func deleteDB(){
+        dynamoDBObjectMapper.remove(myHistory!).continue({ (task:AWSTask!) -> Any? in
+            if let error = task.error as NSError? {
+                print("\nThe remove request failed. \nError: \(error)\n")
+                
+                let alertController = UIAlertController(title: "Deletion Failed", message: "Your ride could not be deleted. Try again?", preferredStyle: .alert)
+                let yesAlertButton = UIAlertAction(title: "Yes", style: .default, handler: {
+                    action in
+                    self.deleteDB()
+                })
+                let noAlertButton = UIAlertAction(title: "No", style: .destructive, handler: nil)
+
+                alertController.addAction(yesAlertButton)
+                alertController.addAction(noAlertButton)
+                self.present(alertController, animated: true, completion: nil)
+            }
+            else{
+                print("Removed")
+            }
+            return nil
+        })
     }
 
     func saveDB(){
@@ -76,7 +99,6 @@ class FeedViewController: UIViewController {
             }
             return nil
         })
-        
     }
     
 }
