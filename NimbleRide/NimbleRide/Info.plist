@@ -93,6 +93,14 @@
 </dict>
 <key>AWS</key>
 <dict>
+    <key>DynamoDB</key>
+    <dict>
+        <key>Default</key>
+        <dict>
+            <key>Region</key>
+            <string>us-west-2</string>
+        </dict>
+    </dict>
     <key>DynamoDBObjectMapper</key>
     <dict>
         <key>Default</key>

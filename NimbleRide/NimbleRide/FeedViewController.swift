@@ -20,7 +20,7 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        myHistory?.userId = "2"
+        myHistory?.userId = "3"
         myHistory?.RideID = "Test Ride ID"
         saveDB()
     }
@@ -92,5 +92,9 @@ class History : AWSDynamoDBObjectModel, AWSDynamoDBModeling  {
 
     class func hashKeyAttribute() -> String {
         return "userId"
+    }
+
+    class func rangeKeyAttribute() -> String {
+        return "RideID"
     }
 }
