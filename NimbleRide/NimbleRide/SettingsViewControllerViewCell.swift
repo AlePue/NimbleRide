@@ -1,19 +1,17 @@
 //
-//  MoreTabViewControllerViewCell.swift
+//  SettingsViewControllerViewCell.swift
 //  NimbleRide
 //
-//  Created by Alejandro Puente on 4/2/17.
+//  Created by Alejandro Puente on 4/23/17.
 //  Copyright © 2017 Alejandro Puente. All rights reserved.
 //
 
-
 import UIKit
 
-class MoreTabViewControllerViewCell: UITableViewCell {
+class SettingsViewControllerViewCell: UITableViewCell {
     
-    
-    @IBOutlet weak var myLabel: UILabel!
-    
+
+    @IBOutlet weak var settingsLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +22,6 @@ class MoreTabViewControllerViewCell: UITableViewCell {
         
         
     }
-    
-}
 
+
+}

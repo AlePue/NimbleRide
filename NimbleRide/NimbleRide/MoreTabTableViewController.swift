@@ -24,7 +24,7 @@ class MoreTabTableViewController: UIViewController, UITableViewDelegate, UITable
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MoreTabViewControllerViewCell
         cell.myLabel.text = list[indexPath.row]
-        
+        cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         return (cell)
 
     }

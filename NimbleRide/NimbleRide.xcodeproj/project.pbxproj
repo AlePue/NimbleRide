@@ -21,6 +21,14 @@
 		ED2058D81DD10D1B0029879B /* NimbleRideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058D71DD10D1B0029879B /* NimbleRideUITests.swift */; };
 		ED2D8EF51EAD51D4002BDE07 /* MoreTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2D8EF41EAD51D4002BDE07 /* MoreTabTableViewController.swift */; };
 		ED43C6171E91A88800DE2AB5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43C6161E91A88800DE2AB5 /* FeedViewController.swift */; };
+		ED9DCF3C1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF3B1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift */; };
+		ED9DCF3E1EAD712700FC1326 /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF3D1EAD712700FC1326 /* PremiumViewController.swift */; };
+		ED9DCF401EAD71BE00FC1326 /* UnitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF3F1EAD71BE00FC1326 /* UnitsViewController.swift */; };
+		ED9DCF421EAD73B300FC1326 /* ManageAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF411EAD73B300FC1326 /* ManageAccountsViewController.swift */; };
+		ED9DCF441EAD73C000FC1326 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF431EAD73C000FC1326 /* MusicViewController.swift */; };
+		ED9DCF461EAD73CE00FC1326 /* TOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF451EAD73CE00FC1326 /* TOSViewController.swift */; };
+		ED9DCF481EAD73DC00FC1326 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF471EAD73DC00FC1326 /* LogoutViewController.swift */; };
+		ED9DCF4B1EAD751000FC1326 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF4A1EAD751000FC1326 /* HelpViewController.swift */; };
 		EDBC49131E91B93D009C2FF4 /* FtueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC49121E91B93D009C2FF4 /* FtueViewController.swift */; };
 		EDCEDA021E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCEDA011E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift */; };
 		EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */; };
@@ -75,6 +83,14 @@
 		ED2058D91DD10D1B0029879B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED2D8EF41EAD51D4002BDE07 /* MoreTabTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTabTableViewController.swift; sourceTree = "<group>"; };
 		ED43C6161E91A88800DE2AB5 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		ED9DCF3B1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerViewCell.swift; sourceTree = "<group>"; };
+		ED9DCF3D1EAD712700FC1326 /* PremiumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
+		ED9DCF3F1EAD71BE00FC1326 /* UnitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitsViewController.swift; sourceTree = "<group>"; };
+		ED9DCF411EAD73B300FC1326 /* ManageAccountsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageAccountsViewController.swift; sourceTree = "<group>"; };
+		ED9DCF431EAD73C000FC1326 /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
+		ED9DCF451EAD73CE00FC1326 /* TOSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOSViewController.swift; sourceTree = "<group>"; };
+		ED9DCF471EAD73DC00FC1326 /* LogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		ED9DCF4A1EAD751000FC1326 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		EDBC49121E91B93D009C2FF4 /* FtueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FtueViewController.swift; sourceTree = "<group>"; };
 		EDCEDA011E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTabTableViewControllerViewCell.swift; sourceTree = "<group>"; };
 		EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -154,14 +170,16 @@
 				ED2058B71DD10D1B0029879B /* AppDelegate.swift */,
 				ED2058B91DD10D1B0029879B /* ViewController.swift */,
 				ED1B186B1E92131E007D0FD9 /* SettingsViewController.swift */,
+				ED9DCF3B1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift */,
+				ED9DCF491EAD748C00FC1326 /* Settings */,
 				EDBC49121E91B93D009C2FF4 /* FtueViewController.swift */,
-				ED2058BE1DD10D1B0029879B /* Assets.xcassets */,
-				ED2058C01DD10D1B0029879B /* LaunchScreen.storyboard */,
-				ED2058C31DD10D1B0029879B /* Info.plist */,
+				27215A311DD2F6880053799A /* RideViewController.swift */,
 				ED2D8EF41EAD51D4002BDE07 /* MoreTabTableViewController.swift */,
 				EDCEDA011E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift */,
 				ED43C6161E91A88800DE2AB5 /* FeedViewController.swift */,
-				27215A311DD2F6880053799A /* RideViewController.swift */,
+				ED2058BE1DD10D1B0029879B /* Assets.xcassets */,
+				ED2058C01DD10D1B0029879B /* LaunchScreen.storyboard */,
+				ED2058C31DD10D1B0029879B /* Info.plist */,
 			);
 			path = NimbleRide;
 			sourceTree = "<group>";
@@ -182,6 +200,20 @@
 				ED2058D91DD10D1B0029879B /* Info.plist */,
 			);
 			path = NimbleRideUITests;
+			sourceTree = "<group>";
+		};
+		ED9DCF491EAD748C00FC1326 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				ED9DCF3D1EAD712700FC1326 /* PremiumViewController.swift */,
+				ED9DCF3F1EAD71BE00FC1326 /* UnitsViewController.swift */,
+				ED9DCF4A1EAD751000FC1326 /* HelpViewController.swift */,
+				ED9DCF411EAD73B300FC1326 /* ManageAccountsViewController.swift */,
+				ED9DCF431EAD73C000FC1326 /* MusicViewController.swift */,
+				ED9DCF451EAD73CE00FC1326 /* TOSViewController.swift */,
+				ED9DCF471EAD73DC00FC1326 /* LogoutViewController.swift */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		F8352209F7021EB8889A697D /* Pods */ = {
@@ -486,15 +518,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9DCF3E1EAD712700FC1326 /* PremiumViewController.swift in Sources */,
+				ED9DCF401EAD71BE00FC1326 /* UnitsViewController.swift in Sources */,
 				EDBC49131E91B93D009C2FF4 /* FtueViewController.swift in Sources */,
+				ED9DCF421EAD73B300FC1326 /* ManageAccountsViewController.swift in Sources */,
 				EDCEDA021E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift in Sources */,
+				ED9DCF481EAD73DC00FC1326 /* LogoutViewController.swift in Sources */,
 				ED2058BA1DD10D1B0029879B /* ViewController.swift in Sources */,
+				ED9DCF441EAD73C000FC1326 /* MusicViewController.swift in Sources */,
+				ED9DCF461EAD73CE00FC1326 /* TOSViewController.swift in Sources */,
 				ED2058B81DD10D1B0029879B /* AppDelegate.swift in Sources */,
 				EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */,
 				ED43C6171E91A88800DE2AB5 /* FeedViewController.swift in Sources */,
 				27215A321DD2F6880053799A /* RideViewController.swift in Sources */,
+				ED9DCF4B1EAD751000FC1326 /* HelpViewController.swift in Sources */,
 				ED1B186E1E92138E007D0FD9 /* PairingViewController.swift in Sources */,
 				ED2D8EF51EAD51D4002BDE07 /* MoreTabTableViewController.swift in Sources */,
+				ED9DCF3C1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift in Sources */,
 				ED1B186C1E92131E007D0FD9 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
