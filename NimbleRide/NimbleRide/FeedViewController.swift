@@ -20,14 +20,14 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        myHistory?.userId = 666
-//        myHistory?.RideID = 1
+        myHistory?.userId = 2
+        myHistory?.RideID = 1
 //        myHistory?.avgSpeed = 10000
 //        myHistory?.calBurned = 1
 //        myHistory?.distance = 125
-//        myHistory?.fName = "The"
-//        myHistory?.lName = "Devil"
-//        myHistory?.profilePic = "www.fakepicture.com"
+        myHistory?.fName = "Steve"
+        myHistory?.lName = "Jobs"
+        myHistory?.profilePic = "www.apple.com"
 //        myHistory?.time = "04:52:15"
 //        saveDB()
 
@@ -73,6 +73,11 @@ class FeedViewController: UIViewController {
     }
 
     func saveDB(){
+//        myHistory?.time = RideViewController().timerLabel.text
+//        myHistory?.avgSpeed = NSNumber(value:Double(RideViewController().avgSpeedLabel.text!)!)
+//        myHistory?.calBurned = NSNumber(value:Int(RideViewController().calorieLabel.text!)!)
+//        myHistory?.distance = NSNumber(value:Double(RideViewController().distanceLabel.text!)!)
+        
         dynamoDBObjectMapper.save(myHistory!).continue({ (task:AWSTask!) -> Any? in
             if let error = task.error as NSError? {
                 debugPrint("\nThe save request failed. \nError: \(error)\n")
