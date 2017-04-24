@@ -25,11 +25,11 @@ class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         }
-    
+
     @IBAction func FBloginButton(_ sender: AnyObject) {
-        print("BUTTON PRESSED")
+        debugPrint("BUTTON PRESSED")
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
-        fbLoginManager.logIn(withReadPermissions: ["email"], from:self) { (result, error) -> Void in
+        fbLoginManager.logIn(withReadPermissions: ["email", "user_friends", "public_profile"], from:self) { (result, error) -> Void in
             if (error == nil){
                 let loginResult : FBSDKLoginManagerLoginResult = result!
                 if loginResult.grantedPermissions != nil{
@@ -46,6 +46,7 @@ class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
         if((FBSDKAccessToken.current()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, first_name, last_name, picture.type(large)"]).start(completionHandler: { (connection, FBuserData, error) -> Void in
                 if (error == nil){
+                    print (FBuserData!)
 
 //                    EXAMPLE OUTPUT
 //                    {
@@ -62,6 +63,8 @@ class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
 
 
                     self.userData = FBuserData as! NSDictionary
+                    let total = self.userData.allKeys.count
+                    if total > 1{
                     FBuser.firstName = String (describing: self.userData["first_name"]!)
                     FBuser.lastName = String (describing: self.userData["last_name"]!)
                     FBuser.id = (self.userData["id"] as? String)!
@@ -69,9 +72,41 @@ class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
                     self.lastNameLabel.text = FBuser.lastName
                     let url = NSURL(string: "https://graph.facebook.com/\(FBuser.id)/picture?type=large&return_ssl_resources=1")
                     self.profilePictureView.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
+                    }
+                }
+                else{
+                    print ("\nUser Error")
+                    print (error!)
+                }
+
+            })
+
+            FBSDKGraphRequest(graphPath: "me/friends", parameters: ["fields": "email, id, first_name, last_name, picture.type(large)"]).start(completionHandler: { (connection, friendsData, error) -> Void in
+                if (error == nil){
+                    print ("Friends 1")
+                    print (friendsData!)
+                    print ("Friends 2")
+
+//                    self.userData = FBuserData as! NSDictionary
+//                    let total = self.userData.allKeys.count
+//                    if total > 1{
+//                        FBuser.firstName = String (describing: self.userData["first_name"]!)
+//                        FBuser.lastName = String (describing: self.userData["last_name"]!)
+//                        FBuser.id = (self.userData["id"] as? String)!
+//                        self.firstNameLabel.text = FBuser.firstName
+//                        self.lastNameLabel.text = FBuser.lastName
+//                        let url = NSURL(string: "https://graph.facebook.com/\(FBuser.id)/picture?type=large&return_ssl_resources=1")
+//                        self.profilePictureView.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
+//                    }
+                }
+                else{
+                    print ("\nFriends Error")
+                    print (error!)
                 }
             })
+
         }
+        
     }
 
     struct FBuser{
@@ -89,7 +124,7 @@ class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
                     self.present(preview!, animated: true, completion: nil)
                 }
                 else {
-                    print("Error" + error!.localizedDescription)
+                    debugPrint("Error" + error!.localizedDescription)
                 }
                 
             }
@@ -103,7 +138,7 @@ class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
         else{
             recorder.startRecording{(error) in
                 if error != nil {
-                    print("Error" + error!.localizedDescription)
+                    debugPrint("Error" + error!.localizedDescription)
                 }
                 else{
                     self.recordButton.setTitle("Stop Recording", for: .normal)
