@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import SpeechKit
+import MapKit
 
 class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransactionDelegate{
 
@@ -125,6 +126,11 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        
         altitude = (locations.last!.altitude * 3.28084)
         altitudeLabel.text = String(format: "%.0f ft", altitude)
         speed = (locations.last!.speed * 2.23694)
@@ -364,5 +370,81 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         _ = session?.speak(textToSpeak, withLanguage: "eng-USA", delegate: self)
         voiceCommandFunc()
     }
+}
 
+
+
+class MapRideViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+    
+    @IBOutlet weak var mapRide: MKMapView!
+    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(metricsButtonTapped))
+
+    
+    
+    var locationManager = CLLocationManager()
+    
+    func navigationControllerSettingsSetup() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start", style: .plain, target: self, action: #selector(metricsButtonTapped))
+    }
+    func metricsButtonTapped() {
+        debugPrint("DONE PRESSED")
+        performSegue(withIdentifier: "Ride", sender: self)
+
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationControllerSettingsSetup()
+        
+        mapRide.delegate = self
+        mapRide.showsUserLocation = true
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        
+        //Check for Location Services
+        if (CLLocationManager.locationServicesEnabled()) {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.requestWhenInUseAuthorization()
+        }
+        
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+        }
+        
+        //Zoom to user location
+        let noLocation = CLLocationCoordinate2D()
+        let viewRegion = MKCoordinateRegionMakeWithDistance(noLocation, 200, 200)
+        mapRide.setRegion(viewRegion, animated: false)
+        mapRide.setUserTrackingMode(.follow, animated: true)
+        DispatchQueue.main.async {
+            self.locationManager.startUpdatingLocation()
+        }
+    }
+    
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        
+        
+    }
+    
+    
 }

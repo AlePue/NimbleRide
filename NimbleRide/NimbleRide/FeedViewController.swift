@@ -9,6 +9,7 @@
 
 import UIKit
 import AWSDynamoDB
+import MapKit
 
 
 class FeedViewController: UIViewController {
@@ -17,6 +18,12 @@ class FeedViewController: UIViewController {
     let myHistory = History()
     let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
 
+    @IBOutlet weak var feedMap: MKMapView!
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,6 +42,10 @@ class FeedViewController: UIViewController {
 //        myHistory?.userId = "3"
 //        myHistory?.RideID = "Test Ride ID"
 //        deleteDB()
+        
+        
+//        feedMap.setRegion(<#T##region: MKCoordinateRegion##MKCoordinateRegion#>, animated: <#T##Bool#>)
+        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {

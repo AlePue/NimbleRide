@@ -11,14 +11,27 @@
 		27CA86D11E6385F400CA8661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27CA86CF1E6385F400CA8661 /* Main.storyboard */; };
 		5A2E4DC9C8DB686E13FD8417 /* Pods_NimbleRideUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E102AF0B9F0C2F21240BEDFE /* Pods_NimbleRideUITests.framework */; };
 		E04082AD6598E4AD8844A45F /* Pods_NimbleRide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD2BD88A65ADE2549075899 /* Pods_NimbleRide.framework */; };
+		ED1B186C1E92131E007D0FD9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B186B1E92131E007D0FD9 /* SettingsViewController.swift */; };
+		ED1B186E1E92138E007D0FD9 /* PairingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B186D1E92138E007D0FD9 /* PairingViewController.swift */; };
 		ED2058B81DD10D1B0029879B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058B71DD10D1B0029879B /* AppDelegate.swift */; };
 		ED2058BA1DD10D1B0029879B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058B91DD10D1B0029879B /* ViewController.swift */; };
 		ED2058BF1DD10D1B0029879B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2058BE1DD10D1B0029879B /* Assets.xcassets */; };
 		ED2058C21DD10D1B0029879B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2058C01DD10D1B0029879B /* LaunchScreen.storyboard */; };
 		ED2058CD1DD10D1B0029879B /* NimbleRideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058CC1DD10D1B0029879B /* NimbleRideTests.swift */; };
 		ED2058D81DD10D1B0029879B /* NimbleRideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058D71DD10D1B0029879B /* NimbleRideUITests.swift */; };
+		ED2D8EF51EAD51D4002BDE07 /* MoreTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2D8EF41EAD51D4002BDE07 /* MoreTabTableViewController.swift */; };
 		ED43C6171E91A88800DE2AB5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43C6161E91A88800DE2AB5 /* FeedViewController.swift */; };
+		ED5A2F551EADAE5C0015894B /* FindMoreFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A2F541EADAE5C0015894B /* FindMoreFriendsViewController.swift */; };
+		ED9DCF3C1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF3B1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift */; };
+		ED9DCF3E1EAD712700FC1326 /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF3D1EAD712700FC1326 /* PremiumViewController.swift */; };
+		ED9DCF401EAD71BE00FC1326 /* UnitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF3F1EAD71BE00FC1326 /* UnitsViewController.swift */; };
+		ED9DCF421EAD73B300FC1326 /* ManageAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF411EAD73B300FC1326 /* ManageAccountsViewController.swift */; };
+		ED9DCF441EAD73C000FC1326 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF431EAD73C000FC1326 /* MusicViewController.swift */; };
+		ED9DCF461EAD73CE00FC1326 /* TOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF451EAD73CE00FC1326 /* TOSViewController.swift */; };
+		ED9DCF481EAD73DC00FC1326 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF471EAD73DC00FC1326 /* LogoutViewController.swift */; };
+		ED9DCF4B1EAD751000FC1326 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF4A1EAD751000FC1326 /* HelpViewController.swift */; };
 		EDBC49131E91B93D009C2FF4 /* FtueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC49121E91B93D009C2FF4 /* FtueViewController.swift */; };
+		EDCEDA021E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCEDA011E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift */; };
 		EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */; };
 		FDD3ADFD6970ADFBB0B70A13 /* Pods_NimbleRideTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C55CE8595DFF6E44AC404F8 /* Pods_NimbleRideTests.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +68,8 @@
 		BAD2BD88A65ADE2549075899 /* Pods_NimbleRide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NimbleRide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4D6CA99DAF95E09BE7DD921 /* Pods-NimbleRideTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRideTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRideTests/Pods-NimbleRideTests.release.xcconfig"; sourceTree = "<group>"; };
 		E102AF0B9F0C2F21240BEDFE /* Pods_NimbleRideUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NimbleRideUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED1B186B1E92131E007D0FD9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ED1B186D1E92138E007D0FD9 /* PairingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairingViewController.swift; sourceTree = "<group>"; };
 		ED2058B41DD10D1B0029879B /* NimbleRide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NimbleRide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2058B71DD10D1B0029879B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED2058B91DD10D1B0029879B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,8 +82,19 @@
 		ED2058D31DD10D1B0029879B /* NimbleRideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NimbleRideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2058D71DD10D1B0029879B /* NimbleRideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleRideUITests.swift; sourceTree = "<group>"; };
 		ED2058D91DD10D1B0029879B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED2D8EF41EAD51D4002BDE07 /* MoreTabTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTabTableViewController.swift; sourceTree = "<group>"; };
 		ED43C6161E91A88800DE2AB5 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		ED5A2F541EADAE5C0015894B /* FindMoreFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindMoreFriendsViewController.swift; sourceTree = "<group>"; };
+		ED9DCF3B1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerViewCell.swift; sourceTree = "<group>"; };
+		ED9DCF3D1EAD712700FC1326 /* PremiumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
+		ED9DCF3F1EAD71BE00FC1326 /* UnitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitsViewController.swift; sourceTree = "<group>"; };
+		ED9DCF411EAD73B300FC1326 /* ManageAccountsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageAccountsViewController.swift; sourceTree = "<group>"; };
+		ED9DCF431EAD73C000FC1326 /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
+		ED9DCF451EAD73CE00FC1326 /* TOSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOSViewController.swift; sourceTree = "<group>"; };
+		ED9DCF471EAD73DC00FC1326 /* LogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		ED9DCF4A1EAD751000FC1326 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		EDBC49121E91B93D009C2FF4 /* FtueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FtueViewController.swift; sourceTree = "<group>"; };
+		EDCEDA011E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTabTableViewControllerViewCell.swift; sourceTree = "<group>"; };
 		EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		EE0C654AA8533192193238D7 /* Pods-NimbleRideTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRideTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRideTests/Pods-NimbleRideTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,14 +168,21 @@
 				270A745F1E7A32D000920FEE /* NimbleRide.entitlements */,
 				27CA86CF1E6385F400CA8661 /* Main.storyboard */,
 				EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */,
+				ED1B186D1E92138E007D0FD9 /* PairingViewController.swift */,
 				ED2058B71DD10D1B0029879B /* AppDelegate.swift */,
 				ED2058B91DD10D1B0029879B /* ViewController.swift */,
+				ED5A2F541EADAE5C0015894B /* FindMoreFriendsViewController.swift */,
+				ED1B186B1E92131E007D0FD9 /* SettingsViewController.swift */,
+				ED9DCF3B1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift */,
+				ED9DCF491EAD748C00FC1326 /* Settings */,
 				EDBC49121E91B93D009C2FF4 /* FtueViewController.swift */,
+				27215A311DD2F6880053799A /* RideViewController.swift */,
+				ED2D8EF41EAD51D4002BDE07 /* MoreTabTableViewController.swift */,
+				EDCEDA011E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift */,
+				ED43C6161E91A88800DE2AB5 /* FeedViewController.swift */,
 				ED2058BE1DD10D1B0029879B /* Assets.xcassets */,
 				ED2058C01DD10D1B0029879B /* LaunchScreen.storyboard */,
 				ED2058C31DD10D1B0029879B /* Info.plist */,
-				ED43C6161E91A88800DE2AB5 /* FeedViewController.swift */,
-				27215A311DD2F6880053799A /* RideViewController.swift */,
 			);
 			path = NimbleRide;
 			sourceTree = "<group>";
@@ -170,6 +203,20 @@
 				ED2058D91DD10D1B0029879B /* Info.plist */,
 			);
 			path = NimbleRideUITests;
+			sourceTree = "<group>";
+		};
+		ED9DCF491EAD748C00FC1326 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				ED9DCF3D1EAD712700FC1326 /* PremiumViewController.swift */,
+				ED9DCF3F1EAD71BE00FC1326 /* UnitsViewController.swift */,
+				ED9DCF4A1EAD751000FC1326 /* HelpViewController.swift */,
+				ED9DCF411EAD73B300FC1326 /* ManageAccountsViewController.swift */,
+				ED9DCF431EAD73C000FC1326 /* MusicViewController.swift */,
+				ED9DCF451EAD73CE00FC1326 /* TOSViewController.swift */,
+				ED9DCF471EAD73DC00FC1326 /* LogoutViewController.swift */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		F8352209F7021EB8889A697D /* Pods */ = {
@@ -262,7 +309,7 @@
 				TargetAttributes = {
 					ED2058B31DD10D1B0029879B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 298XXK9CF2;
+						DevelopmentTeam = 97E8A4AYGV;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -474,12 +521,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9DCF3E1EAD712700FC1326 /* PremiumViewController.swift in Sources */,
+				ED9DCF401EAD71BE00FC1326 /* UnitsViewController.swift in Sources */,
 				EDBC49131E91B93D009C2FF4 /* FtueViewController.swift in Sources */,
+				ED9DCF421EAD73B300FC1326 /* ManageAccountsViewController.swift in Sources */,
+				EDCEDA021E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift in Sources */,
+				ED9DCF481EAD73DC00FC1326 /* LogoutViewController.swift in Sources */,
 				ED2058BA1DD10D1B0029879B /* ViewController.swift in Sources */,
+				ED9DCF441EAD73C000FC1326 /* MusicViewController.swift in Sources */,
+				ED9DCF461EAD73CE00FC1326 /* TOSViewController.swift in Sources */,
 				ED2058B81DD10D1B0029879B /* AppDelegate.swift in Sources */,
 				EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */,
+				ED5A2F551EADAE5C0015894B /* FindMoreFriendsViewController.swift in Sources */,
 				ED43C6171E91A88800DE2AB5 /* FeedViewController.swift in Sources */,
 				27215A321DD2F6880053799A /* RideViewController.swift in Sources */,
+				ED9DCF4B1EAD751000FC1326 /* HelpViewController.swift in Sources */,
+				ED1B186E1E92138E007D0FD9 /* PairingViewController.swift in Sources */,
+				ED2D8EF51EAD51D4002BDE07 /* MoreTabTableViewController.swift in Sources */,
+				ED9DCF3C1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift in Sources */,
+				ED1B186C1E92131E007D0FD9 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,7 +695,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NimbleRide/NimbleRide.entitlements;
-				DEVELOPMENT_TEAM = 298XXK9CF2;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 97E8A4AYGV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
@@ -644,8 +705,9 @@
 				);
 				INFOPLIST_FILE = NimbleRide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide;
+				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -656,7 +718,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NimbleRide/NimbleRide.entitlements;
-				DEVELOPMENT_TEAM = 298XXK9CF2;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 97E8A4AYGV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
@@ -665,8 +728,9 @@
 				);
 				INFOPLIST_FILE = NimbleRide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide;
+				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

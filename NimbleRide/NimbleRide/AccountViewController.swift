@@ -22,6 +22,13 @@ class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
     var userData = NSDictionary()
     let recorder = RPScreenRecorder.shared()
 
+    
+    @IBOutlet weak var followers: UILabel! 
+    @IBOutlet weak var following: UILabel!
+    
+//    followers.text = "0"
+//    following.text = "0"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         }
