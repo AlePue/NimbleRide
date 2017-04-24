@@ -9,14 +9,24 @@
 
 import UIKit
 import AWSDynamoDB
+import MapKit
 
 class FeedViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
 
+    @IBOutlet weak var feedMap: MKMapView!
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+//        feedMap.setRegion(<#T##region: MKCoordinateRegion##MKCoordinateRegion#>, animated: <#T##Bool#>)
         // Do any additional setup after loading the view, typically from a nib.
     }
     

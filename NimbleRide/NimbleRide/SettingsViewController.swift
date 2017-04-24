@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let settings = ["Go Premium", "Units", "Help", "Manage Accounts", "My Music", "Terms of Service", "Logout"]
+    let settings = ["Go Premium", "Units of Measurement", "Help", "Manage Accounts", "My Music", "Terms of Service", "Logout"]
     var myIndex = 0
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int

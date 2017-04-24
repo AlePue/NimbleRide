@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import SpeechKit
+import MapKit
 
 class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransactionDelegate{
 
@@ -365,4 +366,41 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         voiceCommandFunc()
     }
 
+}
+
+
+
+class MapRideViewController: UIViewController, CLLocationManagerDelegate {
+    
+    @IBOutlet weak var mapRide: MKMapView!
+    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(metricsButtonTapped))
+
+    
+    
+    
+    
+    func navigationControllerSettingsSetup() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start", style: .plain, target: self, action: #selector(metricsButtonTapped))
+    }
+    func metricsButtonTapped() {
+        debugPrint("DONE PRESSED")
+        performSegue(withIdentifier: "Ride", sender: self)
+
+        
+    }
+    
+    override func viewDidLoad() {
+    
+        navigationControllerSettingsSetup()
+    }
+    
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
 }

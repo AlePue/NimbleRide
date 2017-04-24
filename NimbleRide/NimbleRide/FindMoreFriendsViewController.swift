@@ -1,6 +1,5 @@
-
 //
-//  UnitsViewController.swift
+//  FindMoreFriendsViewController.swift
 //  NimbleRide
 //
 //  Created by Alejandro Puente on 4/23/17.
@@ -9,26 +8,8 @@
 
 import UIKit
 
-class UnitsViewController: UIViewController {
+class FindMoreFriendsViewController: UIViewController {
 
-    @IBOutlet weak var units: UILabel!
-    
-    @IBOutlet weak var unitValue: UISwitch!
-    
-    
-    
-    
-    @IBAction func UnitSelection(_ sender: Any) {
-        if unitValue.isOn {
-            units.text = "Metric"
-            unitValue.setOn(false, animated: true)
-        } else {
-            units.text = "Imperial"
-            unitValue.setOn(true, animated: true)
-        }
-    }
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

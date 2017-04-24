@@ -21,6 +21,7 @@
 		ED2058D81DD10D1B0029879B /* NimbleRideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058D71DD10D1B0029879B /* NimbleRideUITests.swift */; };
 		ED2D8EF51EAD51D4002BDE07 /* MoreTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2D8EF41EAD51D4002BDE07 /* MoreTabTableViewController.swift */; };
 		ED43C6171E91A88800DE2AB5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43C6161E91A88800DE2AB5 /* FeedViewController.swift */; };
+		ED5A2F551EADAE5C0015894B /* FindMoreFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A2F541EADAE5C0015894B /* FindMoreFriendsViewController.swift */; };
 		ED9DCF3C1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF3B1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift */; };
 		ED9DCF3E1EAD712700FC1326 /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF3D1EAD712700FC1326 /* PremiumViewController.swift */; };
 		ED9DCF401EAD71BE00FC1326 /* UnitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF3F1EAD71BE00FC1326 /* UnitsViewController.swift */; };
@@ -83,6 +84,7 @@
 		ED2058D91DD10D1B0029879B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED2D8EF41EAD51D4002BDE07 /* MoreTabTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTabTableViewController.swift; sourceTree = "<group>"; };
 		ED43C6161E91A88800DE2AB5 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		ED5A2F541EADAE5C0015894B /* FindMoreFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindMoreFriendsViewController.swift; sourceTree = "<group>"; };
 		ED9DCF3B1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerViewCell.swift; sourceTree = "<group>"; };
 		ED9DCF3D1EAD712700FC1326 /* PremiumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
 		ED9DCF3F1EAD71BE00FC1326 /* UnitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitsViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				ED1B186D1E92138E007D0FD9 /* PairingViewController.swift */,
 				ED2058B71DD10D1B0029879B /* AppDelegate.swift */,
 				ED2058B91DD10D1B0029879B /* ViewController.swift */,
+				ED5A2F541EADAE5C0015894B /* FindMoreFriendsViewController.swift */,
 				ED1B186B1E92131E007D0FD9 /* SettingsViewController.swift */,
 				ED9DCF3B1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift */,
 				ED9DCF491EAD748C00FC1326 /* Settings */,
@@ -529,6 +532,7 @@
 				ED9DCF461EAD73CE00FC1326 /* TOSViewController.swift in Sources */,
 				ED2058B81DD10D1B0029879B /* AppDelegate.swift in Sources */,
 				EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */,
+				ED5A2F551EADAE5C0015894B /* FindMoreFriendsViewController.swift in Sources */,
 				ED43C6171E91A88800DE2AB5 /* FeedViewController.swift in Sources */,
 				27215A321DD2F6880053799A /* RideViewController.swift in Sources */,
 				ED9DCF4B1EAD751000FC1326 /* HelpViewController.swift in Sources */,
