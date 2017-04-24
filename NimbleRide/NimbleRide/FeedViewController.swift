@@ -1,5 +1,4 @@
 //
-
 //  FeedViewController.swift
 //  NimbleRide
 //
@@ -23,17 +22,11 @@ class FeedViewController: UIViewController {
         myHistory?.userId = "4"
         myHistory?.RideID = "2"
         saveDB()
-        
-//        dynamoDBObjectMapper.load(hash: (myHistory?.userId)!, range:(myHistory?.RideID)!).continue({ (task:AWSTask!) -> Any? in
-//            NSLog("Load one value - success")
-//            let item = task.result as Item
-//            print(item)
-//            return nil
-//        })
+
         loadDB()
-        myHistory?.userId = "3"
-        myHistory?.RideID = "Test Ride ID"
-        deleteDB()
+//        myHistory?.userId = "3"
+//        myHistory?.RideID = "Test Ride ID"
+//        deleteDB()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,7 +44,7 @@ class FeedViewController: UIViewController {
     func deleteDB(){
         dynamoDBObjectMapper.remove(myHistory!).continue({ (task:AWSTask!) -> Any? in
             if let error = task.error as NSError? {
-                print("\nThe remove request failed. \nError: \(error)\n")
+                debugPrint("\nThe deletion request failed. \nError: \(error)\n")
                 
                 let alertController = UIAlertController(title: "Deletion Failed", message: "Your ride could not be deleted. Try again?", preferredStyle: .alert)
                 let yesAlertButton = UIAlertAction(title: "Yes", style: .default, handler: {
@@ -65,7 +58,7 @@ class FeedViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             }
             else{
-                print("Removed")
+                debugPrint("Removed")
             }
             return nil
         })
@@ -74,7 +67,7 @@ class FeedViewController: UIViewController {
     func saveDB(){
         dynamoDBObjectMapper.save(myHistory!).continue({ (task:AWSTask!) -> Any? in
             if let error = task.error as NSError? {
-                print("\nThe save request failed. \nError: \(error)\n")
+                debugPrint("\nThe save request failed. \nError: \(error)\n")
 
                 let alertController = UIAlertController(title: "Save Failed", message: "Your ride could not be saved. Try again?", preferredStyle: .alert)
                 let yesAlertButton = UIAlertAction(title: "Yes", style: .default, handler: {
@@ -88,20 +81,20 @@ class FeedViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             }
             else{
-                print("Saved")
+                debugPrint("Saved")
             }
             return nil
         })
     }
-    
+
     func scanDB(){
         let scanExpression = AWSDynamoDBScanExpression()
         scanExpression.limit = 20
-        
+
         dynamoDBObjectMapper.scan(History.self, expression: scanExpression).continue({ (task:AWSTask!) -> Any? in
             if let error = task.error as NSError? {
-                print("\nThe scan request failed. \nError: \(error)\n")
-                
+                debugPrint("\nThe scan request failed. \nError: \(error)\n")
+
             }
             else if let paginatedOutput = task.result {
                 for ride in paginatedOutput.items {
@@ -111,19 +104,36 @@ class FeedViewController: UIViewController {
             return nil
         })
     }
-    
+
     func loadDB(){
+        let exp = AWSDynamoDBQueryExpression()
         
-        dynamoDBObjectMapper.load(History.self, hashKey: myHistory?.userId ?? 1, rangeKey: myHistory?.RideID).continue({ (task:AWSTask!) -> Any? in
-            NSLog("Load one value - success")
-            let item = task.result as! History
-            print(item)
+        exp.keyConditionExpression = "#userId = :userId"
+        exp.expressionAttributeNames = ["#userId": "userId",]
+        exp.expressionAttributeValues = [":userId" : myHistory?.userId! as Any]
+
+        dynamoDBObjectMapper.query(History.self, expression: exp).continue({ (task:AWSTask!) -> Any? in
+            if let error = task.error as NSError? {
+                debugPrint("\nThe load request failed. \nError: \(error)\n")
+
+                let alertController = UIAlertController(title: "Load Failed", message: "Your rides could not be loaded. Try again?", preferredStyle: .alert)
+                let yesAlertButton = UIAlertAction(title: "Yes", style: .default, handler: {
+                    action in
+                    self.loadDB()
+                })
+                let noAlertButton = UIAlertAction(title: "No", style: .destructive, handler: nil)
+                
+                alertController.addAction(yesAlertButton)
+                alertController.addAction(noAlertButton)
+                self.present(alertController, animated: true, completion: nil)
+            }
+            else{
+                print(task.result as Any)
+            }
             return nil
         })
     }
-    
-}
-
+};
 
 class History : AWSDynamoDBObjectModel, AWSDynamoDBModeling  {
     var RideID:String?
