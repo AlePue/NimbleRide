@@ -6,6 +6,7 @@
 //  Copyright © 2017 Alejandro Puente. All rights reserved.
 //
 
+
 import UIKit
 import AWSDynamoDB
 
@@ -19,11 +20,18 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        myHistory?.userId = 4
-        myHistory?.RideID = 2
-        saveDB()
+//        myHistory?.userId = 666
+//        myHistory?.RideID = 1
+//        myHistory?.avgSpeed = 10000
+//        myHistory?.calBurned = 1
+//        myHistory?.distance = 125
+//        myHistory?.fName = "The"
+//        myHistory?.lName = "Devil"
+//        myHistory?.profilePic = "www.fakepicture.com"
+//        myHistory?.time = 44453643
+//        saveDB()
 
-        loadDB()
+//        loadDB()
 //        myHistory?.userId = "3"
 //        myHistory?.RideID = "Test Ride ID"
 //        deleteDB()
@@ -122,7 +130,7 @@ class FeedViewController: UIViewController {
                     self.loadDB()
                 })
                 let noAlertButton = UIAlertAction(title: "No", style: .destructive, handler: nil)
-                
+
                 alertController.addAction(yesAlertButton)
                 alertController.addAction(noAlertButton)
                 self.present(alertController, animated: true, completion: nil)
@@ -136,18 +144,17 @@ class FeedViewController: UIViewController {
 };
 
 class History : AWSDynamoDBObjectModel, AWSDynamoDBModeling  {
-    var RideID:Int?
-    var userId:Int?
-    var avgSpeed:Double?
-    var calBurned:Double?
-    var distance:Double?
+    var RideID:NSNumber?
+    var userId:NSNumber?
+    var avgSpeed:NSNumber?
+    var calBurned:NSNumber?
+    var distance:NSNumber?
     var fName:String?
     var lName:String?
     var profilePic:String?
-    var time:Double?
+    var time:NSNumber?
 
     class func dynamoDBTableName() -> String {
-//        return "nimbleride-mobilehub-95138682-History"
         return "History"
     }
 
