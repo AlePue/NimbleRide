@@ -28,7 +28,7 @@ class FeedViewController: UIViewController {
 //        myHistory?.fName = "The"
 //        myHistory?.lName = "Devil"
 //        myHistory?.profilePic = "www.fakepicture.com"
-//        myHistory?.time = 44453643
+//        myHistory?.time = "04:52:15"
 //        saveDB()
 
 //        loadDB()
@@ -152,7 +152,7 @@ class History : AWSDynamoDBObjectModel, AWSDynamoDBModeling  {
     var fName:String?
     var lName:String?
     var profilePic:String?
-    var time:NSNumber?
+    var time:String?
 
     class func dynamoDBTableName() -> String {
         return "History"
