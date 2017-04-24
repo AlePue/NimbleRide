@@ -19,8 +19,8 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        myHistory?.userId = "4"
-        myHistory?.RideID = "2"
+        myHistory?.userId = 4
+        myHistory?.RideID = 2
         saveDB()
 
         loadDB()
@@ -136,11 +136,19 @@ class FeedViewController: UIViewController {
 };
 
 class History : AWSDynamoDBObjectModel, AWSDynamoDBModeling  {
-    var RideID:String?
-    var userId:String?
+    var RideID:Int?
+    var userId:Int?
+    var avgSpeed:Double?
+    var calBurned:Double?
+    var distance:Double?
+    var fName:String?
+    var lName:String?
+    var profilePic:String?
+    var time:Double?
 
     class func dynamoDBTableName() -> String {
-        return "nimbleride-mobilehub-95138682-History"
+//        return "nimbleride-mobilehub-95138682-History"
+        return "History"
     }
 
     class func hashKeyAttribute() -> String {
