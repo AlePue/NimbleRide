@@ -10,7 +10,10 @@
 import UIKit
 import AWSDynamoDB
 import MapKit
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 
 class FeedViewController: UIViewController {
 
@@ -27,6 +30,7 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+<<<<<<< HEAD
         myHistory?.userId = 2
         myHistory?.RideID = 1
 //        myHistory?.avgSpeed = 10000
@@ -42,6 +46,8 @@ class FeedViewController: UIViewController {
 //        myHistory?.userId = "3"
 //        myHistory?.RideID = "Test Ride ID"
 //        deleteDB()
+=======
+>>>>>>> master
         
         
 //        feedMap.setRegion(<#T##region: MKCoordinateRegion##MKCoordinateRegion#>, animated: <#T##Bool#>)
