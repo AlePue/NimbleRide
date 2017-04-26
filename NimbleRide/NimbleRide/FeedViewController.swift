@@ -45,7 +45,7 @@ class FeedViewController: UIViewController {
         print (History.shared)
     }
 
-    func deleteDB(){
+    func deleteDB(controller: UIViewController){
         dynamoDBObjectMapper.remove(History.shared).continue({ (task:AWSTask!) -> Any? in
             if let error = task.error as NSError? {
                 debugPrint("\nThe deletion request failed. \nError: \(error)\n")
@@ -53,13 +53,13 @@ class FeedViewController: UIViewController {
                 let alertController = UIAlertController(title: "Deletion Failed", message: "Your ride could not be deleted. Try again?", preferredStyle: .alert)
                 let yesAlertButton = UIAlertAction(title: "Yes", style: .default, handler: {
                     action in
-                    self.deleteDB()
+                    self.deleteDB(controller: controller)
                 })
                 let noAlertButton = UIAlertAction(title: "No", style: .destructive, handler: nil)
 
                 alertController.addAction(yesAlertButton)
                 alertController.addAction(noAlertButton)
-                self.present(alertController, animated: true, completion: nil)
+                controller.present(alertController, animated: true, completion: nil)
             }
             else{
                 debugPrint("Removed")
@@ -68,7 +68,7 @@ class FeedViewController: UIViewController {
         })
     }
 
-    func saveDB(){
+    func saveDB(controller: UIViewController){
         dynamoDBObjectMapper.save(History.shared).continue({ (task:AWSTask!) -> Any? in
             if let error = task.error as NSError? {
                 debugPrint("\nThe save request failed. \nError: \(error)\n")
@@ -76,13 +76,13 @@ class FeedViewController: UIViewController {
                 let alertController = UIAlertController(title: "Save Failed", message: "Your ride could not be saved. Try again?", preferredStyle: .alert)
                 let yesAlertButton = UIAlertAction(title: "Yes", style: .default, handler: {
                     action in
-                    self.saveDB()
+                    self.saveDB(controller: controller)
                 })
                 let noAlertButton = UIAlertAction(title: "No", style: .destructive, handler: nil)
                 
                 alertController.addAction(yesAlertButton)
                 alertController.addAction(noAlertButton)
-                self.present(alertController, animated: true, completion: nil)
+                controller.present(alertController, animated: true, completion: nil)
             }
             else{
                 debugPrint("Saved")
@@ -109,7 +109,7 @@ class FeedViewController: UIViewController {
         })
     }
 
-    func loadDB(){
+    func loadDB(controller: UIViewController){
         let exp = AWSDynamoDBQueryExpression()
         
         exp.keyConditionExpression = "#userId = :userId"
@@ -123,13 +123,13 @@ class FeedViewController: UIViewController {
                 let alertController = UIAlertController(title: "Load Failed", message: "Your rides could not be loaded. Try again?", preferredStyle: .alert)
                 let yesAlertButton = UIAlertAction(title: "Yes", style: .default, handler: {
                     action in
-                    self.loadDB()
+                    self.loadDB(controller: controller)
                 })
                 let noAlertButton = UIAlertAction(title: "No", style: .destructive, handler: nil)
 
                 alertController.addAction(yesAlertButton)
                 alertController.addAction(noAlertButton)
-                self.present(alertController, animated: true, completion: nil)
+                controller.present(alertController, animated: true, completion: nil)
             }
             else{
                 print(task.result as Any)

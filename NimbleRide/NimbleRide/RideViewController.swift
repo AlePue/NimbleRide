@@ -98,7 +98,7 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         History.shared.lName = AccountViewController.FBuser.lastName
         History.shared.userId = AccountViewController.FBuser.id as NSNumber
 
-        FeedViewController().saveDB() //save ride to DB
+        FeedViewController().saveDB(controller: self) //save ride to DB
         
         timerResetFunc()
     }
