@@ -55,14 +55,24 @@ class FeedCell: UICollectionViewCell {
         label.numberOfLines = 2
         
         let attributedText = NSMutableAttributedString(string: " King Nick R", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)])
-        
-        attributedText.append(NSAttributedString(string: "\n April 20 Burn Trees, Get Money ", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 12), NSForegroundColorAttributeName: UIColor.rgb(red: 83, green: 115, blue: 125)]))
-        
+
+        let dateOfRideEpoch = TimeInterval(1493182377.904576)// Test: 2017-04-25 09:52:57 PM
+//        let dateOfRideEpoch = TimeInterval(1493209753)// Test: 2017-04-26 05:29:13 AM
+        let formattedEpoch = Date(timeIntervalSince1970:  dateOfRideEpoch)
+        var dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss a"
+        dateFormatter.dateFormat = "MMM dd, yyyy hh:mm a"
+        var dateOfRide = dateFormatter.string(from: formattedEpoch)
+        dateOfRide = "   " + dateOfRide
+
+        print (dateOfRide)
+        attributedText.append(NSAttributedString(string: dateOfRide, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 12), NSForegroundColorAttributeName: UIColor.rgb(red: 83, green: 115, blue: 125)]))
+
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 4
-        
+
         attributedText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedText.string.characters.count))
-        
+
         let littleImage = NSTextAttachment()
         littleImage.image = UIImage(named: "NimbleRideLogo")
         littleImage.bounds = CGRect(x: 0, y: -2, width: 12, height: 12)

@@ -93,11 +93,10 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         History.shared.avgSpeed = (avgSpeedLabel.text! as NSString).doubleValue as NSNumber
         History.shared.calBurned = (calorieLabel.text! as NSString).integerValue as NSNumber
         History.shared.distance = (distanceLabel.text! as NSString).doubleValue as NSNumber
-        History.shared.RideID = 12345
         History.shared.fName = AccountViewController.FBuser.firstName
         History.shared.lName = AccountViewController.FBuser.lastName
         History.shared.userId = AccountViewController.FBuser.id as NSNumber
-
+        History.shared.RideID = NSDate().timeIntervalSince1970 as NSNumber
         FeedViewController().saveDB(controller: self) //save ride to DB
         
         timerResetFunc()
