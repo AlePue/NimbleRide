@@ -89,11 +89,14 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
     }
     
     @IBAction func timerResetButton (_ send: AnyObject){
-        FeedViewController().myHistory?.time = timerLabel.text
-        
-        FeedViewController().myHistory?.avgSpeed = (avgSpeedLabel.text! as NSString).doubleValue as NSNumber
-        FeedViewController().myHistory?.calBurned = (calorieLabel.text! as NSString).integerValue as NSNumber
-        FeedViewController().myHistory?.distance = (distanceLabel.text! as NSString).doubleValue as NSNumber
+        History.shared.time = timerLabel.text
+        History.shared.avgSpeed = (avgSpeedLabel.text! as NSString).doubleValue as NSNumber
+        History.shared.calBurned = (calorieLabel.text! as NSString).integerValue as NSNumber
+        History.shared.distance = (distanceLabel.text! as NSString).doubleValue as NSNumber
+        History.shared.RideID = 12345
+        History.shared.fName = AccountViewController.FBuser.firstName
+        History.shared.lName = AccountViewController.FBuser.lastName
+        History.shared.userId = AccountViewController.FBuser.id as NSNumber
 
         FeedViewController().saveDB() //save ride to DB
         

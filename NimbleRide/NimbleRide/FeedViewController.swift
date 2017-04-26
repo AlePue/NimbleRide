@@ -10,45 +10,22 @@
 import UIKit
 import AWSDynamoDB
 import MapKit
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 
 class FeedViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
-    let myHistory = History()
     let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
 
     @IBOutlet weak var feedMap: MKMapView!
     
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-<<<<<<< HEAD
-        myHistory?.userId = 2
-        myHistory?.RideID = 1
-//        myHistory?.avgSpeed = 10000
-//        myHistory?.calBurned = 1
-//        myHistory?.distance = 125
-        myHistory?.fName = "Steve"
-        myHistory?.lName = "Jobs"
-        myHistory?.profilePic = "www.apple.com"
-//        myHistory?.time = "04:52:15"
-//        saveDB()
-
-//        loadDB()
-//        myHistory?.userId = "3"
-//        myHistory?.RideID = "Test Ride ID"
-//        deleteDB()
-=======
->>>>>>> master
-        
+//        History.shared.userId = 2
+//        History.shared.RideID = 1
+//        History.shared.fName = "Steve"
+//        History.shared.lName = "Jobs"
         
 //        feedMap.setRegion(<#T##region: MKCoordinateRegion##MKCoordinateRegion#>, animated: <#T##Bool#>)
         // Do any additional setup after loading the view, typically from a nib.
@@ -64,10 +41,12 @@ class FeedViewController: UIViewController {
             let name = AccountViewController.FBuser.firstName + " " + AccountViewController.FBuser.lastName
             self.nameLabel.text = name + "'s Feed"
         }
+        
+        print (History.shared)
     }
 
     func deleteDB(){
-        dynamoDBObjectMapper.remove(myHistory!).continue({ (task:AWSTask!) -> Any? in
+        dynamoDBObjectMapper.remove(History.shared).continue({ (task:AWSTask!) -> Any? in
             if let error = task.error as NSError? {
                 debugPrint("\nThe deletion request failed. \nError: \(error)\n")
                 
@@ -90,12 +69,7 @@ class FeedViewController: UIViewController {
     }
 
     func saveDB(){
-//        myHistory?.time = RideViewController().timerLabel.text
-//        myHistory?.avgSpeed = NSNumber(value:Double(RideViewController().avgSpeedLabel.text!)!)
-//        myHistory?.calBurned = NSNumber(value:Int(RideViewController().calorieLabel.text!)!)
-//        myHistory?.distance = NSNumber(value:Double(RideViewController().distanceLabel.text!)!)
-        
-        dynamoDBObjectMapper.save(myHistory!).continue({ (task:AWSTask!) -> Any? in
+        dynamoDBObjectMapper.save(History.shared).continue({ (task:AWSTask!) -> Any? in
             if let error = task.error as NSError? {
                 debugPrint("\nThe save request failed. \nError: \(error)\n")
 
@@ -140,7 +114,7 @@ class FeedViewController: UIViewController {
         
         exp.keyConditionExpression = "#userId = :userId"
         exp.expressionAttributeNames = ["#userId": "userId",]
-        exp.expressionAttributeValues = [":userId" : myHistory?.userId! as Any]
+        exp.expressionAttributeValues = [":userId" : History.shared.userId! as Any]
 
         dynamoDBObjectMapper.query(History.self, expression: exp).continue({ (task:AWSTask!) -> Any? in
             if let error = task.error as NSError? {
@@ -166,6 +140,13 @@ class FeedViewController: UIViewController {
 };
 
 class History : AWSDynamoDBObjectModel, AWSDynamoDBModeling  {
+    private override init() {super.init()}
+    
+    required init!(coder: NSCoder!) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    static let shared: History = History()
+
     var RideID:NSNumber?
     var userId:NSNumber?
     var avgSpeed:NSNumber?
@@ -173,7 +154,6 @@ class History : AWSDynamoDBObjectModel, AWSDynamoDBModeling  {
     var distance:NSNumber?
     var fName:String?
     var lName:String?
-    var profilePic:String?
     var time:String?
 
     class func dynamoDBTableName() -> String {

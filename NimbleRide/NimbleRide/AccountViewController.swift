@@ -77,8 +77,8 @@ class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
                         FBuser.id = (self.userData["id"]as! NSString).integerValue
                         self.firstNameLabel.text = FBuser.firstName
                         self.lastNameLabel.text = FBuser.lastName
-                        let url = NSURL(string: "https://graph.facebook.com/\(FBuser.id)/picture?type=large&return_ssl_resources=1")
-                        self.profilePictureView.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
+//                        let url = NSURL(string: "https://graph.facebook.com/\(FBuser.id)/picture?type=large&return_ssl_resources=1")
+                        self.profilePictureView.image = UIImage(data: NSData(contentsOf: FBuser.picURL! as URL)! as Data)
                     }
                 }
                 else{
@@ -116,6 +116,7 @@ class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
         static var lastName = String()
         static var id = Int()
         static var friendList = [Int]()
+        static var picURL = NSURL(string: "https://graph.facebook.com/\(FBuser.id)/picture?type=large&return_ssl_resources=1")
     }
 
     @IBAction func record (_ sender: AnyObject){
