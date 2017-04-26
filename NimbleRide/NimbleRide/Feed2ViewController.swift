@@ -32,7 +32,7 @@ class Feed2ViewController: UICollectionViewController, UICollectionViewDelegateF
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: view.frame.width, height: 300)
+        let size = CGSize(width: view.frame.width, height: 400)
         return size
 //        return CGSizeMake(view.frame.width, 50)
     }
@@ -56,7 +56,7 @@ class FeedCell: UICollectionViewCell {
         
         let attributedText = NSMutableAttributedString(string: " King Nick R", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)])
         
-        attributedText.append(NSAttributedString(string: "\n April 20 Burn Trees, Get Money ", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 12), NSForegroundColorAttributeName: UIColor(red: 155/255, green: 161/255, blue: 171/255, alpha: 1)]))
+        attributedText.append(NSAttributedString(string: "\n April 20 Burn Trees, Get Money ", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 12), NSForegroundColorAttributeName: UIColor.rgb(red: 83, green: 115, blue: 125)]))
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 4
@@ -90,14 +90,34 @@ class FeedCell: UICollectionViewCell {
     
     let rideImageView: UIImageView = {
         let rideImage = UIImageView()
-        rideImage.image = UIImage(named: "NimbleRideLogo")
+        rideImage.image = UIImage(named: "map")
         rideImage.contentMode = .scaleAspectFill
         rideImage.layer.masksToBounds = true
         
         return rideImage
     }()
     
+    let actionsLabel: UILabel = {
+       let actionLabel = UILabel()
+        actionLabel.text = "1 Like     0 Comments"
+        actionLabel.font = UIFont.systemFont(ofSize: 12)
+        actionLabel.textColor = UIColor.rgb(red: 166, green: 161, blue: 171)
+        return actionLabel
+    }()
     
+    let dividerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.rgb(red: 83, green: 115, blue: 125)
+        
+        return view
+    }()
+    
+    let likeButton: UIButton = {
+        let actionButton = UIButton()
+        actionButton.setTitle("Like", for: .normal)
+        actionButton.setTitleColor(UIColor.rgb(red: 143, green: 150, blue: 163), for: .normal)
+        return actionButton
+    }()
     
     func setupViews() {
         backgroundColor = UIColor.white
@@ -106,16 +126,26 @@ class FeedCell: UICollectionViewCell {
         addSubview(profileImageView)
         addSubview(rideTextView)
         addSubview(rideImageView)
+        addSubview(actionsLabel)
+        
+        addSubview(dividerView)
+        addSubview(likeButton)
         
         addConstraintsWithFormat(format: "H:|-8-[v0(44)]-8-[v1]|", views: profileImageView, nameLabel)  //1
         
         addConstraintsWithFormat(format: "H:|-4-[v0]-4-|", views: rideTextView)
         
-         addConstraintsWithFormat(format: "H:|[v0]|", views: rideImageView)
+        addConstraintsWithFormat(format: "H:|[v0]|", views: rideImageView)
+        
+        addConstraintsWithFormat(format: "H:|-12-[v0]|", views: actionsLabel)
         
         addConstraintsWithFormat(format: "V:|-12-[v0]", views: nameLabel)                                  //2
         
-        addConstraintsWithFormat(format: "V:|-8-[v0(44)]-4-[v1(50)]-4-[v2]|", views: profileImageView, rideTextView, rideImageView)                    //3
+        addConstraintsWithFormat(format: "H:|-12-[v0]-12-|", views: dividerView)
+        
+        addConstraintsWithFormat(format: "H:|[v0]|", views: likeButton)
+        
+        addConstraintsWithFormat(format: "V:|-8-[v0(44)]-4-[v1(50)]-4-[v2]-8-[v3(25)]-8-[v4(0.5)][v5(40)]|", views: profileImageView, rideTextView, rideImageView, actionsLabel, dividerView, likeButton)                    //3
        
         
         
@@ -144,6 +174,13 @@ extension UIView {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(), metrics: nil, views: viewsDictionary))
     }
     
+}
+
+extension UIColor {
+    
+    static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
+        return UIColor(red: red/255, green: green/255 , blue: blue/255 , alpha: 1)
+    }
 }
 
 

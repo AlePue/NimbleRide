@@ -133,7 +133,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.32549019607843138" green="0.45098039215686275" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.32469350099563599" green="0.45194113254547119" blue="0.49140322208404541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uyn-tH-KDG">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
@@ -202,7 +202,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S92-7G-KDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1844" y="14"/>
+            <point key="canvasLocation" x="1844" y="750"/>
         </scene>
         <!--Feed-->
         <scene sceneID="R25-jN-Hvy">
@@ -238,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gG9-Te-zCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1844" y="749.7751124437782"/>
+            <point key="canvasLocation" x="2670" y="750"/>
         </scene>
         <!--More-->
         <scene sceneID="Ska-KZ-1Yv">
