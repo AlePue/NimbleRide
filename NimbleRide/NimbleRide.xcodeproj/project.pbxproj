@@ -30,6 +30,7 @@
 		ED9DCF461EAD73CE00FC1326 /* TOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF451EAD73CE00FC1326 /* TOSViewController.swift */; };
 		ED9DCF481EAD73DC00FC1326 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF471EAD73DC00FC1326 /* LogoutViewController.swift */; };
 		ED9DCF4B1EAD751000FC1326 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF4A1EAD751000FC1326 /* HelpViewController.swift */; };
+		EDB108FE1EB00653005B0D5F /* Feed2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB108FD1EB00653005B0D5F /* Feed2ViewController.swift */; };
 		EDBC49131E91B93D009C2FF4 /* FtueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC49121E91B93D009C2FF4 /* FtueViewController.swift */; };
 		EDCEDA021E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCEDA011E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift */; };
 		EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */; };
@@ -93,6 +94,7 @@
 		ED9DCF451EAD73CE00FC1326 /* TOSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOSViewController.swift; sourceTree = "<group>"; };
 		ED9DCF471EAD73DC00FC1326 /* LogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		ED9DCF4A1EAD751000FC1326 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		EDB108FD1EB00653005B0D5F /* Feed2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed2ViewController.swift; sourceTree = "<group>"; };
 		EDBC49121E91B93D009C2FF4 /* FtueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FtueViewController.swift; sourceTree = "<group>"; };
 		EDCEDA011E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTabTableViewControllerViewCell.swift; sourceTree = "<group>"; };
 		EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				ED2D8EF41EAD51D4002BDE07 /* MoreTabTableViewController.swift */,
 				EDCEDA011E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift */,
 				ED43C6161E91A88800DE2AB5 /* FeedViewController.swift */,
+				EDB108FD1EB00653005B0D5F /* Feed2ViewController.swift */,
 				ED2058BE1DD10D1B0029879B /* Assets.xcassets */,
 				ED2058C01DD10D1B0029879B /* LaunchScreen.storyboard */,
 				ED2058C31DD10D1B0029879B /* Info.plist */,
@@ -534,6 +537,7 @@
 				EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */,
 				ED5A2F551EADAE5C0015894B /* FindMoreFriendsViewController.swift in Sources */,
 				ED43C6171E91A88800DE2AB5 /* FeedViewController.swift in Sources */,
+				EDB108FE1EB00653005B0D5F /* Feed2ViewController.swift in Sources */,
 				27215A321DD2F6880053799A /* RideViewController.swift in Sources */,
 				ED9DCF4B1EAD751000FC1326 /* HelpViewController.swift in Sources */,
 				ED1B186E1E92138E007D0FD9 /* PairingViewController.swift in Sources */,
