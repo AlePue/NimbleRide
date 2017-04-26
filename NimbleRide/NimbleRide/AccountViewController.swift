@@ -32,11 +32,11 @@ class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         }
-    
+
     @IBAction func FBloginButton(_ sender: AnyObject) {
-        print("BUTTON PRESSED")
+        debugPrint("BUTTON PRESSED")
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
-        fbLoginManager.logIn(withReadPermissions: ["email"], from:self) { (result, error) -> Void in
+        fbLoginManager.logIn(withReadPermissions: ["email", "user_friends", "public_profile"], from:self) { (result, error) -> Void in
             if (error == nil){
                 let loginResult : FBSDKLoginManagerLoginResult = result!
                 if loginResult.grantedPermissions != nil{
@@ -48,11 +48,12 @@ class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
             }
         }
     }
-    
+
     func getUserData(){
         if((FBSDKAccessToken.current()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, first_name, last_name, picture.type(large)"]).start(completionHandler: { (connection, FBuserData, error) -> Void in
                 if (error == nil){
+                    print (FBuserData!)
 
 //                    EXAMPLE OUTPUT
 //                    {
@@ -69,22 +70,53 @@ class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
 
 
                     self.userData = FBuserData as! NSDictionary
-                    FBuser.firstName = String (describing: self.userData["first_name"]!)
-                    FBuser.lastName = String (describing: self.userData["last_name"]!)
-                    FBuser.id = (self.userData["id"] as? String)!
-                    self.firstNameLabel.text = FBuser.firstName
-                    self.lastNameLabel.text = FBuser.lastName
-                    let url = NSURL(string: "https://graph.facebook.com/\(FBuser.id)/picture?type=large&return_ssl_resources=1")
-                    self.profilePictureView.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
+                    let total = self.userData.allKeys.count
+                    if total > 1{
+                        FBuser.firstName = String (describing: self.userData["first_name"]!)
+                        FBuser.lastName = String (describing: self.userData["last_name"]!)
+                        FBuser.id = (self.userData["id"]as! NSString).integerValue
+                        self.firstNameLabel.text = FBuser.firstName
+                        self.lastNameLabel.text = FBuser.lastName
+//                        let url = NSURL(string: "https://graph.facebook.com/\(FBuser.id)/picture?type=large&return_ssl_resources=1")
+                        self.profilePictureView.image = UIImage(data: NSData(contentsOf: FBuser.picURL! as URL)! as Data)
+                    }
+                }
+                else{
+                    debugPrint ("\nUser Error")
+                    debugPrint (error!)
                 }
             })
+
+            FBSDKGraphRequest(graphPath: "me/friends", parameters: nil).start(completionHandler: { (connection, friendsData, error) -> Void in
+                if (error == nil){
+                    debugPrint (friendsData!)
+                    let total = self.userData.allKeys.count
+
+                    if total > 0{
+                        let friendsData = friendsData as! NSDictionary
+                        let data = friendsData["data"]
+                        for friend in (data as? [[String: Any]])!{
+                                FBuser.friendList.append((friend["id"]as! NSString).integerValue)
+                        }
+                    }
+                    debugPrint (FBuser.friendList)
+                }
+                else{
+                    debugPrint ("\nFriends Error")
+                    debugPrint (error!)
+                }
+            })
+
         }
+        
     }
 
     struct FBuser{
         static var firstName = String()
         static var lastName = String()
-        static var id = String()
+        static var id = Int()
+        static var friendList = [Int]()
+        static var picURL = NSURL(string: "https://graph.facebook.com/\(FBuser.id)/picture?type=large&return_ssl_resources=1")
     }
 
     @IBAction func record (_ sender: AnyObject){
@@ -96,7 +128,7 @@ class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
                     self.present(preview!, animated: true, completion: nil)
                 }
                 else {
-                    print("Error" + error!.localizedDescription)
+                    debugPrint("Error" + error!.localizedDescription)
                 }
                 
             }
@@ -110,7 +142,7 @@ class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
         else{
             recorder.startRecording{(error) in
                 if error != nil {
-                    print("Error" + error!.localizedDescription)
+                    debugPrint("Error" + error!.localizedDescription)
                 }
                 else{
                     self.recordButton.setTitle("Stop Recording", for: .normal)

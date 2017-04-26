@@ -76,7 +76,7 @@
 		ED2058B91DD10D1B0029879B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ED2058BE1DD10D1B0029879B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED2058C11DD10D1B0029879B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		ED2058C31DD10D1B0029879B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED2058C31DD10D1B0029879B /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		ED2058C81DD10D1B0029879B /* NimbleRideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NimbleRideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2058CC1DD10D1B0029879B /* NimbleRideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleRideTests.swift; sourceTree = "<group>"; };
 		ED2058CE1DD10D1B0029879B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
