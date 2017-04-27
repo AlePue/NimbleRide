@@ -42,7 +42,7 @@ class FeedViewController: UIViewController {
             self.nameLabel.text = name + "'s Feed"
         }
         
-        print (History.shared)
+        debugPrint (History.shared)
     }
 
     func deleteDB(controller: UIViewController){
@@ -62,7 +62,12 @@ class FeedViewController: UIViewController {
                 controller.present(alertController, animated: true, completion: nil)
             }
             else{
-                debugPrint("Removed")
+                let alertController = UIAlertController(title: "Ride Deleted", message: nil, preferredStyle: .actionSheet)
+                controller.present(alertController, animated: true, completion: nil)
+                let when = DispatchTime.now() + 1
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    controller.dismiss(animated: true, completion: nil)
+                }
             }
             return nil
         })
@@ -85,7 +90,12 @@ class FeedViewController: UIViewController {
                 controller.present(alertController, animated: true, completion: nil)
             }
             else{
-                debugPrint("Saved")
+                let alertController = UIAlertController(title: "Ride Saved", message: nil, preferredStyle: .actionSheet)
+                controller.present(alertController, animated: true, completion: nil)
+                let when = DispatchTime.now() + 1
+                DispatchQueue.main.asyncAfter(deadline: when){
+                controller.dismiss(animated: true, completion: nil)
+                }
             }
             return nil
         })
@@ -102,7 +112,7 @@ class FeedViewController: UIViewController {
             }
             else if let paginatedOutput = task.result {
                 for ride in paginatedOutput.items {
-                    print (ride)
+                    debugPrint (ride)
                 }
             }
             return nil
@@ -132,7 +142,7 @@ class FeedViewController: UIViewController {
                 controller.present(alertController, animated: true, completion: nil)
             }
             else{
-                print(task.result as Any)
+                debugPrint(task.result as Any)
             }
             return nil
         })
