@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AWSServiceManager.default().defaultServiceConfiguration = configuration
 //        AWSServiceManager.default().defaultServiceConfiguration = _cognitoIdentity
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        application.statusBarStyle = .lightContent
         return true
     }
     
