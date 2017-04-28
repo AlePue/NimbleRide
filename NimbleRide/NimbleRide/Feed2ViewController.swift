@@ -109,7 +109,7 @@ class FeedCell: UICollectionViewCell {
     
     let actionsLabel: UILabel = {
        let actionLabel = UILabel()
-        actionLabel.text = "1 Like     0 Comments"
+        actionLabel.text = "1 Like"
         actionLabel.font = UIFont.systemFont(ofSize: 12)
         actionLabel.textColor = UIColor.rgb(red: 166, green: 161, blue: 171)
         return actionLabel

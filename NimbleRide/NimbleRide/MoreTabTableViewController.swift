@@ -12,7 +12,7 @@ import FBSDKCoreKit
 
 class MoreTabTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let list = ["Profile", "Settings", "Find more Friends", "Pair to E-Bike"]
+    let list = ["Profile", "Settings", "Invite More Friends", "Pair to E-Bike"]
     var myIndex = 0
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -38,7 +38,7 @@ class MoreTabTableViewController: UIViewController, UITableViewDelegate, UITable
         } else if (myIndex == 1) {
         performSegue(withIdentifier: "Settings", sender: self)
         } else if (myIndex == 2) {
-        performSegue(withIdentifier: "FindFriends", sender: self)
+        performSegue(withIdentifier: "InviteFriends", sender: self)
         } else if (myIndex == 3) {
         performSegue(withIdentifier: "Pair", sender: self)
         }
