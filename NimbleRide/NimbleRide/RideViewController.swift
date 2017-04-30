@@ -22,7 +22,9 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
     @IBOutlet weak var timerToggleButton: UIButton!
     @IBOutlet weak var calorieLabel: UILabel!
     @IBOutlet weak var voiceCommandButton: UIButton!
-
+    @IBOutlet weak var cadenceLabel: UIButton!
+    @IBOutlet weak var batteryLabel: UIButton!
+    
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -134,7 +136,13 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
     func calcCalorie (MET: Double, weight: Double) -> Double {
         return MET * (weight * 0.45359237) * (1/3600) // calorie burn = MET * weight in kgs * time in hours
     }
-    
+
+    @IBAction func connectBattery(_ sender: Any) {
+        if batteryLabel.titleLabel?.text == "Connect BLE"{
+            performSegue(withIdentifier: "Pair", sender: self)
+        }
+    }
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         
