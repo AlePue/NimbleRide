@@ -59,9 +59,9 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
         nameDate.append(logo)
         cell.nameLabel.attributedText = nameDate
 
-        let avgSpeed = "Average Speed  - " + String(describing: Data[indexPath.row].avgSpeed as! Int) + " mph" + "\n"
+        let avgSpeed = "Average Speed  - " + String(describing: Data[indexPath.row].avgSpeed as! Float) + " mph" + "\n"
         let cals = "Calories Burned  - " + String(describing: Data[indexPath.row].calBurned as! Int) + "\n"
-        let dist = "Distance  - " + String(describing: Data[indexPath.row].distance as! Int) + " miles" + "\n"
+        let dist = "Distance  - " + String(describing: Data[indexPath.row].distance as! Float) + " miles" + "\n"
         let time = "Time  - " + Data[indexPath.row].time!
         cell.rideTextView.text = avgSpeed + cals + dist + time
 
@@ -345,6 +345,10 @@ class History : AWSDynamoDBObjectModel, AWSDynamoDBModeling  {
     var fName:String?
     var lName:String?
     var time:String?
+    var city:String?
+    var state:String?
+    var country:String?
+    var landmark:String?
     
     class func dynamoDBTableName() -> String {
         return "History"
@@ -376,6 +380,10 @@ class myHistory : AWSDynamoDBObjectModel, AWSDynamoDBModeling  {
     var fName:String?
     var lName:String?
     var time:String?
+    var city:String?
+    var state:String?
+    var country:String?
+    var landmark:String?
     
     class func dynamoDBTableName() -> String {
         return "History"
