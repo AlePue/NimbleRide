@@ -69,3 +69,46 @@
 	<string>Can I follow your ride?</string>
 </dict>
 </plist>
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSExceptionDomains</key>
+    <dict>
+        <key>amazonaws.com</key>
+        <dict>
+            <key>NSThirdPartyExceptionMinimumTLSVersion</key>
+            <string>TLSv1.0</string>
+            <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+            <false/>
+            <key>NSIncludesSubdomains</key>
+            <true/>
+        </dict>
+        <key>amazonaws.com.cn</key>
+        <dict>
+            <key>NSThirdPartyExceptionMinimumTLSVersion</key>
+            <string>TLSv1.0</string>
+            <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+            <false/>
+            <key>NSIncludesSubdomains</key>
+            <true/>
+        </dict>
+    </dict>
+</dict>
+<key>AWS</key>
+<dict>
+    <key>DynamoDB</key>
+    <dict>
+        <key>Default</key>
+        <dict>
+            <key>Region</key>
+            <string>us-west-2</string>
+        </dict>
+    </dict>
+    <key>DynamoDBObjectMapper</key>
+    <dict>
+        <key>Default</key>
+        <dict>
+            <key>Region</key>
+            <string>us-west-2</string>
+        </dict>
+    </dict>
+</dict>

@@ -13,28 +13,59 @@ let cellId = "cellID"
 
 
 class FeedViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-
-    
     
     let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
-
+    var Data = Array<History>()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         collectionView?.register(FeedCell.self, forCellWithReuseIdentifier: cellId)
         collectionView?.alwaysBounceVertical = true
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+//        Data.removeAll()
+        loadDB(controller: self, userId: NSNumber(value: AccountViewController.FBuser.id))
+        for friend in AccountViewController.FBuser.friendList{
+            loadDB(controller: self, userId: NSNumber(value: friend))
+        }
+        Data = Data.sorted { (History1: History, History2: History) -> Bool in
+            return History1.RideID?.compare(History2.RideID!) == ComparisonResult.orderedDescending
+        }
+        collectionView?.reloadData()
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3 // number of actual card to show
+        return Data.count // number of actual card to show
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FeedCell
+
+        let picURL = NSURL(string: "https://graph.facebook.com/\(String(describing: Data[indexPath.row].userId as! Int))/picture?type=large&return_ssl_resources=1")
+        cell.profileImageView.image = UIImage(data: NSData(contentsOf: picURL! as URL)! as Data)
+        
+        let nameDate = NSMutableAttributedString(string: Data[indexPath.row].fName! + " " + Data[indexPath.row].lName!, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)])
+        let rideDate = getDate(epochDB: Data[indexPath.row].RideID!)
+        let date = NSAttributedString(string: rideDate, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 12), NSForegroundColorAttributeName: UIColor.rgb(red: 83, green: 115, blue: 125)])
+        nameDate.append(date)
+        let littleImage = NSTextAttachment()
+        littleImage.image = UIImage(named: "NimbleRideLogo")
+        littleImage.bounds = CGRect(x: 0, y: -2, width: 12, height: 12)
+        let logo = NSAttributedString(attachment: littleImage)
+        nameDate.append(logo)
+        cell.nameLabel.attributedText = nameDate
+
+        let avgSpeed = "Average Speed  - " + String(describing: Data[indexPath.row].avgSpeed as! Int) + " mph" + "\n"
+        let cals = "Calories Burned  - " + String(describing: Data[indexPath.row].calBurned as! Int) + "\n"
+        let dist = "Distance  - " + String(describing: Data[indexPath.row].distance as! Int) + " miles" + "\n"
+        let time = "Time  - " + Data[indexPath.row].time!
+        cell.rideTextView.text = avgSpeed + cals + dist + time
+
+        return cell
     }
     
     
@@ -121,11 +152,10 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     func loadDB(controller: UIViewController, userId: NSNumber){
         let exp = AWSDynamoDBQueryExpression()
-        
         exp.keyConditionExpression = "#userId = :userId"
         exp.expressionAttributeNames = ["#userId": "userId",]
         exp.expressionAttributeValues = [":userId" : userId as Any]
-        
+
         dynamoDBObjectMapper.query(History.self, expression: exp).continue({ (task:AWSTask!) -> Any? in
             if let error = task.error as NSError? {
                 debugPrint("\nThe load request failed. \nError: \(error)\n")
@@ -134,6 +164,7 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
                 let yesAlertButton = UIAlertAction(title: "Yes", style: .default, handler: {
                     action in
                     self.loadDB(controller: controller, userId: userId)
+
                 })
                 let noAlertButton = UIAlertAction(title: "No", style: .destructive, handler: nil)
                 
@@ -143,15 +174,23 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
             }
             else if let paginatedOutput = task.result {
                 for ride in paginatedOutput.items {
-                    debugPrint (ride)
+                    debugPrint(ride)
+                    self.Data.append(ride as! History)
                 }
             }
             return nil
         })
-        
-        
     }
+    
+    func getDate (epochDB : NSNumber) -> String{
+        let dateOfRideEpoch = TimeInterval(epochDB)
+        let formattedEpoch = Date(timeIntervalSince1970:  dateOfRideEpoch)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy hh:mm a" // EX: Apr 29, 2017 09:52 PM
+        let dateOfRide = dateFormatter.string(from: formattedEpoch)
 
+        return "   " + dateOfRide
+    }
 }
 
 class FeedCell: UICollectionViewCell {
@@ -265,7 +304,7 @@ class FeedCell: UICollectionViewCell {
         addConstraintsWithFormat(format: "H:|-12-[v0]-12-|", views: dividerView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: likeButton)
         
-        addConstraintsWithFormat(format: "V:|-8-[v0(44)]-4-[v1(50)]-4-[v2]-8-[v3(25)]-8-[v4(0.5)][v5(40)]|", views: profileImageView, rideTextView, rideImageView, actionsLabel, dividerView, likeButton)                    //3
+        addConstraintsWithFormat(format: "V:|-8-[v0(44)]-4-[v1(75)]-4-[v2]-8-[v3(25)]-8-[v4(0.5)][v5(40)]|", views: profileImageView, rideTextView, rideImageView, actionsLabel, dividerView, likeButton)                    //3
 
     }
     
