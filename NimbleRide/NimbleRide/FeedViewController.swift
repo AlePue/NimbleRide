@@ -247,8 +247,9 @@ class FeedCell: UICollectionViewCell {
     
     let rideTextView: UITextView = {
         let textView = UITextView()
-        textView.text = "YEAH i do drugs everyday but 420 is special man, jah lives and jah will provide"
+        textView.text = ""
         textView.font = UIFont.systemFont(ofSize: 14)
+        textView.isEditable = false
         
         return textView
     }()
@@ -304,7 +305,7 @@ class FeedCell: UICollectionViewCell {
         addConstraintsWithFormat(format: "H:|-12-[v0]-12-|", views: dividerView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: likeButton)
         
-        addConstraintsWithFormat(format: "V:|-8-[v0(44)]-4-[v1(75)]-4-[v2]-8-[v3(25)]-8-[v4(0.5)][v5(40)]|", views: profileImageView, rideTextView, rideImageView, actionsLabel, dividerView, likeButton)                    //3
+        addConstraintsWithFormat(format: "V:|-8-[v0(44)]-4-[v1(75)]-4-[v2]-8-[v3(25)]-8-[v4(0.5)][v5(40)]|", views: profileImageView, rideTextView, rideImageView, actionsLabel, dividerView, likeButton)             //3
 
     }
     

@@ -10,7 +10,7 @@ import ReplayKit
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
-
+import AWSDynamoDB
 
 class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
 
@@ -31,7 +31,8 @@ class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        }
+    self.getUserData()
+    }
 
     @IBAction func FBloginButton(_ sender: AnyObject) {
         debugPrint("BUTTON PRESSED")
