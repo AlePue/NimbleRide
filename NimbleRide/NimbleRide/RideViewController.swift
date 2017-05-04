@@ -61,6 +61,10 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
     var timerFlag = 0, voiceFlag = 0 //0 = paused, 1 = running
     var nextLocation:CLLocation!
     var previousLocation:CLLocation!
+    var city = "San Jose"
+    var state = "CA"
+    var landmark = "San Jose State University"
+    var country = "United States"
 
     let session = SKSession(url: NSURL(string: "nmsps://NMDPTRIAL_nrandhawa01_yahoo_com20170225163344@sslsandbox-nmdp.nuancemobility.net:443") as URL!, appToken: "1b3110f8b753718ce8567d91dbe23f52297406693752658592da9142b36177ce9288c749db38d5c38e53546a3594bc5e08c2c840142dc5a70856e9bbb761894a")
     var textToSpeak = "No input received"
@@ -99,6 +103,10 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         myHistory.shared.lName = AccountViewController.FBuser.lastName
         myHistory.shared.userId = AccountViewController.FBuser.id as NSNumber
         myHistory.shared.RideID = NSDate().timeIntervalSince1970 as NSNumber
+        myHistory.shared.city = city
+        myHistory.shared.state = state
+        myHistory.shared.landmark = landmark
+        myHistory.shared.country = country
         FeedViewController().saveDB(controller: self) //save ride to DB
         
         timerResetFunc()
@@ -164,6 +172,23 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
             avgSpeed = 0
             calories = 0
             previousLocation = locations.last
+            let geoCoder = CLGeocoder()
+            let endLocation = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
+            geoCoder.reverseGeocodeLocation(endLocation, completionHandler: { (placemarks, error) -> Void in
+            var placeMark: CLPlacemark!
+            placeMark = placemarks?[0]
+            
+                if error == nil{
+                    self.state = placeMark.administrativeArea!
+                    self.landmark = placeMark.name!
+                    self.country = placeMark.country!
+                    self.city = placeMark.locality!
+                }
+                else{
+                    debugPrint(error!)
+                }
+            })
+            
         }
 
         else if (timerToggleButton.title(for: .normal) == "Pause"){ //timer is running
@@ -190,6 +215,7 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         calorieLabel.text = String(format: "%.0f", calories)
     }
 
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error" + error.localizedDescription)
     }

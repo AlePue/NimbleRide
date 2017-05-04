@@ -344,6 +344,10 @@ class History : AWSDynamoDBObjectModel, AWSDynamoDBModeling  {
     var fName:String?
     var lName:String?
     var time:String?
+    var city:String?
+    var state:String?
+    var country:String?
+    var landmark:String?
     
     class func dynamoDBTableName() -> String {
         return "History"
@@ -375,6 +379,10 @@ class myHistory : AWSDynamoDBObjectModel, AWSDynamoDBModeling  {
     var fName:String?
     var lName:String?
     var time:String?
+    var city:String?
+    var state:String?
+    var country:String?
+    var landmark:String?
     
     class func dynamoDBTableName() -> String {
         return "History"
