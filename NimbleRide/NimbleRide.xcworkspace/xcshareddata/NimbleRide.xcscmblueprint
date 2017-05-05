@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "90081BC9F9A48E7AF8ED80B222E1ACB8DB691ACD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "704EC0B45B29EE0FB0100B9C5B6B1930908FCE9B" : 9223372036854775807,
+    "90081BC9F9A48E7AF8ED80B222E1ACB8DB691ACD" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CAAA9AD4-F494-42F7-A0E1-96CC1ED71609",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "704EC0B45B29EE0FB0100B9C5B6B1930908FCE9B" : "HM10-BluetoothSerial-iOS\/",
+    "90081BC9F9A48E7AF8ED80B222E1ACB8DB691ACD" : "NimbleRide\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "NimbleRide",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "NimbleRide\/NimbleRide.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/hoiberg\/HM10-BluetoothSerial-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "704EC0B45B29EE0FB0100B9C5B6B1930908FCE9B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alejandro-Glooko\/NimbleRide.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "90081BC9F9A48E7AF8ED80B222E1ACB8DB691ACD"
+    }
+  ]
+}
