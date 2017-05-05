@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2700DA091EBC1852000026C9 /* SerialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2700DA051EBC1852000026C9 /* SerialViewController.swift */; };
+		2700DA0A1EBC1852000026C9 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2700DA061EBC1852000026C9 /* ScannerViewController.swift */; };
+		2700DA0B1EBC1852000026C9 /* PreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2700DA071EBC1852000026C9 /* PreferencesTableViewController.swift */; };
+		2700DA0C1EBC1852000026C9 /* BluetoothSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2700DA081EBC1852000026C9 /* BluetoothSerial.swift */; };
+		2700DA121EBC19EB000026C9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2700DA111EBC19EB000026C9 /* MBProgressHUD.m */; };
 		27215A321DD2F6880053799A /* RideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215A311DD2F6880053799A /* RideViewController.swift */; };
 		27CA86D11E6385F400CA8661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27CA86CF1E6385F400CA8661 /* Main.storyboard */; };
 		5A2E4DC9C8DB686E13FD8417 /* Pods_NimbleRideUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E102AF0B9F0C2F21240BEDFE /* Pods_NimbleRideUITests.framework */; };
@@ -56,6 +61,13 @@
 /* Begin PBXFileReference section */
 		0B6A8BC346991BC4337B6062 /* Pods-NimbleRide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRide/Pods-NimbleRide.debug.xcconfig"; sourceTree = "<group>"; };
 		1553C7D9C7683D4A696A15B6 /* Pods-NimbleRideUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRideUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRideUITests/Pods-NimbleRideUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2700DA051EBC1852000026C9 /* SerialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerialViewController.swift; sourceTree = "<group>"; };
+		2700DA061EBC1852000026C9 /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		2700DA071EBC1852000026C9 /* PreferencesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesTableViewController.swift; sourceTree = "<group>"; };
+		2700DA081EBC1852000026C9 /* BluetoothSerial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothSerial.swift; sourceTree = "<group>"; };
+		2700DA101EBC19EB000026C9 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		2700DA111EBC19EB000026C9 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		2700DA131EBC1A1F000026C9 /* Serial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Serial-Bridging-Header.h"; sourceTree = "<group>"; };
 		270A745F1E7A32D000920FEE /* NimbleRide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NimbleRide.entitlements; sourceTree = "<group>"; };
 		27215A311DD2F6880053799A /* RideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideViewController.swift; sourceTree = "<group>"; };
 		27CA86C91E63769300CA8661 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKCoreKit/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
@@ -167,6 +179,12 @@
 			children = (
 				270A745F1E7A32D000920FEE /* NimbleRide.entitlements */,
 				27CA86CF1E6385F400CA8661 /* Main.storyboard */,
+				2700DA101EBC19EB000026C9 /* MBProgressHUD.h */,
+				2700DA111EBC19EB000026C9 /* MBProgressHUD.m */,
+				2700DA051EBC1852000026C9 /* SerialViewController.swift */,
+				2700DA061EBC1852000026C9 /* ScannerViewController.swift */,
+				2700DA071EBC1852000026C9 /* PreferencesTableViewController.swift */,
+				2700DA081EBC1852000026C9 /* BluetoothSerial.swift */,
 				EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */,
 				ED1B186D1E92138E007D0FD9 /* PairingViewController.swift */,
 				ED2058B71DD10D1B0029879B /* AppDelegate.swift */,
@@ -183,6 +201,7 @@
 				ED2058BE1DD10D1B0029879B /* Assets.xcassets */,
 				ED2058C01DD10D1B0029879B /* LaunchScreen.storyboard */,
 				ED2058C31DD10D1B0029879B /* Info.plist */,
+				2700DA131EBC1A1F000026C9 /* Serial-Bridging-Header.h */,
 			);
 			path = NimbleRide;
 			sourceTree = "<group>";
@@ -310,6 +329,7 @@
 					ED2058B31DD10D1B0029879B = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 97E8A4AYGV;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -525,8 +545,12 @@
 				ED9DCF401EAD71BE00FC1326 /* UnitsViewController.swift in Sources */,
 				EDBC49131E91B93D009C2FF4 /* FtueViewController.swift in Sources */,
 				ED9DCF421EAD73B300FC1326 /* ManageAccountsViewController.swift in Sources */,
+				2700DA091EBC1852000026C9 /* SerialViewController.swift in Sources */,
 				EDCEDA021E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift in Sources */,
 				ED9DCF481EAD73DC00FC1326 /* LogoutViewController.swift in Sources */,
+				2700DA121EBC19EB000026C9 /* MBProgressHUD.m in Sources */,
+				2700DA0C1EBC1852000026C9 /* BluetoothSerial.swift in Sources */,
+				2700DA0A1EBC1852000026C9 /* ScannerViewController.swift in Sources */,
 				ED2058BA1DD10D1B0029879B /* ViewController.swift in Sources */,
 				ED9DCF441EAD73C000FC1326 /* MusicViewController.swift in Sources */,
 				ED9DCF461EAD73CE00FC1326 /* TOSViewController.swift in Sources */,
@@ -537,6 +561,7 @@
 				27215A321DD2F6880053799A /* RideViewController.swift in Sources */,
 				ED9DCF4B1EAD751000FC1326 /* HelpViewController.swift in Sources */,
 				ED1B186E1E92138E007D0FD9 /* PairingViewController.swift in Sources */,
+				2700DA0B1EBC1852000026C9 /* PreferencesTableViewController.swift in Sources */,
 				ED2D8EF51EAD51D4002BDE07 /* MoreTabTableViewController.swift in Sources */,
 				ED9DCF3C1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift in Sources */,
 				ED1B186C1E92131E007D0FD9 /* SettingsViewController.swift in Sources */,
@@ -694,6 +719,7 @@
 			baseConfigurationReference = 0B6A8BC346991BC4337B6062 /* Pods-NimbleRide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NimbleRide/NimbleRide.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 97E8A4AYGV;
@@ -708,6 +734,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "NimbleRide/Serial-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -717,6 +745,7 @@
 			baseConfigurationReference = 378F7992FF3A92932C16FA7B /* Pods-NimbleRide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NimbleRide/NimbleRide.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 97E8A4AYGV;
@@ -731,6 +760,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "NimbleRide/Serial-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

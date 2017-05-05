@@ -10,6 +10,9 @@ import UIKit
 import FBSDKCoreKit
 import AWSCore
 
+let MessageOptionKey = "MessageOption"
+let ReceivedMessageOptionKey = "ReceivedMessageOption"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
