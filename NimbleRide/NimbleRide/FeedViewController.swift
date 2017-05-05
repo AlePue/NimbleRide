@@ -16,8 +16,8 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
     var Data = Array<History>()
-    
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +25,7 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
         collectionView?.alwaysBounceVertical = true
         // Do any additional setup after loading the view.
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
 //        Data.removeAll()
         loadDB(controller: self, userId: NSNumber(value: AccountViewController.FBuser.id))
@@ -41,22 +41,25 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Data.count // number of actual card to show
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FeedCell
 
         let picURL = NSURL(string: "https://graph.facebook.com/\(String(describing: Data[indexPath.row].userId as! Int))/picture?type=large&return_ssl_resources=1")
         cell.profileImageView.image = UIImage(data: NSData(contentsOf: picURL! as URL)! as Data)
-        
+
         let nameDate = NSMutableAttributedString(string: Data[indexPath.row].fName! + " " + Data[indexPath.row].lName!, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)])
         let rideDate = getDate(epochDB: Data[indexPath.row].RideID!)
-        let date = NSAttributedString(string: rideDate, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 12), NSForegroundColorAttributeName: UIColor.rgb(red: 83, green: 115, blue: 125)])
+        let date = NSAttributedString(string: rideDate, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 14), NSForegroundColorAttributeName: UIColor.rgb(red: 83, green: 115, blue: 125)])
         nameDate.append(date)
         let littleImage = NSTextAttachment()
         littleImage.image = UIImage(named: "NimbleRideLogo")
         littleImage.bounds = CGRect(x: 0, y: -2, width: 12, height: 12)
         let logo = NSAttributedString(attachment: littleImage)
         nameDate.append(logo)
+        let rideLocation = "\n" + Data[indexPath.row].landmark! + "\n" + Data[indexPath.row].city! + ", " + Data[indexPath.row].state! + ", " + Data[indexPath.row].country!
+        let locationText = NSAttributedString(string: rideLocation, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 14), NSForegroundColorAttributeName: UIColor.rgb(red: 83, green: 115, blue: 125)])
+        nameDate.append(locationText)
         cell.nameLabel.attributedText = nameDate
 
         let avgSpeed = "Average Speed  - " + String(describing: Data[indexPath.row].avgSpeed as! Float) + " mph" + "\n"
@@ -67,8 +70,8 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         return cell
     }
-    
-    
+
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = CGSize(width: view.frame.width, height: 400)
         return size
@@ -103,7 +106,7 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
             return nil
         })
     }
-    
+
     func saveDB(controller: UIViewController){
         dynamoDBObjectMapper.save(myHistory.shared).continue({ (task:AWSTask!) -> Any? in
             if let error = task.error as NSError? {
@@ -149,7 +152,7 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
             return nil
         })
     }
-    
+
     func loadDB(controller: UIViewController, userId: NSNumber){
         let exp = AWSDynamoDBQueryExpression()
         exp.keyConditionExpression = "#userId = :userId"
@@ -181,7 +184,7 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
             return nil
         })
     }
-    
+
     func getDate (epochDB : NSNumber) -> String{
         let dateOfRideEpoch = TimeInterval(epochDB)
         let formattedEpoch = Date(timeIntervalSince1970:  dateOfRideEpoch)
@@ -207,7 +210,7 @@ class FeedCell: UICollectionViewCell {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 2
+        label.numberOfLines = 3
         
         let attributedText = NSMutableAttributedString(string: " King Nick R", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)])
 
@@ -232,7 +235,7 @@ class FeedCell: UICollectionViewCell {
         littleImage.image = UIImage(named: "NimbleRideLogo")
         littleImage.bounds = CGRect(x: 0, y: -2, width: 12, height: 12)
         attributedText.append(NSAttributedString(attachment: littleImage))
-        
+
         label.attributedText = attributedText
 
         return label
@@ -287,24 +290,23 @@ class FeedCell: UICollectionViewCell {
     
     func setupViews() {
         backgroundColor = UIColor.white
-        
+
         addSubview(nameLabel)
         addSubview(profileImageView)
         addSubview(rideTextView)
         addSubview(rideImageView)
         addSubview(actionsLabel)
-        
         addSubview(dividerView)
         addSubview(likeButton)
-        
+
         addConstraintsWithFormat(format: "H:|-8-[v0(44)]-8-[v1]|", views: profileImageView, nameLabel)  //1
         addConstraintsWithFormat(format: "H:|-4-[v0]-4-|", views: rideTextView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: rideImageView)
         addConstraintsWithFormat(format: "H:|-12-[v0]|", views: actionsLabel)
-        addConstraintsWithFormat(format: "V:|-12-[v0]", views: nameLabel)                                  //2
+        addConstraintsWithFormat(format: "V:|-5-[v0]", views: nameLabel)                                  //2
         addConstraintsWithFormat(format: "H:|-12-[v0]-12-|", views: dividerView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: likeButton)
-        
+
         addConstraintsWithFormat(format: "V:|-8-[v0(44)]-4-[v1(75)]-4-[v2]-8-[v3(25)]-8-[v4(0.5)][v5(40)]|", views: profileImageView, rideTextView, rideImageView, actionsLabel, dividerView, likeButton)             //3
 
     }
