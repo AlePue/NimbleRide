@@ -21,7 +21,7 @@ class FtueViewController: UIViewController {
     
     @IBAction func FBLoginButton(_ sender: Any) {
         
-        debugPrint("BUTTON PRESSED")
+//        debugPrint("BUTTON PRESSED")
                 let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
                 fbLoginManager.logIn(withReadPermissions: ["email", "user_friends", "public_profile"], from:self) { (result, error) -> Void in
                     if (error == nil){
@@ -29,21 +29,19 @@ class FtueViewController: UIViewController {
                         if loginResult.grantedPermissions != nil{
                             if(loginResult.grantedPermissions.contains("email"))
                             {
+                                let controller = FeedViewController()
                                 self.getUserData()
+                        
                                 
                                 self.loadDB(controller: self, userId: NSNumber(value: AccountViewController.FBuser.id))
                                 for friend in AccountViewController.FBuser.friendList{
                                     self.loadDB(controller: self, userId: NSNumber(value: friend))
                                 }
-                                let controller = FeedViewController()
+                                
                                 controller.Data = controller.Data.sorted { (History1: History, History2: History) -> Bool in
                                     return History1.RideID?.compare(History2.RideID!) == ComparisonResult.orderedDescending
                                 }
-                                
 
-                                
-                                
-                                
                                 if let tabViewController = self.storyboard?.instantiateViewController(withIdentifier: "idTabBar") as? UITabBarController {
                                     self.present(tabViewController, animated: true, completion: nil)
                                 }
@@ -128,10 +126,10 @@ class FtueViewController: UIViewController {
                         FBuser.firstName = String (describing: self.userData["first_name"]!)
                         FBuser.lastName = String (describing: self.userData["last_name"]!)
                         FBuser.id = (self.userData["id"]as! NSString).integerValue
-//                        self.firstNameLabel.text = FBuser.firstName
-//                        self.lastNameLabel.text = FBuser.lastName
-                        //                        let url = NSURL(string: "https://graph.facebook.com/\(FBuser.id)/picture?type=large&return_ssl_resources=1")
-//                        self.profilePictureView.image = UIImage(data: NSData(contentsOf: FBuser.picURL! as URL)! as Data)
+                        AccountViewController().firstNameLabel?.text = FBuser.firstName
+                        AccountViewController().lastNameLabel?.text = FBuser.lastName
+                                                let url = NSURL(string: "https://graph.facebook.com/\(FBuser.id)/picture?type=large&return_ssl_resources=1")
+                        AccountViewController().profilePictureView?.image = UIImage(data: NSData(contentsOf: FBuser.picURL! as URL)! as Data)
                     }
                 }
                 else{

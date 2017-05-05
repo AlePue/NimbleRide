@@ -14,6 +14,7 @@ import AWSDynamoDB
 
 class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
 
+    @IBOutlet weak var aboutText: UITextView!
     @IBOutlet weak var FBloginButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var firstNameLabel: UILabel!
@@ -32,6 +33,8 @@ class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     self.getUserData()
+        aboutText.isEditable = false
+        aboutText.isScrollEnabled = false
     }
 
     @IBAction func FBloginButton(_ sender: AnyObject) {

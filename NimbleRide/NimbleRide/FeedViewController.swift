@@ -24,6 +24,7 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
         collectionView?.register(FeedCell.self, forCellWithReuseIdentifier: cellId)
         collectionView?.alwaysBounceVertical = true
         // Do any additional setup after loading the view.
+        collectionView?.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -282,6 +283,7 @@ class FeedCell: UICollectionViewCell {
         let actionButton = UIButton()
         actionButton.setTitle("Like", for: .normal)
         actionButton.setTitleColor(UIColor.rgb(red: 143, green: 150, blue: 163), for: .normal)
+//        actionButton.sendAction(<#T##action: Selector##Selector#>, to: <#T##Any?#>, for: <#T##UIEvent?#>)
         return actionButton
     }()
     
