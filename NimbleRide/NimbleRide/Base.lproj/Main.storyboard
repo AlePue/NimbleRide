@@ -218,11 +218,11 @@
             </objects>
             <point key="canvasLocation" x="1844" y="1432.5337331334333"/>
         </scene>
-        <!--Feed View Controller-->
+        <!--Feed-->
         <scene sceneID="ASs-aV-F3W">
             <objects>
-                <collectionViewController id="rLg-Bb-MO7" customClass="FeedViewController" customModule="NimbleRide" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Y6e-h3-A0X">
+                <collectionViewController title="Feed" id="rLg-Bb-MO7" customClass="FeedViewController" customModule="NimbleRide" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Y6e-h3-A0X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.32469350099563599" green="0.45194113254547119" blue="0.49140322208404541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -247,7 +247,7 @@
                             <outlet property="delegate" destination="rLg-Bb-MO7" id="joG-Mo-c9c"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="W51-yS-Vrq"/>
+                    <navigationItem key="navigationItem" title="Feed" id="W51-yS-Vrq"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S92-7G-KDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
