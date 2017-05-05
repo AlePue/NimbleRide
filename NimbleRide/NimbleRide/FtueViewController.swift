@@ -30,9 +30,9 @@ class FtueViewController: UIViewController {
                             if(loginResult.grantedPermissions.contains("email"))
                             {
                                 self.getUserData()
-                                
-                                self.loadDB(controller: self, userId: NSNumber(value: AccountViewController.FBuser.id))
-                                for friend in AccountViewController.FBuser.friendList{
+
+                                self.loadDB(controller: self, userId: NSNumber(value: FtueViewController.FBuser.id))
+                                for friend in FtueViewController.FBuser.friendList{
                                     self.loadDB(controller: self, userId: NSNumber(value: friend))
                                 }
                                 let controller = FeedViewController()

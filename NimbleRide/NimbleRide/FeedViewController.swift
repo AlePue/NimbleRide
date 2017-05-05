@@ -28,8 +28,8 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     override func viewDidAppear(_ animated: Bool) {
 //        Data.removeAll()
-        loadDB(controller: self, userId: NSNumber(value: AccountViewController.FBuser.id))
-        for friend in AccountViewController.FBuser.friendList{
+        loadDB(controller: self, userId: NSNumber(value: FtueViewController.FBuser.id))
+        for friend in FtueViewController.FBuser.friendList{
             loadDB(controller: self, userId: NSNumber(value: friend))
         }
         Data = Data.sorted { (History1: History, History2: History) -> Bool in

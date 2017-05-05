@@ -99,9 +99,9 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         myHistory.shared.avgSpeed = (avgSpeedLabel.text! as NSString).doubleValue as NSNumber
         myHistory.shared.calBurned = (calorieLabel.text! as NSString).integerValue as NSNumber
         myHistory.shared.distance = (distanceLabel.text! as NSString).doubleValue as NSNumber
-        myHistory.shared.fName = AccountViewController.FBuser.firstName
-        myHistory.shared.lName = AccountViewController.FBuser.lastName
-        myHistory.shared.userId = AccountViewController.FBuser.id as NSNumber
+        myHistory.shared.fName = FtueViewController.FBuser.firstName
+        myHistory.shared.lName = FtueViewController.FBuser.lastName
+        myHistory.shared.userId = FtueViewController.FBuser.id as NSNumber
         myHistory.shared.RideID = NSDate().timeIntervalSince1970 as NSNumber
         myHistory.shared.city = city
         myHistory.shared.state = state
