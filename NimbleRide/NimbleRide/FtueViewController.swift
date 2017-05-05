@@ -31,10 +31,9 @@ class FtueViewController: UIViewController {
                             {
                                 let controller = FeedViewController()
                                 self.getUserData()
-                        
-                                
-                                self.loadDB(controller: self, userId: NSNumber(value: AccountViewController.FBuser.id))
-                                for friend in AccountViewController.FBuser.friendList{
+
+                                self.loadDB(controller: self, userId: NSNumber(value: FtueViewController.FBuser.id))
+                                for friend in FtueViewController.FBuser.friendList{
                                     self.loadDB(controller: self, userId: NSNumber(value: friend))
                                 }
                                 
