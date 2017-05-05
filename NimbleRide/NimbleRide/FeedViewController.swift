@@ -51,15 +51,16 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         let nameDate = NSMutableAttributedString(string: Data[indexPath.row].fName! + " " + Data[indexPath.row].lName!, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)])
         let rideDate = getDate(epochDB: Data[indexPath.row].RideID!)
-        let date = NSAttributedString(string: rideDate, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 14), NSForegroundColorAttributeName: UIColor.rgb(red: 83, green: 115, blue: 125)])
+        let rideDateDate = "\n" + rideDate
+        let date = NSAttributedString(string: rideDateDate, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 10), NSForegroundColorAttributeName: UIColor.rgb(red: 83, green: 115, blue: 125)])
         nameDate.append(date)
         let littleImage = NSTextAttachment()
         littleImage.image = UIImage(named: "NimbleRideLogo")
         littleImage.bounds = CGRect(x: 0, y: -2, width: 12, height: 12)
         let logo = NSAttributedString(attachment: littleImage)
-        nameDate.append(logo)
+//        nameDate.append(logo)
         let rideLocation = "\n" + Data[indexPath.row].landmark! + "\n" + Data[indexPath.row].city! + ", " + Data[indexPath.row].state! + ", " + Data[indexPath.row].country!
-        let locationText = NSAttributedString(string: rideLocation, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 14), NSForegroundColorAttributeName: UIColor.rgb(red: 83, green: 115, blue: 125)])
+        let locationText = NSAttributedString(string: rideLocation, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 10), NSForegroundColorAttributeName: UIColor.rgb(red: 83, green: 115, blue: 125)])
         nameDate.append(locationText)
         cell.nameLabel.attributedText = nameDate
 
@@ -193,7 +194,7 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
         dateFormatter.dateFormat = "MMM dd, yyyy hh:mm a" // EX: Apr 29, 2017 09:52 PM
         let dateOfRide = dateFormatter.string(from: formattedEpoch)
 
-        return "   " + dateOfRide
+        return dateOfRide
     }
 }
 
@@ -211,7 +212,7 @@ class FeedCell: UICollectionViewCell {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 3
+        label.numberOfLines = 4
         
         let attributedText = NSMutableAttributedString(string: " King Nick R", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)])
 
@@ -225,7 +226,7 @@ class FeedCell: UICollectionViewCell {
         dateOfRide = "   " + dateOfRide
 
         print (dateOfRide)
-        attributedText.append(NSAttributedString(string: dateOfRide, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 12), NSForegroundColorAttributeName: UIColor.rgb(red: 83, green: 115, blue: 125)]))
+        attributedText.append(NSAttributedString(string: dateOfRide, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 10), NSForegroundColorAttributeName: UIColor.rgb(red: 83, green: 115, blue: 125)]))
 
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 4
@@ -301,7 +302,7 @@ class FeedCell: UICollectionViewCell {
         addSubview(dividerView)
         addSubview(likeButton)
 
-        addConstraintsWithFormat(format: "H:|-8-[v0(44)]-8-[v1]|", views: profileImageView, nameLabel)  //1
+        addConstraintsWithFormat(format: "H:|-8-[v0(50)]-8-[v1]|", views: profileImageView, nameLabel)  //1
         addConstraintsWithFormat(format: "H:|-4-[v0]-4-|", views: rideTextView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: rideImageView)
         addConstraintsWithFormat(format: "H:|-12-[v0]|", views: actionsLabel)
@@ -309,7 +310,7 @@ class FeedCell: UICollectionViewCell {
         addConstraintsWithFormat(format: "H:|-12-[v0]-12-|", views: dividerView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: likeButton)
 
-        addConstraintsWithFormat(format: "V:|-8-[v0(44)]-4-[v1(75)]-4-[v2]-8-[v3(25)]-8-[v4(0.5)][v5(40)]|", views: profileImageView, rideTextView, rideImageView, actionsLabel, dividerView, likeButton)             //3
+        addConstraintsWithFormat(format: "V:|-8-[v0(50)]-4-[v1(75)]-4-[v2]-8-[v3(25)]-8-[v4(0.5)][v5(40)]|", views: profileImageView, rideTextView, rideImageView, actionsLabel, dividerView, likeButton)             //3
 
     }
     
