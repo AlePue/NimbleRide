@@ -255,6 +255,7 @@ class FeedCell: UICollectionViewCell {
         textView.text = ""
         textView.font = UIFont.systemFont(ofSize: 14)
         textView.isEditable = false
+        textView.isScrollEnabled = false
         
         return textView
     }()
