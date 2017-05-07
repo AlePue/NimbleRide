@@ -45,7 +45,7 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
         serial = BluetoothSerial(delegate: self)
         
         // UI
-        mainTextView.text = ""
+//        mainTextView.text = ""
         reloadView()
         
         NotificationCenter.default.addObserver(self, selector: #selector(SerialViewController.reloadView), name: NSNotification.Name(rawValue: "reloadStartViewController"), object: nil)
@@ -59,12 +59,12 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
-        // style the bottom UIView
-        bottomView.layer.masksToBounds = false
-        bottomView.layer.shadowOffset = CGSize(width: 0, height: -1)
-        bottomView.layer.shadowRadius = 0
-        bottomView.layer.shadowOpacity = 0.5
-        bottomView.layer.shadowColor = UIColor.gray.cgColor
+//        // style the bottom UIView
+//        bottomView.layer.masksToBounds = false
+//        bottomView.layer.shadowOffset = CGSize(width: 0, height: -1)
+//        bottomView.layer.shadowRadius = 0
+//        bottomView.layer.shadowOpacity = 0.5
+//        bottomView.layer.shadowColor = UIColor.gray.cgColor
     }
 
     deinit {
@@ -97,22 +97,22 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
         // in case we're the visible view again
         serial.delegate = self
         
-        if serial.isReady {
-            navItem.title = serial.connectedPeripheral!.name
-            barButton.title = "Disconnect"
-            barButton.tintColor = UIColor.red
-            barButton.isEnabled = true
-        } else if serial.centralManager.state == .poweredOn {
-            navItem.title = "Bluetooth Serial"
-            barButton.title = "Connect"
-            barButton.tintColor = view.tintColor
-            barButton.isEnabled = true
-        } else {
-            navItem.title = "Bluetooth Serial"
-            barButton.title = "Connect"
-            barButton.tintColor = view.tintColor
-            barButton.isEnabled = false
-        }
+//        if serial.isReady {
+//            navItem.title = serial.connectedPeripheral!.name
+//            barButton.title = "Disconnect"
+//            barButton.tintColor = UIColor.red
+//            barButton.isEnabled = true
+//        } else if serial.centralManager.state == .poweredOn {
+//            navItem.title = "Bluetooth Serial"
+//            barButton.title = "Connect"
+//            barButton.tintColor = view.tintColor
+//            barButton.isEnabled = true
+//        } else {
+//            navItem.title = "Bluetooth Serial"
+//            barButton.title = "Connect"
+//            barButton.tintColor = view.tintColor
+//            barButton.isEnabled = false
+//        }
     }
     
     func textViewScrollToBottom() {
@@ -185,7 +185,7 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
     }
     
     func dismissKeyboard() {
-        messageField.resignFirstResponder()
+//        messageField.resignFirstResponder()
     }
     
     
