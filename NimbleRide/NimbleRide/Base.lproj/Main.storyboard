@@ -1748,12 +1748,9 @@
     </scenes>
     <resources>
         <image name="NimbleRideLogo" width="700" height="700"/>
-<<<<<<< HEAD
-=======
         <image name="ProIconSmall" width="16" height="16"/>
         <image name="cycler" width="126" height="122"/>
         <image name="road.png" width="621" height="2208"/>
->>>>>>> city
         <image name="tabBarFeedLogo" width="21" height="21"/>
         <image name="tabBarMoreLogo" width="21" height="21"/>
         <image name="tabBatRideLogo" width="29" height="29"/>
