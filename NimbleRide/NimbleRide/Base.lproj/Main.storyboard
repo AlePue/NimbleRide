@@ -269,7 +269,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6la-cd-cMC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.32549019607843138" green="0.45098039215686275" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -1505,6 +1505,7 @@
                                 </state>
                                 <connections>
                                     <action selector="PlayButton:" destination="ugI-km-TXd" eventType="touchUpInside" id="XZe-84-VDt"/>
+                                    <segue destination="54H-hE-s5z" kind="show" id="bA6-I7-yZ2"/>
                                 </connections>
                             </button>
                         </subviews>
