@@ -155,7 +155,7 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         
         
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+//        print("locations = \(locValue.latitude) \(locValue.longitude)")
         
         altitude = (locations.last!.altitude * 3.28084)
         altitudeLabel.text = String(format: "%.0f ft", altitude)
