@@ -11,13 +11,25 @@ import UIKit
 
 class PairingViewController: UIViewController {
 
+    var count = 0
+    var timer = 0
+    
+    func checkCount() {
+        self.count = 0
+    if count == 0 {
+        self.timer += 1
+        print("timer is at: \(timer)")
+    }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        performSegue(withIdentifier: "pairing", sender: self)
+//        performSegue(withIdentifier: "pairing", sender: self)
     }
 
     override func didReceiveMemoryWarning() {

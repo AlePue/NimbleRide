@@ -20,17 +20,17 @@ class HelpViewController:  UIViewController, UITableViewDelegate, UITableViewDat
         
         public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
         {
-            let settingsCell = tableView.dequeueReusableCell(withIdentifier: "helpCell", for: indexPath) as! SettingsViewControllerViewCell
-            settingsCell.settingsLabel.text = help[indexPath.row]
-            settingsCell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-            return (settingsCell)
+            let helpCell = tableView.dequeueReusableCell(withIdentifier: "helpCell", for: indexPath) as! HelpViewControllerViewCell
+            helpCell.helpLabel.text = help[indexPath.row]
+            helpCell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+            return (helpCell)
             
         }
         
         public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             
             myIndex = indexPath.row
-            debugPrint("\(myIndex)")
+            debugPrint("HelpViewController \(myIndex)")
             if(myIndex == 0){
 //                performSegue(withIdentifier: "Premium", sender: self)
             } else if (myIndex == 1) {

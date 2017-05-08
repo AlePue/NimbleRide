@@ -212,6 +212,7 @@ final class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDel
         // Only then we're ready for communication
 
         peripheral.discoverServices([serviceUUID])
+        print("TEST: CONNECTED")
     }
 
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
@@ -246,6 +247,7 @@ final class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDel
         for service in peripheral.services! {
             peripheral.discoverCharacteristics([characteristicUUID], for: service)
         }
+        print("TEST: SERVICE")
     }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
@@ -265,6 +267,7 @@ final class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDel
                 delegate.serialIsReady(peripheral)
             }
         }
+        print("TEST: CHARACTERISTICS")
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {

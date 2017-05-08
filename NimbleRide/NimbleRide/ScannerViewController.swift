@@ -13,6 +13,8 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
 
 //MARK: IBOutlets
     
+    
+    
     @IBOutlet weak var tryAgainButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
@@ -117,12 +119,23 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
         
         // the user has selected a peripheral, so stop scanning and proceed to the next view
         serial.stopScan()
+        print("TEST: TEST CONNECT BUTTON")
         selectedPeripheral = peripherals[(indexPath as NSIndexPath).row].peripheral
         serial.connectToPeripheral(selectedPeripheral!)
         progressHUD = MBProgressHUD.showAdded(to: view, animated: true)
         progressHUD!.labelText = "Connecting"
         
+
+//        connectLabel.text = "Connected"
+
+        
         Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(ScannerViewController.connectTimeOut), userInfo: nil, repeats: false)
+        
+        
+        progressHUD!.labelText = "Connected!"
+        
+        
+
     }
     
     
@@ -174,7 +187,11 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
         }
         
         NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadStartViewController"), object: self)
-//        dismiss(animated: true, completion: nil)
+        //let controller = PairingViewController();
+
+        
+        //        self.present(controller, animated: true, completion: nil)
+        //        dismiss(animated: true, completion: nil)
     }
     
     func serialDidChangeState() {
@@ -184,7 +201,8 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
         
         if serial.centralManager.state != .poweredOn {
             NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadStartViewController"), object: self)
-//            dismiss(animated: true, completion: nil)
+            
+            dismiss(animated: true, completion: nil)
         }
     }
     

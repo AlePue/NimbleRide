@@ -27,6 +27,31 @@
 		ED2D8EF51EAD51D4002BDE07 /* MoreTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2D8EF41EAD51D4002BDE07 /* MoreTabTableViewController.swift */; };
 		ED5A2F551EADAE5C0015894B /* FindMoreFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A2F541EADAE5C0015894B /* FindMoreFriendsViewController.swift */; };
 		ED95BF331EBFDD1000C47562 /* HelpViewControllerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED95BF321EBFDD1000C47562 /* HelpViewControllerViewCell.swift */; };
+		ED95BF5A1EBFEC1200C47562 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF391EBFEC1200C47562 /* Actions.sks */; };
+		ED95BF5B1EBFEC1200C47562 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF3A1EBFEC1200C47562 /* Assets.xcassets */; };
+		ED95BF5C1EBFEC1200C47562 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF3B1EBFEC1200C47562 /* LaunchScreen.storyboard */; };
+		ED95BF5D1EBFEC1200C47562 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF3D1EBFEC1200C47562 /* Main.storyboard */; };
+		ED95BF5E1EBFEC1200C47562 /* road.png in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF411EBFEC1200C47562 /* road.png */; };
+		ED95BF5F1EBFEC1200C47562 /* road@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF421EBFEC1200C47562 /* road@2x.png */; };
+		ED95BF601EBFEC1200C47562 /* RoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED95BF431EBFEC1200C47562 /* RoadView.swift */; };
+		ED95BF611EBFEC1200C47562 /* EnemyCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED95BF451EBFEC1200C47562 /* EnemyCarView.swift */; };
+		ED95BF621EBFEC1200C47562 /* car4.png in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF471EBFEC1200C47562 /* car4.png */; };
+		ED95BF631EBFEC1200C47562 /* car4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF481EBFEC1200C47562 /* car4@2x.png */; };
+		ED95BF641EBFEC1200C47562 /* wölkchen.png in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF491EBFEC1200C47562 /* wölkchen.png */; };
+		ED95BF651EBFEC1200C47562 /* wölkchen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF4A1EBFEC1200C47562 /* wölkchen@2x.png */; };
+		ED95BF661EBFEC1200C47562 /* ExplosionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED95BF4C1EBFEC1200C47562 /* ExplosionView.swift */; };
+		ED95BF671EBFEC1200C47562 /* blam1.png in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF4E1EBFEC1200C47562 /* blam1.png */; };
+		ED95BF681EBFEC1200C47562 /* blam1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF4F1EBFEC1200C47562 /* blam1@2x.png */; };
+		ED95BF691EBFEC1200C47562 /* blam2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF501EBFEC1200C47562 /* blam2.png */; };
+		ED95BF6A1EBFEC1200C47562 /* blam2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF511EBFEC1200C47562 /* blam2@2x.png */; };
+		ED95BF6B1EBFEC1200C47562 /* blam3.png in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF521EBFEC1200C47562 /* blam3.png */; };
+		ED95BF6C1EBFEC1200C47562 /* blam3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF531EBFEC1200C47562 /* blam3@2x.png */; };
+		ED95BF6D1EBFEC1200C47562 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF541EBFEC1200C47562 /* GameScene.sks */; };
+		ED95BF6E1EBFEC1200C47562 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED95BF551EBFEC1200C47562 /* GameScene.swift */; };
+		ED95BF6F1EBFEC1200C47562 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED95BF561EBFEC1200C47562 /* GameViewController.swift */; };
+		ED95BF701EBFEC1200C47562 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED95BF571EBFEC1200C47562 /* Info.plist */; };
+		ED95BF711EBFEC1200C47562 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED95BF581EBFEC1200C47562 /* MenuViewController.swift */; };
+		ED95BF721EBFEC1200C47562 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED95BF591EBFEC1200C47562 /* OptionsViewController.swift */; };
 		ED9DCF3C1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF3B1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift */; };
 		ED9DCF3E1EAD712700FC1326 /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF3D1EAD712700FC1326 /* PremiumViewController.swift */; };
 		ED9DCF401EAD71BE00FC1326 /* UnitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF3F1EAD71BE00FC1326 /* UnitsViewController.swift */; };
@@ -98,6 +123,31 @@
 		ED2D8EF41EAD51D4002BDE07 /* MoreTabTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTabTableViewController.swift; sourceTree = "<group>"; };
 		ED5A2F541EADAE5C0015894B /* FindMoreFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindMoreFriendsViewController.swift; sourceTree = "<group>"; };
 		ED95BF321EBFDD1000C47562 /* HelpViewControllerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewControllerViewCell.swift; sourceTree = "<group>"; };
+		ED95BF391EBFEC1200C47562 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		ED95BF3A1EBFEC1200C47562 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED95BF3C1EBFEC1200C47562 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED95BF3E1EBFEC1200C47562 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED95BF411EBFEC1200C47562 /* road.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = road.png; sourceTree = "<group>"; };
+		ED95BF421EBFEC1200C47562 /* road@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "road@2x.png"; sourceTree = "<group>"; };
+		ED95BF431EBFEC1200C47562 /* RoadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoadView.swift; sourceTree = "<group>"; };
+		ED95BF451EBFEC1200C47562 /* EnemyCarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyCarView.swift; sourceTree = "<group>"; };
+		ED95BF471EBFEC1200C47562 /* car4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car4.png; sourceTree = "<group>"; };
+		ED95BF481EBFEC1200C47562 /* car4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "car4@2x.png"; sourceTree = "<group>"; };
+		ED95BF491EBFEC1200C47562 /* wölkchen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wölkchen.png"; sourceTree = "<group>"; };
+		ED95BF4A1EBFEC1200C47562 /* wölkchen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wölkchen@2x.png"; sourceTree = "<group>"; };
+		ED95BF4C1EBFEC1200C47562 /* ExplosionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplosionView.swift; sourceTree = "<group>"; };
+		ED95BF4E1EBFEC1200C47562 /* blam1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blam1.png; sourceTree = "<group>"; };
+		ED95BF4F1EBFEC1200C47562 /* blam1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blam1@2x.png"; sourceTree = "<group>"; };
+		ED95BF501EBFEC1200C47562 /* blam2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blam2.png; sourceTree = "<group>"; };
+		ED95BF511EBFEC1200C47562 /* blam2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blam2@2x.png"; sourceTree = "<group>"; };
+		ED95BF521EBFEC1200C47562 /* blam3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blam3.png; sourceTree = "<group>"; };
+		ED95BF531EBFEC1200C47562 /* blam3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blam3@2x.png"; sourceTree = "<group>"; };
+		ED95BF541EBFEC1200C47562 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		ED95BF551EBFEC1200C47562 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		ED95BF561EBFEC1200C47562 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		ED95BF571EBFEC1200C47562 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED95BF581EBFEC1200C47562 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		ED95BF591EBFEC1200C47562 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		ED9DCF3B1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerViewCell.swift; sourceTree = "<group>"; };
 		ED9DCF3D1EAD712700FC1326 /* PremiumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
 		ED9DCF3F1EAD71BE00FC1326 /* UnitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitsViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +207,7 @@
 		ED2058AB1DD10D1B0029879B = {
 			isa = PBXGroup;
 			children = (
+				ED95BF381EBFEC1200C47562 /* CityCycler */,
 				ED2058B61DD10D1B0029879B /* NimbleRide */,
 				ED2058CB1DD10D1B0029879B /* NimbleRideTests */,
 				ED2058D61DD10D1B0029879B /* NimbleRideUITests */,
@@ -224,6 +275,86 @@
 				ED2058D91DD10D1B0029879B /* Info.plist */,
 			);
 			path = NimbleRideUITests;
+			sourceTree = "<group>";
+		};
+		ED95BF381EBFEC1200C47562 /* CityCycler */ = {
+			isa = PBXGroup;
+			children = (
+				ED95BF391EBFEC1200C47562 /* Actions.sks */,
+				ED95BF3A1EBFEC1200C47562 /* Assets.xcassets */,
+				ED95BF3B1EBFEC1200C47562 /* LaunchScreen.storyboard */,
+				ED95BF3D1EBFEC1200C47562 /* Main.storyboard */,
+				ED95BF3F1EBFEC1200C47562 /* driveAnimation */,
+				ED95BF441EBFEC1200C47562 /* EnemyAnimationss */,
+				ED95BF4B1EBFEC1200C47562 /* explosion */,
+				ED95BF541EBFEC1200C47562 /* GameScene.sks */,
+				ED95BF551EBFEC1200C47562 /* GameScene.swift */,
+				ED95BF561EBFEC1200C47562 /* GameViewController.swift */,
+				ED95BF571EBFEC1200C47562 /* Info.plist */,
+				ED95BF581EBFEC1200C47562 /* MenuViewController.swift */,
+				ED95BF591EBFEC1200C47562 /* OptionsViewController.swift */,
+			);
+			path = CityCycler;
+			sourceTree = "<group>";
+		};
+		ED95BF3F1EBFEC1200C47562 /* driveAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				ED95BF401EBFEC1200C47562 /* images */,
+				ED95BF431EBFEC1200C47562 /* RoadView.swift */,
+			);
+			path = driveAnimation;
+			sourceTree = "<group>";
+		};
+		ED95BF401EBFEC1200C47562 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				ED95BF411EBFEC1200C47562 /* road.png */,
+				ED95BF421EBFEC1200C47562 /* road@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		ED95BF441EBFEC1200C47562 /* EnemyAnimationss */ = {
+			isa = PBXGroup;
+			children = (
+				ED95BF451EBFEC1200C47562 /* EnemyCarView.swift */,
+				ED95BF461EBFEC1200C47562 /* images */,
+			);
+			path = EnemyAnimationss;
+			sourceTree = "<group>";
+		};
+		ED95BF461EBFEC1200C47562 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				ED95BF471EBFEC1200C47562 /* car4.png */,
+				ED95BF481EBFEC1200C47562 /* car4@2x.png */,
+				ED95BF491EBFEC1200C47562 /* wölkchen.png */,
+				ED95BF4A1EBFEC1200C47562 /* wölkchen@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		ED95BF4B1EBFEC1200C47562 /* explosion */ = {
+			isa = PBXGroup;
+			children = (
+				ED95BF4C1EBFEC1200C47562 /* ExplosionView.swift */,
+				ED95BF4D1EBFEC1200C47562 /* images */,
+			);
+			path = explosion;
+			sourceTree = "<group>";
+		};
+		ED95BF4D1EBFEC1200C47562 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				ED95BF4E1EBFEC1200C47562 /* blam1.png */,
+				ED95BF4F1EBFEC1200C47562 /* blam1@2x.png */,
+				ED95BF501EBFEC1200C47562 /* blam2.png */,
+				ED95BF511EBFEC1200C47562 /* blam2@2x.png */,
+				ED95BF521EBFEC1200C47562 /* blam3.png */,
+				ED95BF531EBFEC1200C47562 /* blam3@2x.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		ED9DCF491EAD748C00FC1326 /* Settings */ = {
@@ -331,7 +462,7 @@
 				TargetAttributes = {
 					ED2058B31DD10D1B0029879B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 97E8A4AYGV;
+						DevelopmentTeam = LAPKZ7JHB5;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -382,9 +513,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED95BF631EBFEC1200C47562 /* car4@2x.png in Resources */,
+				ED95BF5D1EBFEC1200C47562 /* Main.storyboard in Resources */,
+				ED95BF681EBFEC1200C47562 /* blam1@2x.png in Resources */,
+				ED95BF621EBFEC1200C47562 /* car4.png in Resources */,
+				ED95BF6C1EBFEC1200C47562 /* blam3@2x.png in Resources */,
+				ED95BF671EBFEC1200C47562 /* blam1.png in Resources */,
+				ED95BF651EBFEC1200C47562 /* wölkchen@2x.png in Resources */,
+				ED95BF641EBFEC1200C47562 /* wölkchen.png in Resources */,
+				ED95BF5F1EBFEC1200C47562 /* road@2x.png in Resources */,
+				ED95BF5E1EBFEC1200C47562 /* road.png in Resources */,
 				27CA86D11E6385F400CA8661 /* Main.storyboard in Resources */,
+				ED95BF691EBFEC1200C47562 /* blam2.png in Resources */,
+				ED95BF6B1EBFEC1200C47562 /* blam3.png in Resources */,
+				ED95BF6A1EBFEC1200C47562 /* blam2@2x.png in Resources */,
 				ED2058C21DD10D1B0029879B /* LaunchScreen.storyboard in Resources */,
 				ED2058BF1DD10D1B0029879B /* Assets.xcassets in Resources */,
+				ED95BF6D1EBFEC1200C47562 /* GameScene.sks in Resources */,
+				ED95BF5C1EBFEC1200C47562 /* LaunchScreen.storyboard in Resources */,
+				ED95BF5A1EBFEC1200C47562 /* Actions.sks in Resources */,
+				ED95BF5B1EBFEC1200C47562 /* Assets.xcassets in Resources */,
+				ED95BF701EBFEC1200C47562 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,15 +697,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED9DCF3E1EAD712700FC1326 /* PremiumViewController.swift in Sources */,
+				ED95BF721EBFEC1200C47562 /* OptionsViewController.swift in Sources */,
 				ED9DCF401EAD71BE00FC1326 /* UnitsViewController.swift in Sources */,
+				ED95BF661EBFEC1200C47562 /* ExplosionView.swift in Sources */,
+				ED95BF6E1EBFEC1200C47562 /* GameScene.swift in Sources */,
 				EDBC49131E91B93D009C2FF4 /* FtueViewController.swift in Sources */,
 				ED9DCF421EAD73B300FC1326 /* ManageAccountsViewController.swift in Sources */,
 				2700DA091EBC1852000026C9 /* SerialViewController.swift in Sources */,
+				ED95BF711EBFEC1200C47562 /* MenuViewController.swift in Sources */,
 				EDCEDA021E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift in Sources */,
 				ED95BF331EBFDD1000C47562 /* HelpViewControllerViewCell.swift in Sources */,
 				ED9DCF481EAD73DC00FC1326 /* LogoutViewController.swift in Sources */,
+				ED95BF6F1EBFEC1200C47562 /* GameViewController.swift in Sources */,
 				2700DA121EBC19EB000026C9 /* MBProgressHUD.m in Sources */,
 				2700DA0C1EBC1852000026C9 /* BluetoothSerial.swift in Sources */,
+				ED95BF611EBFEC1200C47562 /* EnemyCarView.swift in Sources */,
 				2700DA0A1EBC1852000026C9 /* ScannerViewController.swift in Sources */,
 				ED2058BA1DD10D1B0029879B /* ViewController.swift in Sources */,
 				ED9DCF441EAD73C000FC1326 /* MusicViewController.swift in Sources */,
@@ -569,6 +724,7 @@
 				ED9DCF4B1EAD751000FC1326 /* HelpViewController.swift in Sources */,
 				ED1B186E1E92138E007D0FD9 /* PairingViewController.swift in Sources */,
 				2700DA0B1EBC1852000026C9 /* PreferencesTableViewController.swift in Sources */,
+				ED95BF601EBFEC1200C47562 /* RoadView.swift in Sources */,
 				ED2D8EF51EAD51D4002BDE07 /* MoreTabTableViewController.swift in Sources */,
 				ED9DCF3C1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift in Sources */,
 				ED1B186C1E92131E007D0FD9 /* SettingsViewController.swift in Sources */,
@@ -621,6 +777,22 @@
 				ED2058C11DD10D1B0029879B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		ED95BF3B1EBFEC1200C47562 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED95BF3C1EBFEC1200C47562 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		ED95BF3D1EBFEC1200C47562 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED95BF3E1EBFEC1200C47562 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -729,7 +901,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NimbleRide/NimbleRide.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 97E8A4AYGV;
+				DEVELOPMENT_TEAM = LAPKZ7JHB5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
@@ -738,7 +910,7 @@
 				);
 				INFOPLIST_FILE = NimbleRide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide;
+				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NimbleRide/Serial-Bridging-Header.h";
@@ -755,7 +927,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NimbleRide/NimbleRide.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 97E8A4AYGV;
+				DEVELOPMENT_TEAM = LAPKZ7JHB5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
@@ -764,7 +936,7 @@
 				);
 				INFOPLIST_FILE = NimbleRide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide;
+				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NimbleRide/Serial-Bridging-Header.h";

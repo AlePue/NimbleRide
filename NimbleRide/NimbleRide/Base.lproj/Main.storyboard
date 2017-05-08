@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="McM-mT-0r5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="McM-mT-0r5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -468,6 +468,15 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mcf-51-qzP">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTT-KK-T4g">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="268"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.32549019610000002" green="0.45098039220000002" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
@@ -483,11 +492,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="barButton" destination="LPK-4G-4mN" id="Qxf-EE-jsZ"/>
+                        <outlet property="mainTextView" destination="RTT-KK-T4g" id="3Em-cv-Zst"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RWK-tr-XvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4697" y="2194"/>
+            <point key="canvasLocation" x="4696.8000000000002" y="2193.5532233883059"/>
         </scene>
         <!--Units of Measurement-->
         <scene sceneID="f7T-zp-i5r">
@@ -967,7 +977,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="helpCell" id="ahg-lO-SAg" customClass="SettingsViewControllerViewCell" customModule="NimbleRide" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="helpCell" id="ahg-lO-SAg" customClass="HelpViewControllerViewCell" customModule="NimbleRide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ahg-lO-SAg" id="si7-aM-9iP">
@@ -984,13 +994,13 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="settingsLabel" destination="hAc-LE-hfa" id="pUX-ov-8Sy"/>
+                                            <outlet property="helpLabel" destination="hAc-LE-hfa" id="6wE-wR-xzQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="mqO-bh-skd" id="8jb-l2-17b"/>
-                                    <outlet property="delegate" destination="mqO-bh-skd" id="vBs-eA-WpU"/>
+                                    <outlet property="dataSource" destination="zUf-rK-lEU" id="D7w-Nv-34S"/>
+                                    <outlet property="delegate" destination="zcp-Kw-DRG" id="pkE-86-aEY"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -1158,7 +1168,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Scanning ..." id="Ywp-af-vQw">
-                        <barButtonItem key="rightBarButtonItem" title="Try again" id="ngm-6q-7QZ">
+                        <barButtonItem key="rightBarButtonItem" title="Connect" id="ngm-6q-7QZ">
                             <connections>
                                 <action selector="tryAgain:" destination="Lks-PH-K3K" id="Dkl-mk-quu"/>
                             </connections>
@@ -1171,7 +1181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FyQ-OW-rPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6743" y="1510"/>
+            <point key="canvasLocation" x="6746" y="1864"/>
         </scene>
         <!--Bluetooth Serial-->
         <scene sceneID="Abb-Ay-HF2">
@@ -1194,22 +1204,9 @@
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abG-FV-Ljn">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your message and hit 'Send'" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e6a-D5-Q1b">
-                                        <rect key="frame" x="8" y="7" width="359" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="send"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="iMO-Ww-6aR" id="MVL-GU-fS1"/>
-                                        </connections>
-                                    </textField>
-                                </subviews>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="e6a-D5-Q1b" secondAttribute="trailing" constant="8" id="4EI-xv-oXJ"/>
                                     <constraint firstAttribute="height" constant="44" id="axc-2C-zGt"/>
-                                    <constraint firstAttribute="centerY" secondItem="e6a-D5-Q1b" secondAttribute="centerY" id="fDI-af-5UO"/>
-                                    <constraint firstItem="e6a-D5-Q1b" firstAttribute="leading" secondItem="abG-FV-Ljn" secondAttribute="leading" constant="8" id="pfo-gT-uaJ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1239,14 +1236,13 @@
                         <outlet property="bottomConstraint" destination="M1t-SE-08L" id="4cY-iD-cBb"/>
                         <outlet property="bottomView" destination="abG-FV-Ljn" id="60G-pX-6dD"/>
                         <outlet property="mainTextView" destination="dW2-OH-mKT" id="mlS-pI-Wgg"/>
-                        <outlet property="messageField" destination="e6a-D5-Q1b" id="NMd-7l-end"/>
                         <outlet property="navItem" destination="5fe-9d-fBJ" id="Vgt-9J-hfk"/>
                         <segue destination="lZ8-fX-bId" kind="presentation" identifier="ShowScanner" modalPresentationStyle="formSheet" id="TYd-oP-Hwr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PyP-0M-ZAE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5276" y="1328"/>
+            <point key="canvasLocation" x="5087" y="872"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ybN-hv-Vbl">
@@ -1264,11 +1260,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faD-w3-4wW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6545" y="652"/>
+            <point key="canvasLocation" x="6001" y="871"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v7P-1W-cG9">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6SC-uU-78l" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YF0-xr-qvU" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="54i-nH-9Hk">
@@ -1280,9 +1277,8 @@
                         <segue destination="iMO-Ww-6aR" kind="relationship" relationship="rootViewController" id="CCv-ch-Knm"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6SC-uU-78l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3657" y="1269"/>
+            <point key="canvasLocation" x="4270" y="871"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="VFO-Gb-ngl">
@@ -1774,7 +1770,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="h81-lG-6dh"/>
         <segue reference="qKf-Un-PES"/>
-        <segue reference="jrY-Np-OiY"/>
+        <segue reference="i9a-Cu-9AF"/>
         <segue reference="g8R-Fn-JLh"/>
     </inferredMetricsTieBreakers>
 </document>
