@@ -187,7 +187,9 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
         }
         
         NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadStartViewController"), object: self)
-        //let controller = PairingViewController();
+
+        let controller = PairingViewController();
+
 
         
         //        self.present(controller, animated: true, completion: nil)
