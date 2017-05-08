@@ -29,13 +29,13 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
 //MARK: IBOutlets
     
     @IBOutlet weak var mainTextView: UITextView!
-    @IBOutlet weak var messageField: UITextField!
+    //@IBOutlet weak var messageField: UITextField!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint! // used to move the textField up when the keyboard is present
     @IBOutlet weak var barButton: UIBarButtonItem!
     @IBOutlet weak var navItem: UINavigationItem!
 
-
+//    var count = 0;
 //MARK: Functions
     
     override func viewDidLoad() {
@@ -125,10 +125,15 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
     
     func serialDidReceiveString(_ message: String) {
         // add the received text to the textView, optionally with a line break at the end
-        mainTextView.text! += message
+        
+        mainTextView.text! += "\(message)\n"
         let pref = UserDefaults.standard.integer(forKey: ReceivedMessageOptionKey)
         if pref == ReceivedMessageOption.newline.rawValue { mainTextView.text! += "\n" }
         textViewScrollToBottom()
+        let controller = PairingViewController()
+        controller.count += 1
+        print("this is count :  \(controller.count)" )
+        controller.checkCount()
     }
     
     func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?) {
@@ -159,28 +164,28 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
             let alert = UIAlertController(title: "Not connected", message: "What am I supposed to send this to?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: { action -> Void in self.dismiss(animated: true, completion: nil) }))
             present(alert, animated: true, completion: nil)
-            messageField.resignFirstResponder()
+            //messageField.resignFirstResponder()
             return true
         }
         
         // send the message to the bluetooth device
         // but fist, add optionally a line break or carriage return (or both) to the message
-        let pref = UserDefaults.standard.integer(forKey: MessageOptionKey)
-        var msg = messageField.text!
-        switch pref {
-        case MessageOption.newline.rawValue:
-            msg += "\n"
-        case MessageOption.carriageReturn.rawValue:
-            msg += "\r"
-        case MessageOption.carriageReturnAndNewline.rawValue:
-            msg += "\r\n"
-        default:
-            msg += ""
-        }
+        //let pref = UserDefaults.standard.integer(forKey: MessageOptionKey)
+        //var msg = messageField.text!
+//        switch pref {
+//        case MessageOption.newline.rawValue:
+//            msg += "\n"
+//        case MessageOption.carriageReturn.rawValue:
+//            msg += "\r"
+//        case MessageOption.carriageReturnAndNewline.rawValue:
+//            msg += "\r\n"
+//        default:
+//            msg += ""
+//        }
         
         // send the message and clear the textfield
-        serial.sendMessageToDevice(msg)
-        messageField.text = ""
+        //serial.sendMessageToDevice(msg)
+        //messageField.text = ""
         return true
     }
     

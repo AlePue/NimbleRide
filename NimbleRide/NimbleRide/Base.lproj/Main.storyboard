@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="McM-mT-0r5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="McM-mT-0r5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -468,6 +468,15 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mcf-51-qzP">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTT-KK-T4g">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="268"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.32549019610000002" green="0.45098039220000002" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
@@ -483,11 +492,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="barButton" destination="LPK-4G-4mN" id="Qxf-EE-jsZ"/>
+                        <outlet property="mainTextView" destination="RTT-KK-T4g" id="3Em-cv-Zst"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RWK-tr-XvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4697" y="2194"/>
+            <point key="canvasLocation" x="4696.8000000000002" y="2193.5532233883059"/>
         </scene>
         <!--Units of Measurement-->
         <scene sceneID="f7T-zp-i5r">
@@ -891,12 +901,12 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <mutableString key="text">Terms of Service
-The NimbleRide mobile applications and services are made available to you by NimbleRide, subject to these Terms of Service and the NimbleRide Privacy Policy (collectively the “Terms”). More information about the Services may be found at http://www.NimbleRide.com. You agree to comply with these Terms and any NimbleRide policies made available to you on the Services. By accessing, using or uploading or downloading any information or materials to or from the SERVICES, or by indicating your assent to these Terms by CREATING AN ACCOUNT, clicking “Sign up” or any similar mechanism, you are agreeing to the these Terms. If you do not agree to the these Terms, do not access or use the Services. This agreement was written in English. To the extent a translated version of the Terms conflict with the English version, the English version controls.
+                                        <string key="text">Terms of Service
+The NimbleRide mobile applications and services are made available to you by NimbleRide, subject to these Terms of Service and the NimbleRide Privacy Policy (collectively the “Terms”). More information about the Services may be found at https://www.NimbleRide.com. You agree to comply with these Terms and any NimbleRide policies made available to you on the Services. By accessing, using or uploading or downloading any information or materials to or from the SERVICES, or by indicating your assent to these Terms by CREATING AN ACCOUNT, clicking “Sign up” or any similar mechanism, you are agreeing to the these Terms. If you do not agree to the these Terms, do not access or use the Services. This agreement was written in English. To the extent a translated version of the Terms conflict with the English version, the English version controls.
 If you access or use the Services on behalf of a company or other entity, you represent that you have authority to bind such entity and its affiliates to these Terms and that it is fully binding on them. In such case, the term “you” will refer to such entity and its affiliates. If you do not have authority, you may not access or use the Services. These Terms contain disclaimers of warranties and limitations on liability that may be applicable to you.
 Notice Regarding Dispute Resolution: These Terms contain provisions that govern how disputes between you and NimbleRide are resolved, including an agreement to arbitrate, which will, with limited exception, require you to submit claims you have against us to binding and final arbitration and limit you to claims against NimbleRide on an individual basis, unless you opt-out in accordance with the instructions below.  
 © 2017 NimbleRide
-</mutableString>
+</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -1163,7 +1173,7 @@ Notice Regarding Dispute Resolution: These Terms contain provisions that govern 
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Scanning ..." id="Ywp-af-vQw">
-                        <barButtonItem key="rightBarButtonItem" title="Try again" id="ngm-6q-7QZ">
+                        <barButtonItem key="rightBarButtonItem" title="Connect" id="ngm-6q-7QZ">
                             <connections>
                                 <action selector="tryAgain:" destination="Lks-PH-K3K" id="Dkl-mk-quu"/>
                             </connections>
@@ -1176,7 +1186,7 @@ Notice Regarding Dispute Resolution: These Terms contain provisions that govern 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FyQ-OW-rPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6743" y="1510"/>
+            <point key="canvasLocation" x="6746" y="1864"/>
         </scene>
         <!--Bluetooth Serial-->
         <scene sceneID="Abb-Ay-HF2">
@@ -1199,22 +1209,9 @@ Notice Regarding Dispute Resolution: These Terms contain provisions that govern 
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abG-FV-Ljn">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your message and hit 'Send'" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e6a-D5-Q1b">
-                                        <rect key="frame" x="8" y="7" width="359" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="send"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="iMO-Ww-6aR" id="MVL-GU-fS1"/>
-                                        </connections>
-                                    </textField>
-                                </subviews>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="e6a-D5-Q1b" secondAttribute="trailing" constant="8" id="4EI-xv-oXJ"/>
                                     <constraint firstAttribute="height" constant="44" id="axc-2C-zGt"/>
-                                    <constraint firstAttribute="centerY" secondItem="e6a-D5-Q1b" secondAttribute="centerY" id="fDI-af-5UO"/>
-                                    <constraint firstItem="e6a-D5-Q1b" firstAttribute="leading" secondItem="abG-FV-Ljn" secondAttribute="leading" constant="8" id="pfo-gT-uaJ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1244,7 +1241,6 @@ Notice Regarding Dispute Resolution: These Terms contain provisions that govern 
                         <outlet property="bottomConstraint" destination="M1t-SE-08L" id="4cY-iD-cBb"/>
                         <outlet property="bottomView" destination="abG-FV-Ljn" id="60G-pX-6dD"/>
                         <outlet property="mainTextView" destination="dW2-OH-mKT" id="mlS-pI-Wgg"/>
-                        <outlet property="messageField" destination="e6a-D5-Q1b" id="NMd-7l-end"/>
                         <outlet property="navItem" destination="5fe-9d-fBJ" id="Vgt-9J-hfk"/>
                         <segue destination="lZ8-fX-bId" kind="presentation" identifier="ShowScanner" modalPresentationStyle="formSheet" id="TYd-oP-Hwr"/>
                     </connections>
