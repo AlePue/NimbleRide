@@ -2,4 +2,102 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NimbleRide/ScannerViewController.swift"
+            timestampString = "515900974.148606"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "serialDidChangeState()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NimbleRide.ScannerViewController.serialDidChangeState () -&gt; ()"
+                  moduleName = "NimbleRide"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alejandropuente/Desktop/Alejandro/seniorProj/NimbleRide/NimbleRide/NimbleRide/ScannerViewController.swift"
+                  timestampString = "515902272.416382"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "185"
+                  endingLineNumber = "185"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NimbleRide.ScannerViewController.serialDidChangeState () -&gt; ()"
+                  moduleName = "NimbleRide"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alejandropuente/Desktop/Alejandro/seniorProj/NimbleRide/NimbleRide/NimbleRide/ScannerViewController.swift"
+                  timestampString = "515902272.41815"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "185"
+                  endingLineNumber = "185"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NimbleRide/ScannerViewController.swift"
+            timestampString = "515897983.273134"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "serialIsReady(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NimbleRide.ScannerViewController.serialIsReady (__ObjC.CBPeripheral) -&gt; ()"
+                  moduleName = "NimbleRide"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alejandropuente/Desktop/Alejandro/seniorProj/NimbleRide/NimbleRide/NimbleRide/ScannerViewController.swift"
+                  timestampString = "515902272.421602"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "172"
+                  endingLineNumber = "172"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NimbleRide.ScannerViewController.serialIsReady (__ObjC.CBPeripheral) -&gt; ()"
+                  moduleName = "NimbleRide"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alejandropuente/Desktop/Alejandro/seniorProj/NimbleRide/NimbleRide/NimbleRide/ScannerViewController.swift"
+                  timestampString = "515902272.423098"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "172"
+                  endingLineNumber = "172"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

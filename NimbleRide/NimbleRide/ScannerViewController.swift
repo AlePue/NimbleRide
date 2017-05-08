@@ -174,7 +174,11 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
         }
         
         NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadStartViewController"), object: self)
-//        dismiss(animated: true, completion: nil)
+        let controller = PairingViewController();
+
+        
+        //        self.present(controller, animated: true, completion: nil)
+        //        dismiss(animated: true, completion: nil)
     }
     
     func serialDidChangeState() {
@@ -184,7 +188,8 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
         
         if serial.centralManager.state != .poweredOn {
             NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadStartViewController"), object: self)
-//            dismiss(animated: true, completion: nil)
+            
+            dismiss(animated: true, completion: nil)
         }
     }
     

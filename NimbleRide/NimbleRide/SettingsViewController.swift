@@ -30,7 +30,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         myIndex = indexPath.row
-        debugPrint("\(myIndex)")
+        debugPrint("SettingsViewController \(myIndex)")
         if(myIndex == 0){
             performSegue(withIdentifier: "Premium", sender: self)
         } else if (myIndex == 1) {

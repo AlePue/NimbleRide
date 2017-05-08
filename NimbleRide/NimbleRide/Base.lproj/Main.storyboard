@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="McM-mT-0r5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="McM-mT-0r5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -891,8 +891,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <mutableString key="text">Terms of ServiceThe NileRide mobile applications and services are made available to you by NimbleRide, subject to these Terms of Service and the NimbleRide Privacy Policy (collectively the “Terms”). More information about the Services may be found at http//:NimbleRide.com. You agree to comply with these Terms and any NimbleRide policies made available to you on the Services. By accessing, using or uploading or downloading any information or materials to or from the SERVICES, or by indicating your assent to these Terms by CREATING AN ACCOUNT, clicking “Sign up” or any similar mechanism, you are agreeing to the these Terms. If you do not agree to the these Terms, do not access or use the Services. This agreement was written in English. To the extent a translated version of the Terms conflict with the English version, the English version controls.If you access or use the Services on behalf of a company or other entity, you represent that you have authority to bind such entity and its affiliates to these Terms and that it is fully binding on them. In such case, the term “you” will refer to such entity and its affiliates. If you do not have authority, you may not access or use the Services. These Terms contain disclaimers of warranties and limitations on liability that may be applicable to you.Notice Regarding Dispute Resolution: These Terms contain provisions that govern how disputes between you and NimbleRide are resolved, including an agreement to arbitrate, which will, with limited exception, require you to submit claims you have against us to binding and final arbitration and limit you to claims against NimbleRide on an individual basis, unless you opt-out in accordance with the instructions below.  © 2017 NimbleRide</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -967,7 +967,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="helpCell" id="ahg-lO-SAg" customClass="SettingsViewControllerViewCell" customModule="NimbleRide" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="helpCell" id="ahg-lO-SAg" customClass="HelpViewControllerViewCell" customModule="NimbleRide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ahg-lO-SAg" id="si7-aM-9iP">
@@ -984,13 +984,13 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="settingsLabel" destination="hAc-LE-hfa" id="pUX-ov-8Sy"/>
+                                            <outlet property="helpLabel" destination="hAc-LE-hfa" id="6wE-wR-xzQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="mqO-bh-skd" id="8jb-l2-17b"/>
-                                    <outlet property="delegate" destination="mqO-bh-skd" id="vBs-eA-WpU"/>
+                                    <outlet property="dataSource" destination="zUf-rK-lEU" id="D7w-Nv-34S"/>
+                                    <outlet property="delegate" destination="zcp-Kw-DRG" id="pkE-86-aEY"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -1246,7 +1246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PyP-0M-ZAE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5276" y="1328"/>
+            <point key="canvasLocation" x="5087" y="872"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ybN-hv-Vbl">
@@ -1264,7 +1264,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faD-w3-4wW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6545" y="652"/>
+            <point key="canvasLocation" x="6001" y="871"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v7P-1W-cG9">
@@ -1282,7 +1282,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6SC-uU-78l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3657" y="1269"/>
+            <point key="canvasLocation" x="4270" y="871"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="VFO-Gb-ngl">
@@ -1774,7 +1774,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="h81-lG-6dh"/>
         <segue reference="qKf-Un-PES"/>
-        <segue reference="jrY-Np-OiY"/>
+        <segue reference="i9a-Cu-9AF"/>
         <segue reference="g8R-Fn-JLh"/>
     </inferredMetricsTieBreakers>
 </document>

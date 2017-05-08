@@ -12,7 +12,7 @@ import UIKit
 class HelpViewControllerViewCell: UITableViewCell {
     
     
-    @IBOutlet weak var settingsLabel: UILabel!
+    @IBOutlet weak var helpLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
