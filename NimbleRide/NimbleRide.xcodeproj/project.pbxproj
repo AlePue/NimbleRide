@@ -28,6 +28,7 @@
 		ED2058D81DD10D1B0029879B /* NimbleRideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2058D71DD10D1B0029879B /* NimbleRideUITests.swift */; };
 		ED2D8EF51EAD51D4002BDE07 /* MoreTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2D8EF41EAD51D4002BDE07 /* MoreTabTableViewController.swift */; };
 		ED5A2F551EADAE5C0015894B /* FindMoreFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A2F541EADAE5C0015894B /* FindMoreFriendsViewController.swift */; };
+		ED95BF331EBFDD1000C47562 /* HelpViewControllerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED95BF321EBFDD1000C47562 /* HelpViewControllerViewCell.swift */; };
 		ED9DCF3C1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF3B1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift */; };
 		ED9DCF3E1EAD712700FC1326 /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF3D1EAD712700FC1326 /* PremiumViewController.swift */; };
 		ED9DCF401EAD71BE00FC1326 /* UnitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9DCF3F1EAD71BE00FC1326 /* UnitsViewController.swift */; };
@@ -100,6 +101,7 @@
 		ED2058D91DD10D1B0029879B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED2D8EF41EAD51D4002BDE07 /* MoreTabTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTabTableViewController.swift; sourceTree = "<group>"; };
 		ED5A2F541EADAE5C0015894B /* FindMoreFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindMoreFriendsViewController.swift; sourceTree = "<group>"; };
+		ED95BF321EBFDD1000C47562 /* HelpViewControllerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewControllerViewCell.swift; sourceTree = "<group>"; };
 		ED9DCF3B1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerViewCell.swift; sourceTree = "<group>"; };
 		ED9DCF3D1EAD712700FC1326 /* PremiumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
 		ED9DCF3F1EAD71BE00FC1326 /* UnitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitsViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				ED9DCF3D1EAD712700FC1326 /* PremiumViewController.swift */,
 				ED9DCF3F1EAD71BE00FC1326 /* UnitsViewController.swift */,
 				ED9DCF4A1EAD751000FC1326 /* HelpViewController.swift */,
+				ED95BF321EBFDD1000C47562 /* HelpViewControllerViewCell.swift */,
 				ED9DCF411EAD73B300FC1326 /* ManageAccountsViewController.swift */,
 				ED9DCF431EAD73C000FC1326 /* MusicViewController.swift */,
 				ED9DCF451EAD73CE00FC1326 /* TOSViewController.swift */,
@@ -334,10 +337,13 @@
 				TargetAttributes = {
 					ED2058B31DD10D1B0029879B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = YD92H42WD6;
+						DevelopmentTeam = 97E8A4AYGV;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
@@ -554,6 +560,7 @@
 				ED9DCF421EAD73B300FC1326 /* ManageAccountsViewController.swift in Sources */,
 				2700DA091EBC1852000026C9 /* SerialViewController.swift in Sources */,
 				EDCEDA021E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift in Sources */,
+				ED95BF331EBFDD1000C47562 /* HelpViewControllerViewCell.swift in Sources */,
 				ED9DCF481EAD73DC00FC1326 /* LogoutViewController.swift in Sources */,
 				2700DA121EBC19EB000026C9 /* MBProgressHUD.m in Sources */,
 				2700DA0C1EBC1852000026C9 /* BluetoothSerial.swift in Sources */,
@@ -730,7 +737,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NimbleRide/NimbleRide.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = YD92H42WD6;
+				DEVELOPMENT_TEAM = 97E8A4AYGV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
@@ -756,7 +763,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NimbleRide/NimbleRide.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = YD92H42WD6;
+				DEVELOPMENT_TEAM = 97E8A4AYGV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
