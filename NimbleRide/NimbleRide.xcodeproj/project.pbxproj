@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2700DA091EBC1852000026C9 /* SerialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2700DA051EBC1852000026C9 /* SerialViewController.swift */; };
 		2700DA0A1EBC1852000026C9 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2700DA061EBC1852000026C9 /* ScannerViewController.swift */; };
-		2700DA0B1EBC1852000026C9 /* PreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2700DA071EBC1852000026C9 /* PreferencesTableViewController.swift */; };
 		2700DA0C1EBC1852000026C9 /* BluetoothSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2700DA081EBC1852000026C9 /* BluetoothSerial.swift */; };
 		2700DA121EBC19EB000026C9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2700DA111EBC19EB000026C9 /* MBProgressHUD.m */; };
 		27215A321DD2F6880053799A /* RideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215A311DD2F6880053799A /* RideViewController.swift */; };
@@ -89,7 +88,6 @@
 		1553C7D9C7683D4A696A15B6 /* Pods-NimbleRideUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleRideUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleRideUITests/Pods-NimbleRideUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2700DA051EBC1852000026C9 /* SerialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerialViewController.swift; sourceTree = "<group>"; };
 		2700DA061EBC1852000026C9 /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
-		2700DA071EBC1852000026C9 /* PreferencesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesTableViewController.swift; sourceTree = "<group>"; };
 		2700DA081EBC1852000026C9 /* BluetoothSerial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothSerial.swift; sourceTree = "<group>"; };
 		2700DA101EBC19EB000026C9 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		2700DA111EBC19EB000026C9 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
@@ -236,7 +234,6 @@
 				2700DA111EBC19EB000026C9 /* MBProgressHUD.m */,
 				2700DA051EBC1852000026C9 /* SerialViewController.swift */,
 				2700DA061EBC1852000026C9 /* ScannerViewController.swift */,
-				2700DA071EBC1852000026C9 /* PreferencesTableViewController.swift */,
 				2700DA081EBC1852000026C9 /* BluetoothSerial.swift */,
 				EDDBEB1F1DDCE0F8004D00C6 /* AccountViewController.swift */,
 				ED1B186D1E92138E007D0FD9 /* PairingViewController.swift */,
@@ -723,7 +720,6 @@
 				27215A321DD2F6880053799A /* RideViewController.swift in Sources */,
 				ED9DCF4B1EAD751000FC1326 /* HelpViewController.swift in Sources */,
 				ED1B186E1E92138E007D0FD9 /* PairingViewController.swift in Sources */,
-				2700DA0B1EBC1852000026C9 /* PreferencesTableViewController.swift in Sources */,
 				ED95BF601EBFEC1200C47562 /* RoadView.swift in Sources */,
 				ED2D8EF51EAD51D4002BDE07 /* MoreTabTableViewController.swift in Sources */,
 				ED9DCF3C1EAD6C5A00FC1326 /* SettingsViewControllerViewCell.swift in Sources */,
