@@ -155,17 +155,17 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         
         
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+//        print("locations = \(locValue.latitude) \(locValue.longitude)")
         
-        altitude = (locations.last!.altitude * 3.28084)
-        altitudeLabel.text = String(format: "%.0f ft", altitude)
+        altitude = ((locations.last?.altitude)! * 3.28084)
+        altitudeLabel?.text = String(format: "%.0f ft", altitude)
         speed = (locations.last!.speed * 2.23694)
         if (speed < 0){
             speed = 0
         }
-        speedLabel.text = String(format: "%.2f mph", speed)
+        speedLabel?.text = String(format: "%.2f mph", speed)
 
-        if (timerToggleButton.title(for: .normal) == "Start"){ //timer has not started
+        if (timerToggleButton?.title(for: .normal) == "Start"){ //timer has not started
             distance = 0
             totalSpeed = 0
             pointsTaken = 0
@@ -191,7 +191,7 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
             
         }
 
-        else if (timerToggleButton.title(for: .normal) == "Pause"){ //timer is running
+        else if (timerToggleButton?.title(for: .normal) == "Pause"){ //timer is running
             nextLocation = locations.last
             pointsTaken += 1
             distance += nextLocation.distance(from: previousLocation)
@@ -210,9 +210,9 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         }
 
         totalDistance = distance * 0.000621371
-        distanceLabel.text = String(format: "%.2f miles", totalDistance)
-        avgSpeedLabel.text = String(format: "%.2f mph", avgSpeed * 2.23694)
-        calorieLabel.text = String(format: "%.0f", calories)
+        distanceLabel?.text = String(format: "%.2f miles", totalDistance)
+        avgSpeedLabel?.text = String(format: "%.2f mph", avgSpeed * 2.23694)
+        calorieLabel?.text = String(format: "%.0f", calories)
     }
 
     
@@ -485,7 +485,7 @@ class MapRideViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         
         
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+//        print("locations = \(locValue.latitude) \(locValue.longitude)")
         
         
     }

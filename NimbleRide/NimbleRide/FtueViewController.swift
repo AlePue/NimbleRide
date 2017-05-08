@@ -13,7 +13,16 @@ import AWSDynamoDB
 
 class FtueViewController: UIViewController {
     
-    
+    override func viewWillDisappear(_ animated: Bool) {        
+        self.loadDB(controller: RideViewController(), userId: NSNumber(value: FtueViewController.FBuser.id))
+        for friend in FtueViewController.FBuser.friendList{
+            self.loadDB(controller: RideViewController(), userId: NSNumber(value: friend))
+        }
+        
+        feedData.Data = feedData.Data.sorted { (History1: History, History2: History) -> Bool in
+            return History1.RideID?.compare(History2.RideID!) == ComparisonResult.orderedDescending
+        }
+    }
     
     var userData = NSDictionary()
 //    let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
@@ -21,34 +30,22 @@ class FtueViewController: UIViewController {
     
     @IBAction func FBLoginButton(_ sender: Any) {
         
-//        debugPrint("BUTTON PRESSED")
-                let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
-                fbLoginManager.logIn(withReadPermissions: ["email", "user_friends", "public_profile"], from:self) { (result, error) -> Void in
-                    if (error == nil){
-                        let loginResult : FBSDKLoginManagerLoginResult = result!
-                        if loginResult.grantedPermissions != nil{
-                            if(loginResult.grantedPermissions.contains("email"))
-                            {
-                                let controller = FeedViewController()
-                                self.getUserData()
-
-                                self.loadDB(controller: self, userId: NSNumber(value: FtueViewController.FBuser.id))
-                                for friend in FtueViewController.FBuser.friendList{
-                                    self.loadDB(controller: self, userId: NSNumber(value: friend))
-                                }
-                                
-                                controller.Data = controller.Data.sorted { (History1: History, History2: History) -> Bool in
-                                    return History1.RideID?.compare(History2.RideID!) == ComparisonResult.orderedDescending
-                                }
-
-                                if let tabViewController = self.storyboard?.instantiateViewController(withIdentifier: "idTabBar") as? UITabBarController {
-                                    self.present(tabViewController, animated: true, completion: nil)
-                                }
-                            }
+        let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+        fbLoginManager.logIn(withReadPermissions: ["email", "user_friends", "public_profile"], from:self) { (result, error) -> Void in
+            if (error == nil){
+                let loginResult : FBSDKLoginManagerLoginResult = result!
+                if loginResult.grantedPermissions != nil{
+                    if(loginResult.grantedPermissions.contains("email"))
+                    {
+                        self.getUserData()
+                        if let tabViewController = self.storyboard?.instantiateViewController(withIdentifier: "idTabBar") as? UITabBarController {
+                            self.present(tabViewController, animated: true, completion: nil)
                         }
                     }
-                    
                 }
+            }
+            
+        }
 
     }
     
@@ -65,6 +62,7 @@ class FtueViewController: UIViewController {
     
     
     func loadDB(controller: UIViewController, userId: NSNumber){
+        debugPrint("USER ID \(userId)/")
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
 
         let exp = AWSDynamoDBQueryExpression()
@@ -91,14 +89,14 @@ class FtueViewController: UIViewController {
             else if let paginatedOutput = task.result {
                 for ride in paginatedOutput.items {
                     debugPrint(ride)
-                    let controller = FeedViewController()
-                    controller.Data.append(ride as! History)
+//                    let controller = FeedViewController()
+                    feedData.Data.append(ride as! History)
                 }
             }
             return nil
         })
     }
-    
+
     func getUserData(){
         if((FBSDKAccessToken.current()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, first_name, last_name, picture.type(large)"]).start(completionHandler: { (connection, FBuserData, error) -> Void in
@@ -127,7 +125,7 @@ class FtueViewController: UIViewController {
                         FBuser.id = (self.userData["id"]as! NSString).integerValue
                         AccountViewController().firstNameLabel?.text = FBuser.firstName
                         AccountViewController().lastNameLabel?.text = FBuser.lastName
-                                                let url = NSURL(string: "https://graph.facebook.com/\(FBuser.id)/picture?type=large&return_ssl_resources=1")
+//                                                let url = NSURL(string: "https://graph.facebook.com/\(FBuser.id)/picture?type=large&return_ssl_resources=1")
                         AccountViewController().profilePictureView?.image = UIImage(data: NSData(contentsOf: FBuser.picURL! as URL)! as Data)
                     }
                 }
@@ -168,7 +166,4 @@ class FtueViewController: UIViewController {
         static var friendList = [Int]()
         static var picURL = NSURL(string: "https://graph.facebook.com/\(FBuser.id)/picture?type=large&return_ssl_resources=1")
     }
-
-
-        
 }

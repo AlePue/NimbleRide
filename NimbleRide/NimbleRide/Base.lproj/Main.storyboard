@@ -250,10 +250,60 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Feed" id="W51-yS-Vrq"/>
+                    <connections>
+                        <segue destination="ipv-lJ-z6g" kind="show" identifier="fake" id="U6j-vl-ZNp"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S92-7G-KDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1844" y="750"/>
+        </scene>
+        <!--Fake View Controller-->
+        <scene sceneID="Pnh-yi-rlR">
+            <objects>
+                <viewController id="ipv-lJ-z6g" customClass="FakeViewController" customModule="NimbleRide" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9vv-48-y72"/>
+                        <viewControllerLayoutGuide type="bottom" id="hBL-JJ-akR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JSM-jB-khQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5rQ-Uq-gyb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="I6d-BG-Prl">
+                                        <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Updating Feed..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="41T-VM-CMl">
+                                        <rect key="frame" x="63" y="133" width="248" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.32518914341926575" green="0.45073091983795166" blue="0.48868483304977417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NimbleRideLogo" translatesAutoresizingMaskIntoConstraints="NO" id="9Uo-mN-TmS">
+                                        <rect key="frame" x="67" y="365" width="240" height="238"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.32518914341926575" green="0.45073091983795166" blue="0.48868483304977417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="rLg-Bb-MO7" kind="show" identifier="feed" id="nFT-2W-IOL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KgZ-Nk-o0Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844" y="-43.628185907046479"/>
         </scene>
         <!--More-->
         <scene sceneID="Ska-KZ-1Yv">
@@ -668,6 +718,11 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="Bjr-wo-8v8" kind="relationship" relationship="viewControllers" id="Wip-py-qlp"/>
                         <segue destination="vW4-oT-GKs" kind="relationship" relationship="viewControllers" id="mDM-kl-1IW"/>
@@ -1427,5 +1482,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jrY-Np-OiY"/>
+        <segue reference="nFT-2W-IOL"/>
     </inferredMetricsTieBreakers>
 </document>

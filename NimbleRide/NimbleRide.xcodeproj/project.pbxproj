@@ -12,7 +12,9 @@
 		2700DA0B1EBC1852000026C9 /* PreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2700DA071EBC1852000026C9 /* PreferencesTableViewController.swift */; };
 		2700DA0C1EBC1852000026C9 /* BluetoothSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2700DA081EBC1852000026C9 /* BluetoothSerial.swift */; };
 		2700DA121EBC19EB000026C9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2700DA111EBC19EB000026C9 /* MBProgressHUD.m */; };
+		2700DA151EBC3CA6000026C9 /* CityCycler in Resources */ = {isa = PBXBuildFile; fileRef = 2700DA141EBC3CA6000026C9 /* CityCycler */; };
 		27215A321DD2F6880053799A /* RideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215A311DD2F6880053799A /* RideViewController.swift */; };
+		2745B1E91EBFFD34002C4F91 /* FakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745B1E81EBFFD34002C4F91 /* FakeViewController.swift */; };
 		27CA86D11E6385F400CA8661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27CA86CF1E6385F400CA8661 /* Main.storyboard */; };
 		5A2E4DC9C8DB686E13FD8417 /* Pods_NimbleRideUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E102AF0B9F0C2F21240BEDFE /* Pods_NimbleRideUITests.framework */; };
 		E04082AD6598E4AD8844A45F /* Pods_NimbleRide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD2BD88A65ADE2549075899 /* Pods_NimbleRide.framework */; };
@@ -68,8 +70,10 @@
 		2700DA101EBC19EB000026C9 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		2700DA111EBC19EB000026C9 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		2700DA131EBC1A1F000026C9 /* Serial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Serial-Bridging-Header.h"; sourceTree = "<group>"; };
+		2700DA141EBC3CA6000026C9 /* CityCycler */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CityCycler; sourceTree = "<group>"; };
 		270A745F1E7A32D000920FEE /* NimbleRide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NimbleRide.entitlements; sourceTree = "<group>"; };
 		27215A311DD2F6880053799A /* RideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideViewController.swift; sourceTree = "<group>"; };
+		2745B1E81EBFFD34002C4F91 /* FakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeViewController.swift; sourceTree = "<group>"; };
 		27CA86C91E63769300CA8661 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKCoreKit/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		27CA86CA1E63769300CA8661 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKLoginKit/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		27CA86CB1E63769300CA8661 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKShareKit/FBSDKShareKit.framework"; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 		ED2058AB1DD10D1B0029879B = {
 			isa = PBXGroup;
 			children = (
+				2700DA141EBC3CA6000026C9 /* CityCycler */,
 				ED2058B61DD10D1B0029879B /* NimbleRide */,
 				ED2058CB1DD10D1B0029879B /* NimbleRideTests */,
 				ED2058D61DD10D1B0029879B /* NimbleRideUITests */,
@@ -182,6 +187,7 @@
 				2700DA101EBC19EB000026C9 /* MBProgressHUD.h */,
 				2700DA111EBC19EB000026C9 /* MBProgressHUD.m */,
 				2700DA051EBC1852000026C9 /* SerialViewController.swift */,
+				2745B1E81EBFFD34002C4F91 /* FakeViewController.swift */,
 				2700DA061EBC1852000026C9 /* ScannerViewController.swift */,
 				2700DA071EBC1852000026C9 /* PreferencesTableViewController.swift */,
 				2700DA081EBC1852000026C9 /* BluetoothSerial.swift */,
@@ -377,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27CA86D11E6385F400CA8661 /* Main.storyboard in Resources */,
+				2700DA151EBC3CA6000026C9 /* CityCycler in Resources */,
 				ED2058C21DD10D1B0029879B /* LaunchScreen.storyboard in Resources */,
 				ED2058BF1DD10D1B0029879B /* Assets.xcassets in Resources */,
 			);
@@ -558,6 +565,7 @@
 				EDDBEB201DDCE0F8004D00C6 /* AccountViewController.swift in Sources */,
 				ED5A2F551EADAE5C0015894B /* FindMoreFriendsViewController.swift in Sources */,
 				EDB108FE1EB00653005B0D5F /* FeedViewController.swift in Sources */,
+				2745B1E91EBFFD34002C4F91 /* FakeViewController.swift in Sources */,
 				27215A321DD2F6880053799A /* RideViewController.swift in Sources */,
 				ED9DCF4B1EAD751000FC1326 /* HelpViewController.swift in Sources */,
 				ED1B186E1E92138E007D0FD9 /* PairingViewController.swift in Sources */,
