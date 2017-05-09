@@ -16,12 +16,12 @@ class PairingViewController: UIViewController {
     
     func checkCount() {
         self.count = 0
-    if count == 0 {
-        self.timer += 1
-        print("timer is at: \(timer)")
+        
+//        for i in 0...100{
+//            self.timer += 1
+//            print("timer is at: \(timer)")
+//        }
     }
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

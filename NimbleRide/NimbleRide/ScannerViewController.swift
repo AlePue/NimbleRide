@@ -1,19 +1,9 @@
-//
-//  ScannerViewController.swift
-//  HM10 Serial
-//
-//  Created by Alex on 10-08-15.
-//  Copyright (c) 2015 Balancing Rock. All rights reserved.
-//
-
 import UIKit
 import CoreBluetooth
 
 final class ScannerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, BluetoothSerialDelegate {
 
 //MARK: IBOutlets
-    
-    
     
     @IBOutlet weak var tryAgainButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
@@ -52,7 +42,7 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
         
         // start scanning and schedule the time out
         serial.startScan()
-        Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(ScannerViewController.scanTimeOut), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(ScannerViewController.scanTimeOut), userInfo: nil, repeats: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,7 +55,8 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
         // timeout has occurred, stop scanning and give the user the option to try again
         serial.stopScan()
         tryAgainButton.isEnabled = true
-        title = "Done scanning"
+        //title = "Done scanning"
+        title = "Connected"
     }
     
     /// Should be called 10s after we've begun connecting
@@ -129,7 +120,7 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
 //        connectLabel.text = "Connected"
 
         
-        Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(ScannerViewController.connectTimeOut), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(ScannerViewController.connectTimeOut), userInfo: nil, repeats: false)
         
         
         progressHUD!.labelText = "Connected!"
@@ -187,13 +178,6 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
         }
         
         NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadStartViewController"), object: self)
-
-        let controller = PairingViewController();
-
-
-        
-        //        self.present(controller, animated: true, completion: nil)
-        //        dismiss(animated: true, completion: nil)
     }
     
     func serialDidChangeState() {
@@ -214,8 +198,6 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
     @IBAction func cancel(_ sender: AnyObject) {
         // go back
         serial.stopScan()
-        let cancelViewController = ScannerViewController()
-//      
         dismiss(animated: true, completion: nil)
     }
 
@@ -226,7 +208,7 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
         tryAgainButton.isEnabled = false
         title = "Scanning ..."
         serial.startScan()
-        Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(ScannerViewController.scanTimeOut), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(ScannerViewController.scanTimeOut), userInfo: nil, repeats: false)
     }
     
 }
