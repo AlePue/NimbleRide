@@ -15,7 +15,6 @@ import AWSDynamoDB
 class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
 
     @IBOutlet weak var aboutText: UITextView!
-    @IBOutlet weak var FBloginButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
@@ -35,22 +34,6 @@ class AccountViewController: UIViewController, RPPreviewViewControllerDelegate {
     self.getUserData()
         aboutText.isEditable = false
         aboutText.isScrollEnabled = false
-    }
-
-    @IBAction func FBloginButton(_ sender: AnyObject) {
-        debugPrint("BUTTON PRESSED")
-        let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
-        fbLoginManager.logIn(withReadPermissions: ["email", "user_friends", "public_profile"], from:self) { (result, error) -> Void in
-            if (error == nil){
-                let loginResult : FBSDKLoginManagerLoginResult = result!
-                if loginResult.grantedPermissions != nil{
-                    if(loginResult.grantedPermissions.contains("email"))
-                    {
-                        self.getUserData()
-                    }
-                }
-            }
-        }
     }
 
     func getUserData(){
