@@ -516,12 +516,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ebh-3o-GoE">
-                                        <rect key="frame" x="162" y="261" width="51" height="31"/>
+                                        <rect key="frame" x="257" y="262" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="UnitSelection:" destination="tZf-FU-hVz" eventType="valueChanged" id="t1s-Pt-NJo"/>
                                         </connections>
                                     </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Imperial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltt-rZ-Uve">
+                                        <rect key="frame" x="48" y="262" width="115" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.32549019610000002" green="0.45098039220000002" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -531,6 +538,7 @@
                     <navigationItem key="navigationItem" title="Units of Measurement" id="6bN-Z5-XKu"/>
                     <connections>
                         <outlet property="unitValue" destination="Ebh-3o-GoE" id="XbP-q6-qMS"/>
+                        <outlet property="units" destination="Ltt-rZ-Uve" id="nE5-th-cKX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2vf-WT-jgd" userLabel="First Responder" sceneMemberID="firstResponder"/>
