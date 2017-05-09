@@ -10,12 +10,15 @@ import UIKit
 import AWSDynamoDB
 
 let cellId = "cellID"
+struct feedData{
+    static  var Data = Array<History>()
+}
 
 
 class FeedViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
-    var Data = Array<History>()
+    var refreshControl:UIRefreshControl!
 
 
     override func viewDidLoad() {
@@ -25,74 +28,113 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
         collectionView?.alwaysBounceVertical = true
         // Do any additional setup after loading the view.
         collectionView?.reloadData()
+        
+        super.viewDidLoad()
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
+        collectionView!.addSubview(refreshControl)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-//        Data.removeAll()
+    func refresh(sender:AnyObject){
+        feedData.Data.removeAll()
         loadDB(controller: self, userId: NSNumber(value: FtueViewController.FBuser.id))
         for friend in FtueViewController.FBuser.friendList{
             loadDB(controller: self, userId: NSNumber(value: friend))
         }
-        Data = Data.sorted { (History1: History, History2: History) -> Bool in
+        feedData.Data = feedData.Data.sorted { (History1: History, History2: History) -> Bool in
+            return History1.RideID?.compare(History2.RideID!) == ComparisonResult.orderedDescending
+        }
+        collectionView?.reloadData()
+        refreshControl.endRefreshing()
+        performSegue(withIdentifier: "fake", sender: AnyObject.self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+//        Data.removeAll()
+//        loadDB(controller: self, userId: NSNumber(value: FtueViewController.FBuser.id))
+//        for friend in FtueViewController.FBuser.friendList{
+//            loadDB(controller: self, userId: NSNumber(value: friend))
+//        }
+        feedData.Data = feedData.Data.sorted { (History1: History, History2: History) -> Bool in
             return History1.RideID?.compare(History2.RideID!) == ComparisonResult.orderedDescending
         }
         collectionView?.reloadData()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Data.count // number of actual card to show
+        return feedData.Data.count // number of actual card to show
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FeedCell
 
-        let picURL = NSURL(string: "https://graph.facebook.com/\(String(describing: Data[indexPath.row].userId as! Int))/picture?type=large&return_ssl_resources=1")
+        let picURL = NSURL(string: "https://graph.facebook.com/\(String(describing: feedData.Data[indexPath.row].userId as! Int))/picture?type=large&return_ssl_resources=1")
         cell.profileImageView.image = UIImage(data: NSData(contentsOf: picURL! as URL)! as Data)
 
-        let nameDate = NSMutableAttributedString(string: Data[indexPath.row].fName! + " " + Data[indexPath.row].lName!, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)])
-        let rideDate = getDate(epochDB: Data[indexPath.row].RideID!)
+        let nameDate = NSMutableAttributedString(string: feedData.Data[indexPath.row].fName! + " " + feedData.Data[indexPath.row].lName!, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)])
+        let rideDate = getDate(epochDB: feedData.Data[indexPath.row].RideID!)
         let rideDateDate = "\n" + rideDate
         let date = NSAttributedString(string: rideDateDate, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 10), NSForegroundColorAttributeName: UIColor.rgb(red: 83, green: 115, blue: 125)])
         nameDate.append(date)
-        let littleImage = NSTextAttachment()
-        littleImage.image = UIImage(named: "NimbleRideLogo")
-        littleImage.bounds = CGRect(x: 0, y: -2, width: 12, height: 12)
-        let logo = NSAttributedString(attachment: littleImage)
-//        nameDate.append(logo)
-        let rideLocation = "\n" + Data[indexPath.row].landmark! + "\n" + Data[indexPath.row].city! + ", " + Data[indexPath.row].state! + ", " + Data[indexPath.row].country!
+        let rideLocation = "\n" + feedData.Data[indexPath.row].landmark! + "\n" + feedData.Data[indexPath.row].city! + ", " + feedData.Data[indexPath.row].state! + ", " + feedData.Data[indexPath.row].country!
         let locationText = NSAttributedString(string: rideLocation, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 10), NSForegroundColorAttributeName: UIColor.rgb(red: 83, green: 115, blue: 125)])
         nameDate.append(locationText)
         cell.nameLabel.attributedText = nameDate
 
-        let avgSpeed = "Average Speed  - " + String(describing: Data[indexPath.row].avgSpeed as! Float) + " mph" + "\n"
-        let cals = "Calories Burned  - " + String(describing: Data[indexPath.row].calBurned as! Int) + "\n"
-        let dist = "Distance  - " + String(describing: Data[indexPath.row].distance as! Float) + " miles" + "\n"
-        let time = "Time  - " + Data[indexPath.row].time!
+        let avgSpeed = "Average Speed  - " + String(describing: feedData.Data[indexPath.row].avgSpeed as! Float) + " mph" + "\n"
+        let cals = "Calories Burned  - " + String(describing: feedData.Data[indexPath.row].calBurned as! Int) + "\n"
+        let dist = "Distance  - " + String(describing: feedData.Data[indexPath.row].distance as! Float) + " miles" + "\n"
+        let time = "Time  - " + feedData.Data[indexPath.row].time!
         cell.rideTextView.text = avgSpeed + cals + dist + time
 
+        let cSelector = #selector(deleteCard)
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: cSelector )
+        rightSwipe.direction = UISwipeGestureRecognizerDirection.right
+        cell.addGestureRecognizer(rightSwipe)
+        
         return cell
     }
 
+    func deleteCard(sender: UISwipeGestureRecognizer){
+        let cell = sender.view as! UICollectionViewCell
+        let i = self.collectionView?.indexPath(for: cell)!
+        let dataToDelete = feedData.Data[(i?.row)!]
+
+        if (FtueViewController.FBuser.id == dataToDelete.userId as! Int){
+            let alertController = UIAlertController(title: "Delete Ride", message: "Would you like to delete your ride?", preferredStyle: .alert)
+            let yesAlertButton = UIAlertAction(title: "Yes", style: .default, handler: {
+                action in
+                feedData.Data.remove(at: (i?.row)!)
+                self.collectionView?.deleteItems(at: [i!])
+                self.deleteDB(controller: self, history: dataToDelete)
+            })
+            let noAlertButton = UIAlertAction(title: "No", style: .destructive, handler: nil)
+
+            alertController.addAction(yesAlertButton)
+            alertController.addAction(noAlertButton)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = CGSize(width: view.frame.width, height: 400)
         return size
 //        return CGSizeMake(view.frame.width, 50)
     }
-    
-    
-    func deleteDB(controller: UIViewController){
-        dynamoDBObjectMapper.remove(myHistory.shared).continue({ (task:AWSTask!) -> Any? in
+
+    func deleteDB(controller: UIViewController, history: History){
+        dynamoDBObjectMapper.remove(history).continue({ (task:AWSTask!) -> Any? in
             if let error = task.error as NSError? {
                 debugPrint("\nThe deletion request failed. \nError: \(error)\n")
                 
                 let alertController = UIAlertController(title: "Deletion Failed", message: "Your ride could not be deleted. Try again?", preferredStyle: .alert)
                 let yesAlertButton = UIAlertAction(title: "Yes", style: .default, handler: {
                     action in
-                    self.deleteDB(controller: controller)
+                    self.deleteDB(controller: controller, history: history)
                 })
                 let noAlertButton = UIAlertAction(title: "No", style: .destructive, handler: nil)
-                
+
                 alertController.addAction(yesAlertButton)
                 alertController.addAction(noAlertButton)
                 controller.present(alertController, animated: true, completion: nil)
@@ -179,8 +221,8 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
             }
             else if let paginatedOutput = task.result {
                 for ride in paginatedOutput.items {
-                    debugPrint(ride)
-                    self.Data.append(ride as! History)
+//                    debugPrint(ride)
+                    feedData.Data.append(ride as! History)
                 }
             }
             return nil
@@ -311,7 +353,7 @@ class FeedCell: UICollectionViewCell {
         addConstraintsWithFormat(format: "H:|-12-[v0]-12-|", views: dividerView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: likeButton)
 
-        addConstraintsWithFormat(format: "V:|-8-[v0(50)]-4-[v1(75)]-4-[v2]-8-[v3(25)]-8-[v4(0.5)][v5(40)]|", views: profileImageView, rideTextView, rideImageView, actionsLabel, dividerView, likeButton)             //3
+        addConstraintsWithFormat(format: "V:|-8-[v0(50)]-4-[v1(85)]-4-[v2]-8-[v3(25)]-8-[v4(0.5)][v5(40)]|", views: profileImageView, rideTextView, rideImageView, actionsLabel, dividerView, likeButton)             //3
 
     }
     

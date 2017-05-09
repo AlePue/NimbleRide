@@ -12,6 +12,7 @@
 		2700DA0C1EBC1852000026C9 /* BluetoothSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2700DA081EBC1852000026C9 /* BluetoothSerial.swift */; };
 		2700DA121EBC19EB000026C9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2700DA111EBC19EB000026C9 /* MBProgressHUD.m */; };
 		27215A321DD2F6880053799A /* RideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215A311DD2F6880053799A /* RideViewController.swift */; };
+		2724BA391EC15BFD001BA7BB /* FakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724BA381EC15BFD001BA7BB /* FakeViewController.swift */; };
 		27CA86D11E6385F400CA8661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27CA86CF1E6385F400CA8661 /* Main.storyboard */; };
 		5A2E4DC9C8DB686E13FD8417 /* Pods_NimbleRideUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E102AF0B9F0C2F21240BEDFE /* Pods_NimbleRideUITests.framework */; };
 		E04082AD6598E4AD8844A45F /* Pods_NimbleRide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD2BD88A65ADE2549075899 /* Pods_NimbleRide.framework */; };
@@ -94,6 +95,7 @@
 		2700DA131EBC1A1F000026C9 /* Serial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Serial-Bridging-Header.h"; sourceTree = "<group>"; };
 		270A745F1E7A32D000920FEE /* NimbleRide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NimbleRide.entitlements; sourceTree = "<group>"; };
 		27215A311DD2F6880053799A /* RideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideViewController.swift; sourceTree = "<group>"; };
+		2724BA381EC15BFD001BA7BB /* FakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeViewController.swift; sourceTree = "<group>"; };
 		27CA86C91E63769300CA8661 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKCoreKit/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		27CA86CA1E63769300CA8661 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKLoginKit/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		27CA86CB1E63769300CA8661 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKShareKit/FBSDKShareKit.framework"; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				ED2058C01DD10D1B0029879B /* LaunchScreen.storyboard */,
 				ED2058C31DD10D1B0029879B /* Info.plist */,
 				2700DA131EBC1A1F000026C9 /* Serial-Bridging-Header.h */,
+				2724BA381EC15BFD001BA7BB /* FakeViewController.swift */,
 			);
 			path = NimbleRide;
 			sourceTree = "<group>";
@@ -459,7 +462,7 @@
 				TargetAttributes = {
 					ED2058B31DD10D1B0029879B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 97E8A4AYGV;
+						DevelopmentTeam = 298XXK9CF2;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -702,6 +705,7 @@
 				ED9DCF421EAD73B300FC1326 /* ManageAccountsViewController.swift in Sources */,
 				2700DA091EBC1852000026C9 /* SerialViewController.swift in Sources */,
 				ED95BF711EBFEC1200C47562 /* MenuViewController.swift in Sources */,
+				2724BA391EC15BFD001BA7BB /* FakeViewController.swift in Sources */,
 				EDCEDA021E91EE0A009799A1 /* MoreTabTableViewControllerViewCell.swift in Sources */,
 				ED95BF331EBFDD1000C47562 /* HelpViewControllerViewCell.swift in Sources */,
 				ED9DCF481EAD73DC00FC1326 /* LogoutViewController.swift in Sources */,
@@ -897,7 +901,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NimbleRide/NimbleRide.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 97E8A4AYGV;
+				DEVELOPMENT_TEAM = 298XXK9CF2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
@@ -906,7 +910,7 @@
 				);
 				INFOPLIST_FILE = NimbleRide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide3;
+				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NimbleRide/Serial-Bridging-Header.h";
@@ -923,7 +927,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NimbleRide/NimbleRide.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 97E8A4AYGV;
+				DEVELOPMENT_TEAM = 298XXK9CF2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
@@ -932,7 +936,7 @@
 				);
 				INFOPLIST_FILE = NimbleRide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide3;
+				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NimbleRide/Serial-Bridging-Header.h";

@@ -8,20 +8,27 @@
 
 import UIKit
 
+var difficulty = ""
+
 class OptionsViewController: UIViewController {
 
     @IBOutlet weak var difficultyLabel: UITextField!
-    
     
     @IBAction func goPlay(_ sender: Any) {
 //        let difficultySpeed = UserDefaults.standard.integer(forKey: "difficulty")
         self.difficultyLabel.resignFirstResponder()
         
-        let difficulty = difficultyLabel.text
         
-        if Int(difficulty!)! > 3 || Int(difficulty!)! < 1{
+        
+        if difficultyLabel.text == nil {
             //UserDefaults.standard.set(true, forKey: "isUserLogin")
-            displayMyaAlertMessage(userMessage: "Need to select 1-3")
+//            displayMyaAlertMessage(userMessage: "Need to select 1-3")
+//            difficultyLabel.text = "1"
+            difficulty = "1"
+        } else if difficultyLabel.text != "1" || difficultyLabel.text != "2" || difficultyLabel.text != "3" {
+            difficulty = "1"
+        } else {
+            difficulty = difficultyLabel.text!
         }
     }
     
@@ -29,7 +36,7 @@ class OptionsViewController: UIViewController {
         let DestViewController : GameViewController = segue.destination as! GameViewController
         
         
-        DestViewController.gameSpeed1 = Int(difficultyLabel.text!)!
+        DestViewController.gameSpeed1 = Int(difficulty)!
     }
     
     override func viewDidLoad() {

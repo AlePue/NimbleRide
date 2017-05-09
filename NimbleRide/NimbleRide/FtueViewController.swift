@@ -29,7 +29,6 @@ class FtueViewController: UIViewController {
                         if loginResult.grantedPermissions != nil{
                             if(loginResult.grantedPermissions.contains("email"))
                             {
-                                let controller = FeedViewController()
                                 self.getUserData()
 
                                 self.loadDB(controller: self, userId: NSNumber(value: FtueViewController.FBuser.id))
@@ -37,7 +36,7 @@ class FtueViewController: UIViewController {
                                     self.loadDB(controller: self, userId: NSNumber(value: friend))
                                 }
                                 
-                                controller.Data = controller.Data.sorted { (History1: History, History2: History) -> Bool in
+                                feedData.Data = feedData.Data.sorted { (History1: History, History2: History) -> Bool in
                                     return History1.RideID?.compare(History2.RideID!) == ComparisonResult.orderedDescending
                                 }
 
@@ -90,9 +89,8 @@ class FtueViewController: UIViewController {
             }
             else if let paginatedOutput = task.result {
                 for ride in paginatedOutput.items {
-                    debugPrint(ride)
-                    let controller = FeedViewController()
-                    controller.Data.append(ride as! History)
+//                    debugPrint(ride)
+                    feedData.Data.append(ride as! History)
                 }
             }
             return nil

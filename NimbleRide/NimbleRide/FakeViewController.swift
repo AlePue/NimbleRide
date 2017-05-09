@@ -1,23 +1,15 @@
 //
-//  LogoutViewController.swift
+//  FakeViewController.swift
 //  NimbleRide
 //
-//  Created by Alejandro Puente on 4/23/17.
+//  Created by Nicholas Randhawa on 5/8/17.
 //  Copyright © 2017 Alejandro Puente. All rights reserved.
 //
 
 import UIKit
 
-class LogoutViewController: UIViewController {
+class FakeViewController: UIViewController {
 
-  
-    @IBAction func logoutButton(_ sender: Any) {
-        
-        dismiss(animated: true, completion: nil)
-        feedData.Data.removeAll()
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +21,12 @@ class LogoutViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            self.performSegue(withIdentifier: "feed", sender: AnyObject.self)
+        }
+    }
 
     /*
     // MARK: - Navigation
