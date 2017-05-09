@@ -22,6 +22,7 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
     @IBOutlet weak var timerToggleButton: UIButton!
     @IBOutlet weak var calorieLabel: UILabel!
     @IBOutlet weak var voiceCommandButton: UIButton!
+    @IBOutlet weak var voiceImage: UIImageView!
     @IBOutlet weak var cadenceLabel: UIButton!
     @IBOutlet weak var batteryLabel: UIButton!
     
@@ -36,7 +37,9 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         
-        
+        var myUIImage: UIImage
+        myUIImage = #imageLiteral(resourceName: "speaker2")
+        myButton.setImage(myUIImage, for: UIControlState.normal)
     }
     
     override func didReceiveMemoryWarning() {
@@ -220,6 +223,13 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         print("Error" + error.localizedDescription)
     }
 
+    @IBAction func voiceButton(_ sender: Any) {
+        //        voiceCommandFunc()
+        //        session!.recognize(withType: SKTransactionSpeechTypeDictation, detection: .long, language: "eng-USA", delegate: self)
+        debugPrint("image tapped")
+    }
+    
+    @IBOutlet weak var myButton: UIButton!
     @IBAction func voiceCommandButton (_ send: AnyObject){
             voiceCommandFunc()
             session!.recognize(withType: SKTransactionSpeechTypeDictation, detection: .long, language: "eng-USA", delegate: self)
@@ -228,13 +238,13 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
     func voiceCommandFunc () {
         voiceFlag = ~voiceFlag
         if (voiceFlag == 0){
-            voiceCommandButton.setTitle("Voice Command", for: .normal)
+            voiceCommandButton.setTitle("", for: .normal) //voice command
             self.voiceCommandButton.setTitleColor(UIColor.red, for: .normal)
             self.voiceCommandButton.sizeToFit()
             self.voiceCommandButton.center.x = self.view.center.x
         }
         else{
-            voiceCommandButton.setTitle("Command Running", for: .normal)
+            voiceCommandButton.setTitle("", for: .normal) //command running
             self.voiceCommandButton.setTitleColor(UIColor.green, for: .normal)
             self.voiceCommandButton.sizeToFit()
             self.voiceCommandButton.center.x = self.view.center.x

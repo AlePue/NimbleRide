@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="McM-mT-0r5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="McM-mT-0r5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -170,10 +170,18 @@
                                             <action selector="connectBattery:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bs6-tK-pDv"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udj-rx-OWO">
-                                        <rect key="frame" x="119" y="551" width="113" height="30"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="speaker" translatesAutoresizingMaskIntoConstraints="NO" id="h7J-YD-K2q">
+                                        <rect key="frame" x="287" y="508" width="88" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Voice Command">
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="KEd-v1-4w2" appends="YES" id="SjQ-xX-edn"/>
+                                        </connections>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udj-rx-OWO">
+                                        <rect key="frame" x="147" y="532" width="57" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -208,15 +216,22 @@
                         <outlet property="cadenceLabel" destination="3ty-0T-9yU" id="8q0-Yt-60w"/>
                         <outlet property="calorieLabel" destination="fiy-9B-PY1" id="UcG-On-Kr1"/>
                         <outlet property="distanceLabel" destination="ZPk-gD-IRG" id="Xua-hB-244"/>
+                        <outlet property="myButton" destination="Udj-rx-OWO" id="in4-Pq-na0"/>
                         <outlet property="speedLabel" destination="0Sx-3f-1Me" id="FnM-qf-Ap3"/>
                         <outlet property="timerLabel" destination="Y9a-Hu-4Ic" id="bGs-Jh-uL8"/>
                         <outlet property="timerResetButton" destination="Nqq-hm-CAx" id="FaY-Hc-iuR"/>
                         <outlet property="timerToggleButton" destination="pXM-S9-cJQ" id="gpq-lC-ZTl"/>
                         <outlet property="voiceCommandButton" destination="Udj-rx-OWO" id="rzz-R1-Bry"/>
+                        <outlet property="voiceImage" destination="h7J-YD-K2q" id="afK-RN-2fK"/>
                         <segue destination="q3b-2k-B9I" kind="show" identifier="Pair" id="jrY-Np-OiY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="KEd-v1-4w2">
+                    <connections>
+                        <action selector="voiceButton:" destination="BYZ-38-t0r" id="Gr3-ac-Tl4"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1844" y="1432.5337331334333"/>
         </scene>
@@ -1790,14 +1805,15 @@ Notice Regarding Dispute Resolution: These Terms contain provisions that govern 
         <image name="NimbleRideLogo" width="700" height="700"/>
         <image name="cycler" width="126" height="122"/>
         <image name="road.png" width="621" height="2208"/>
+        <image name="speaker" width="483" height="538"/>
         <image name="tabBarFeedLogo" width="21" height="21"/>
         <image name="tabBarMoreLogo" width="21" height="21"/>
         <image name="tabBatRideLogo" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h81-lG-6dh"/>
         <segue reference="qKf-Un-PES"/>
-        <segue reference="i9a-Cu-9AF"/>
+        <segue reference="h81-lG-6dh"/>
+        <segue reference="jrY-Np-OiY"/>
         <segue reference="g8R-Fn-JLh"/>
     </inferredMetricsTieBreakers>
 </document>
