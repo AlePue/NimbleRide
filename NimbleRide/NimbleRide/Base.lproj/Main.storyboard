@@ -170,8 +170,8 @@
                                             <action selector="connectBattery:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bs6-tK-pDv"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="speaker" translatesAutoresizingMaskIntoConstraints="NO" id="h7J-YD-K2q">
-                                        <rect key="frame" x="287" y="508" width="88" height="110"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="speaker2" translatesAutoresizingMaskIntoConstraints="NO" id="h7J-YD-K2q">
+                                        <rect key="frame" x="297" y="528" width="60" height="64"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -179,7 +179,7 @@
                                         </connections>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udj-rx-OWO">
-                                        <rect key="frame" x="147" y="532" width="57" height="63"/>
+                                        <rect key="frame" x="147" y="547" width="57" height="63"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1805,7 +1805,7 @@ Notice Regarding Dispute Resolution: These Terms contain provisions that govern 
         <image name="NimbleRideLogo" width="700" height="700"/>
         <image name="cycler" width="126" height="122"/>
         <image name="road.png" width="621" height="2208"/>
-        <image name="speaker" width="483" height="538"/>
+        <image name="speaker2" width="57" height="63"/>
         <image name="tabBarFeedLogo" width="21" height="21"/>
         <image name="tabBarMoreLogo" width="21" height="21"/>
         <image name="tabBatRideLogo" width="29" height="29"/>

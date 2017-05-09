@@ -27,6 +27,7 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
     @IBOutlet weak var batteryLabel: UIButton!
     
     let locationManager = CLLocationManager()
+    var myUIImage: UIImage = #imageLiteral(resourceName: "speaker2")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,9 +38,13 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         
-        var myUIImage: UIImage
-        myUIImage = #imageLiteral(resourceName: "speaker2")
+        
+//        myUIImage = #imageLiteral(resourceName: "speaker2")
         myButton.setImage(myUIImage, for: UIControlState.normal)
+        
+        myUIImage = myUIImage.maskWithColor(color: .black)
+        
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -237,17 +242,18 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
 
     func voiceCommandFunc () {
         voiceFlag = ~voiceFlag
+
+        
         if (voiceFlag == 0){
             voiceCommandButton.setTitle("", for: .normal) //voice command
-            self.voiceCommandButton.setTitleColor(UIColor.red, for: .normal)
-            self.voiceCommandButton.sizeToFit()
-            self.voiceCommandButton.center.x = self.view.center.x
+            
+            myUIImage = myUIImage.maskWithColor(color: .red)
+            
         }
         else{
             voiceCommandButton.setTitle("", for: .normal) //command running
-            self.voiceCommandButton.setTitleColor(UIColor.green, for: .normal)
-            self.voiceCommandButton.sizeToFit()
-            self.voiceCommandButton.center.x = self.view.center.x
+            myUIImage = myUIImage.maskWithColor(color: .green)
+            
         }
     }
 
@@ -536,5 +542,50 @@ class MapRideViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     
 }
 
-
-
+//extension UIImage {
+//    
+//    func maskWithColor( color:UIColor) -> UIImage {
+//        
+//        UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen.main.scale)
+//        let context = UIGraphicsGetCurrentContext()!
+//        
+//        color.setFill()
+//        
+//        context.translateBy(x: 0, y: self.size.height)
+//        context.scaleBy(x: 1.0, y: -1.0)
+//        
+//        let rect = CGRect(x: 0.0, y: 0.0, width: self.size.width, height: self.size.height)
+//        context.draw(self.cgImage!, in: rect)
+//        
+//        context.setBlendMode(CGBlendMode.sourceIn)
+//        context.addRect(rect)
+//        context.drawPath(using: CGPathDrawingMode.fill)
+//        
+//        let coloredImage = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        
+//        return coloredImage!
+//    }
+//}
+extension UIImage {
+    func maskWithColor(color: UIColor) -> UIImage {
+        
+        var maskImage = self.cgImage
+        let width = self.size.width
+        let height = self.size.height
+        let bounds = CGRect(x: 0, y: 0, width: width, height: height)
+        
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
+        let bitmapContext = CGContext(data: nil, width: Int(width), height: Int(height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo.rawValue)
+        
+        bitmapContext!.clip(to: bounds, mask: maskImage!)
+        bitmapContext!.setFillColor(color.cgColor)
+        bitmapContext!.fill(bounds)
+        
+        let cImage = bitmapContext!.makeImage()
+        let coloredImage = UIImage(cgImage: cImage!)
+        
+        return coloredImage
+    }
+}
