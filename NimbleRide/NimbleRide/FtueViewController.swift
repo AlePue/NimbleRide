@@ -29,7 +29,6 @@ class FtueViewController: UIViewController {
                         if loginResult.grantedPermissions != nil{
                             if(loginResult.grantedPermissions.contains("email"))
                             {
-                                let controller = FeedViewController()
                                 self.getUserData()
 
                                 self.loadDB(controller: self, userId: NSNumber(value: FtueViewController.FBuser.id))

@@ -77,11 +77,6 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
         let rideDateDate = "\n" + rideDate
         let date = NSAttributedString(string: rideDateDate, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 10), NSForegroundColorAttributeName: UIColor.rgb(red: 83, green: 115, blue: 125)])
         nameDate.append(date)
-        let littleImage = NSTextAttachment()
-        littleImage.image = UIImage(named: "NimbleRideLogo")
-        littleImage.bounds = CGRect(x: 0, y: -2, width: 12, height: 12)
-        let logo = NSAttributedString(attachment: littleImage)
-//        nameDate.append(logo)
         let rideLocation = "\n" + feedData.Data[indexPath.row].landmark! + "\n" + feedData.Data[indexPath.row].city! + ", " + feedData.Data[indexPath.row].state! + ", " + feedData.Data[indexPath.row].country!
         let locationText = NSAttributedString(string: rideLocation, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 10), NSForegroundColorAttributeName: UIColor.rgb(red: 83, green: 115, blue: 125)])
         nameDate.append(locationText)

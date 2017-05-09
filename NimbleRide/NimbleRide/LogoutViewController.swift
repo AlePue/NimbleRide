@@ -14,6 +14,7 @@ class LogoutViewController: UIViewController {
     @IBAction func logoutButton(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)
+        feedData.Data.removeAll()
     }
     
     

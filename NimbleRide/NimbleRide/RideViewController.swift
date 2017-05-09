@@ -107,7 +107,17 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         myHistory.shared.state = state
         myHistory.shared.landmark = landmark
         myHistory.shared.country = country
-        FeedViewController().saveDB(controller: self) //save ride to DB
+        
+        let alertController = UIAlertController(title: "Save Ride", message: "Would you like to save your ride?", preferredStyle: .alert)
+        let yesAlertButton = UIAlertAction(title: "Yes", style: .default, handler: {
+            action in
+            FeedViewController().saveDB(controller: self) //save ride to DB
+        })
+        let noAlertButton = UIAlertAction(title: "No", style: .destructive, handler: nil)
+        
+        alertController.addAction(yesAlertButton)
+        alertController.addAction(noAlertButton)
+        self.present(alertController, animated: true, completion: nil)
         
         timerResetFunc()
     }
