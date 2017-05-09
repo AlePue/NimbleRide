@@ -395,16 +395,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eL-Ah-ay7">
-                                        <rect key="frame" x="51" y="473" width="292" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="FaceBook Login">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="FBloginButton:" destination="F6w-HA-HYe" eventType="touchDown" id="6gh-JM-ESq"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sON-24-raF">
                                         <rect key="frame" x="8" y="194" width="81" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -483,7 +473,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="f7g-ao-pCv"/>
                     <connections>
-                        <outlet property="FBloginButton" destination="1eL-Ah-ay7" id="AXR-vF-h2X"/>
                         <outlet property="aboutText" destination="Yw5-sN-hH9" id="rnN-et-NzX"/>
                         <outlet property="firstNameLabel" destination="9Pv-Sh-UVE" id="kbg-RH-fnq"/>
                         <outlet property="followers" destination="0A5-0L-gzX" id="0z2-Vd-NMJ"/>
