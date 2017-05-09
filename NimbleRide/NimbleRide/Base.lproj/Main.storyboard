@@ -148,17 +148,6 @@
                                             <segue destination="Ohq-Qk-lx7" kind="show" identifier="Map" id="j4f-so-RVL"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ty-0T-9yU">
-                                        <rect key="frame" x="12" y="432" width="149" height="42"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Connect BLE">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="connectBattery:" destination="BYZ-38-t0r" eventType="touchUpInside" id="scG-2p-zDC"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuq-nQ-1va">
                                         <rect key="frame" x="218" y="432" width="149" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -180,6 +169,13 @@
                                             <action selector="voiceCommandButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lxC-3v-Umb"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mja-hg-hkq">
+                                        <rect key="frame" x="12" y="432" width="149" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.32469350099563599" green="0.45194113254547119" blue="0.49140322208404541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -205,7 +201,7 @@
                         <outlet property="altitudeLabel" destination="TpS-Je-I6T" id="7a1-dP-35J"/>
                         <outlet property="avgSpeedLabel" destination="2iC-x8-Ovx" id="fRI-nZ-P2B"/>
                         <outlet property="batteryLabel" destination="xuq-nQ-1va" id="6pO-Jt-N6u"/>
-                        <outlet property="cadenceLabel" destination="3ty-0T-9yU" id="8q0-Yt-60w"/>
+                        <outlet property="cadenceLabel" destination="Mja-hg-hkq" id="RUf-su-lKh"/>
                         <outlet property="calorieLabel" destination="fiy-9B-PY1" id="UcG-On-Kr1"/>
                         <outlet property="distanceLabel" destination="ZPk-gD-IRG" id="Xua-hB-244"/>
                         <outlet property="speedLabel" destination="0Sx-3f-1Me" id="FnM-qf-Ap3"/>
@@ -1848,11 +1844,10 @@ Notice Regarding Dispute Resolution: These Terms contain provisions that govern 
         <image name="tabBatRideLogo" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="R6e-vS-vTC"/>
-        <segue reference="ncK-8k-QQV"/>
         <segue reference="h81-lG-6dh"/>
         <segue reference="qKf-Un-PES"/>
-        <segue reference="i9a-Cu-9AF"/>
+        <segue reference="jrY-Np-OiY"/>
         <segue reference="g8R-Fn-JLh"/>
+        <segue reference="R6e-vS-vTC"/>
     </inferredMetricsTieBreakers>
 </document>

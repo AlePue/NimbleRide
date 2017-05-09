@@ -22,8 +22,14 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
     @IBOutlet weak var timerToggleButton: UIButton!
     @IBOutlet weak var calorieLabel: UILabel!
     @IBOutlet weak var voiceCommandButton: UIButton!
-    @IBOutlet weak var cadenceLabel: UIButton!
+//    @IBOutlet weak var cadenceLabel: UIButton!
     @IBOutlet weak var batteryLabel: UIButton!
+    
+    @IBOutlet weak var cadenceLabel: UILabel! = {
+       let cadenceLabels = UILabel()
+        cadenceLabels.text = "10"
+        return cadenceLabels
+    }()
     
     let locationManager = CLLocationManager()
     

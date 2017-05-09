@@ -42,7 +42,7 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
         
         // start scanning and schedule the time out
         serial.startScan()
-        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(ScannerViewController.scanTimeOut), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(ScannerViewController.scanTimeOut), userInfo: nil, repeats: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -120,7 +120,7 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
 //        connectLabel.text = "Connected"
 
         
-        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(ScannerViewController.connectTimeOut), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(ScannerViewController.connectTimeOut), userInfo: nil, repeats: false)
         
         
         progressHUD!.labelText = "Connected!"
@@ -208,7 +208,7 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
         tryAgainButton.isEnabled = false
         title = "Scanning ..."
         serial.startScan()
-        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(ScannerViewController.scanTimeOut), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(ScannerViewController.scanTimeOut), userInfo: nil, repeats: false)
     }
     
 }

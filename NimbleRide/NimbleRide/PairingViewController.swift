@@ -11,17 +11,17 @@ import UIKit
 
 class PairingViewController: UIViewController {
 
-    var count = 0
-    var timer = 0
-    
-    func checkCount() {
-        self.count = 0
-        
-//        for i in 0...100{
-//            self.timer += 1
-//            print("timer is at: \(timer)")
-//        }
-    }
+//    var count = 0
+//    var timer = 0
+//    
+//    func checkCount() {
+//        self.count = 0
+//        
+////        for i in 0...100{
+////            self.timer += 1
+////            print("timer is at: \(timer)")
+////        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
