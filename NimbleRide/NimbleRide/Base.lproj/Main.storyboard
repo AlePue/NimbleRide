@@ -1750,8 +1750,8 @@ Notice Regarding Dispute Resolution: These Terms contain provisions that govern 
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eek-PX-5EC">
                                 <rect key="frame" x="260" y="150" width="92" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">1 - easy 
-2 - medium
+                                <string key="text">1 - Easy 
+2 - Medium
 3 - Hard</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
