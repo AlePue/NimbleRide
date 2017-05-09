@@ -960,7 +960,9 @@ Notice Regarding Dispute Resolution: These Terms contain provisions that govern 
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crg-je-jBZ">
                                         <rect key="frame" x="123" y="516" width="131" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="CityCycler"/>
+                                        <state key="normal" title="CityCycler">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <segue destination="ugI-km-TXd" kind="presentation" id="h81-lG-6dh"/>
                                         </connections>
