@@ -459,7 +459,7 @@
 				TargetAttributes = {
 					ED2058B31DD10D1B0029879B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = LAPKZ7JHB5;
+						DevelopmentTeam = 97E8A4AYGV;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -897,7 +897,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NimbleRide/NimbleRide.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LAPKZ7JHB5;
+				DEVELOPMENT_TEAM = 97E8A4AYGV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
@@ -906,8 +906,7 @@
 				);
 				INFOPLIST_FILE = NimbleRide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-
-				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide1;
+				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NimbleRide/Serial-Bridging-Header.h";
@@ -924,7 +923,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NimbleRide/NimbleRide.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LAPKZ7JHB5;
+				DEVELOPMENT_TEAM = 97E8A4AYGV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
@@ -933,7 +932,7 @@
 				);
 				INFOPLIST_FILE = NimbleRide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide1;
+				PRODUCT_BUNDLE_IDENTIFIER = app.NimbleRide3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NimbleRide/Serial-Bridging-Header.h";
