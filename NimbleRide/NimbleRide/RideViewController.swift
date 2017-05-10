@@ -27,7 +27,7 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
     @IBOutlet weak var batteryLabel: UIButton!
     
     let locationManager = CLLocationManager()
-    var myUIImage: UIImage = #imageLiteral(resourceName: "speaker2")
+    var myUIImage: UIImage = #imageLiteral(resourceName: "speaker2").withRenderingMode(.alwaysTemplate)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,6 +103,10 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
     }
     
     @IBAction func timerResetButton (_ send: AnyObject){
+        timerResetFunc()
+    }
+    
+    func timerResetFunc() {
         myHistory.shared.time = timerLabel.text
         myHistory.shared.avgSpeed = (avgSpeedLabel.text! as NSString).doubleValue as NSNumber
         myHistory.shared.calBurned = (calorieLabel.text! as NSString).integerValue as NSNumber
@@ -117,10 +121,6 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         myHistory.shared.country = country
         FeedViewController().saveDB(controller: self) //save ride to DB
         
-        timerResetFunc()
-    }
-    
-    func timerResetFunc() {
         timerLabel.text = "00:00:00"
         timerCount = 0
         timerFlag = 0
@@ -247,12 +247,14 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         if (voiceFlag == 0){
             voiceCommandButton.setTitle("", for: .normal) //voice command
             
-            myUIImage = myUIImage.maskWithColor(color: .red)
+            myUIImage = myUIImage.maskWithColor(color: .green)
+            myButton.setImage(myUIImage, for: UIControlState.normal)
             
         }
         else{
             voiceCommandButton.setTitle("", for: .normal) //command running
-            myUIImage = myUIImage.maskWithColor(color: .green)
+            myUIImage = myUIImage.maskWithColor(color: .red)
+            myButton.setImage(myUIImage, for: UIControlState.normal)
             
         }
     }
@@ -412,6 +414,16 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
 
         else if recognition.text.lowercased().range(of: "pause") != nil{
             textToSpeak = "Workout paused. Enjoy your break"
+            timerToggleFunc()
+        }
+
+        else if recognition.text.lowercased().range(of: "cadence") != nil{
+            textToSpeak = "Your cadence is" + cadenceLabel.title(for: .normal)!
+            timerToggleFunc()
+        }
+
+        else if recognition.text.lowercased().range(of: "battery") != nil{
+            textToSpeak = "Your battery is at" + batteryLabel.title(for: .normal)!
             timerToggleFunc()
         }
 
