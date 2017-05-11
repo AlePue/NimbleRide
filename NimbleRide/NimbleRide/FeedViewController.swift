@@ -93,6 +93,10 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
         rightSwipe.direction = UISwipeGestureRecognizerDirection.right
         cell.addGestureRecognizer(rightSwipe)
         
+        let cSelector1 = #selector(newLike)
+        let likeTap = UITapGestureRecognizer(target: self, action: cSelector1 )
+        cell.likeButton.addGestureRecognizer(likeTap)
+        
         return cell
     }
 
@@ -117,6 +121,26 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
         }
     }
 
+    func newLike(sender: UITapGestureRecognizer){
+        let cellInit = sender.location(in: self.collectionView)
+        let i: NSIndexPath = self.collectionView?.indexPathForItem(at: cellInit)! as! NSIndexPath
+        let cell = self.collectionView?.cellForItem(at: i as IndexPath) as! FeedCell
+        let strLikes = cell.actionsLabel.text?.components(separatedBy: " ")
+        let strCurrentLikes = strLikes?.first
+        if cell.likeButton.title(for: .normal) == "Unlike"{
+            var intLikes = Int(strCurrentLikes!)! - 1
+            cell.actionsLabel.text = "\(intLikes) Likes"
+            cell.likeButton.setTitleColor(UIColor.rgb(red: 166, green: 161, blue: 171), for: .normal)
+            cell.likeButton.setTitle("Like", for: .normal)
+        }
+        else{
+            var intLikes = Int(strCurrentLikes!)! + 1
+            cell.actionsLabel.text = "\(intLikes) Likes"
+            cell.likeButton.setTitleColor(UIColor.red, for: .normal)
+            cell.likeButton.setTitle("Unlike", for: .normal)
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = CGSize(width: view.frame.width, height: 400)
         return size
@@ -307,7 +331,12 @@ class FeedCell: UICollectionViewCell {
         rideImage.image = UIImage(named: "map")
         rideImage.contentMode = .scaleAspectFill
         rideImage.layer.masksToBounds = true
-        
+//        rideImage.layer.shadowColor = UIColor.black.cgColor
+//        rideImage.layer.shadowOpacity = 1
+//        rideImage.layer.shadowOffset = CGSize.zero
+//        rideImage.layer.shadowRadius = 0
+//        rideImage.layer.shouldRasterize = true
+
         return rideImage
     }()
     

@@ -26,6 +26,12 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
     @IBOutlet weak var cadenceLabel: UIButton!
     @IBOutlet weak var batteryLabel: UIButton!
     
+//    @IBOutlet weak var cadenceLabel: UILabel! = {
+//       let cadenceLabels = UILabel()
+//        cadenceLabels.text = "10"
+//        return cadenceLabels
+//    }()
+    
     let locationManager = CLLocationManager()
     var myUIImage: UIImage = #imageLiteral(resourceName: "speaker2").withRenderingMode(.alwaysTemplate)
     

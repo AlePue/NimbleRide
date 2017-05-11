@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="McM-mT-0r5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="McM-mT-0r5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -210,7 +210,7 @@
                         <outlet property="altitudeLabel" destination="TpS-Je-I6T" id="7a1-dP-35J"/>
                         <outlet property="avgSpeedLabel" destination="2iC-x8-Ovx" id="fRI-nZ-P2B"/>
                         <outlet property="batteryLabel" destination="xuq-nQ-1va" id="6pO-Jt-N6u"/>
-                        <outlet property="cadenceLabel" destination="3ty-0T-9yU" id="8q0-Yt-60w"/>
+                        <outlet property="cadenceLabel" destination="3ty-0T-9yU" id="z31-QF-a01"/>
                         <outlet property="calorieLabel" destination="fiy-9B-PY1" id="UcG-On-Kr1"/>
                         <outlet property="distanceLabel" destination="ZPk-gD-IRG" id="Xua-hB-244"/>
                         <outlet property="myButton" destination="Udj-rx-OWO" id="in4-Pq-na0"/>
@@ -235,7 +235,7 @@
         <scene sceneID="ASs-aV-F3W">
             <objects>
                 <collectionViewController title="Feed" id="rLg-Bb-MO7" customClass="FeedViewController" customModule="NimbleRide" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Y6e-h3-A0X">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Y6e-h3-A0X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.32469350099563599" green="0.45194113254547119" blue="0.49140322208404541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -975,11 +975,11 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Terms of Service
-The NimbleRide mobile applications and services are made available to you by NimbleRide, subject to these Terms of Service and the NimbleRide Privacy Policy (collectively the “Terms”). More information about the Services may be found at https://www.NimbleRide.com. You agree to comply with these Terms and any NimbleRide policies made available to you on the Services. By accessing, using or uploading or downloading any information or materials to or from the SERVICES, or by indicating your assent to these Terms by CREATING AN ACCOUNT, clicking “Sign up” or any similar mechanism, you are agreeing to the these Terms. If you do not agree to the these Terms, do not access or use the Services. This agreement was written in English. To the extent a translated version of the Terms conflict with the English version, the English version controls.
-If you access or use the Services on behalf of a company or other entity, you represent that you have authority to bind such entity and its affiliates to these Terms and that it is fully binding on them. In such case, the term “you” will refer to such entity and its affiliates. If you do not have authority, you may not access or use the Services. These Terms contain disclaimers of warranties and limitations on liability that may be applicable to you.
-Notice Regarding Dispute Resolution: These Terms contain provisions that govern how disputes between you and NimbleRide are resolved, including an agreement to arbitrate, which will, with limited exception, require you to submit claims you have against us to binding and final arbitration and limit you to claims against NimbleRide on an individual basis, unless you opt-out in accordance with the instructions below.  
-© 2017 NimbleRide
-</string>
+                                            The NimbleRide mobile applications and services are made available to you by NimbleRide, subject to these Terms of Service and the NimbleRide Privacy Policy (collectively the “Terms”). More information about the Services may be found at https://www.NimbleRide.com. You agree to comply with these Terms and any NimbleRide policies made available to you on the Services. By accessing, using or uploading or downloading any information or materials to or from the SERVICES, or by indicating your assent to these Terms by CREATING AN ACCOUNT, clicking “Sign up” or any similar mechanism, you are agreeing to the these Terms. If you do not agree to the these Terms, do not access or use the Services. This agreement was written in English. To the extent a translated version of the Terms conflict with the English version, the English version controls.
+                                            If you access or use the Services on behalf of a company or other entity, you represent that you have authority to bind such entity and its affiliates to these Terms and that it is fully binding on them. In such case, the term “you” will refer to such entity and its affiliates. If you do not have authority, you may not access or use the Services. These Terms contain disclaimers of warranties and limitations on liability that may be applicable to you.
+                                            Notice Regarding Dispute Resolution: These Terms contain provisions that govern how disputes between you and NimbleRide are resolved, including an agreement to arbitrate, which will, with limited exception, require you to submit claims you have against us to binding and final arbitration and limit you to claims against NimbleRide on an individual basis, unless you opt-out in accordance with the instructions below.
+                                            © 2017 NimbleRide
+                                        </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -1812,8 +1812,8 @@ Notice Regarding Dispute Resolution: These Terms contain provisions that govern 
                                 <rect key="frame" x="260" y="150" width="92" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">1 - Easy 
-2 - Medium
-3 - Hard</string>
+                                    2 - Medium
+                                    3 - Hard</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
