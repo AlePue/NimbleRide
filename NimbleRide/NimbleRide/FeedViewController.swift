@@ -328,17 +328,37 @@ class FeedCell: UICollectionViewCell {
     
     let rideImageView: UIImageView = {
         let rideImage = UIImageView()
+        
+        let goPremiumLabel: UILabel = {
+            let premiumLabel = UILabel()
+            premiumLabel.text = "Go Premium To See Your Ride"
+            premiumLabel.font = UIFont.systemFont(ofSize: 20)
+            premiumLabel.textColor = UIColor.black
+            
+            
+            return premiumLabel
+        }()
+        
         rideImage.image = UIImage(named: "map")
-        rideImage.contentMode = .scaleAspectFill
+//        rideImage.contentMode = .scaleAspectFill
         rideImage.layer.masksToBounds = true
 //        rideImage.layer.shadowColor = UIColor.black.cgColor
 //        rideImage.layer.shadowOpacity = 1
 //        rideImage.layer.shadowOffset = CGSize.zero
 //        rideImage.layer.shadowRadius = 0
 //        rideImage.layer.shouldRasterize = true
-
+        
+//        rideImage.addBlur()
+        
+        rideImage.addSubview(goPremiumLabel)
         return rideImage
     }()
+    
+    
+    
+    
+    
+
     
     let actionsLabel: UILabel = {
        let actionLabel = UILabel()
@@ -366,6 +386,8 @@ class FeedCell: UICollectionViewCell {
     func setupViews() {
         backgroundColor = UIColor.white
 
+        
+        
         addSubview(nameLabel)
         addSubview(profileImageView)
         addSubview(rideTextView)
@@ -411,6 +433,18 @@ extension UIColor {
     static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
         return UIColor(red: red/255, green: green/255 , blue: blue/255 , alpha: 1)
     }
+}
+
+extension UIImageView {
+    func addBlur() {
+        let blur =  UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurView = UIVisualEffectView(effect: blur)
+        blurView.frame = self.bounds
+        
+        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.addSubview(blurView)
+    }
+    
 }
 
 class History : AWSDynamoDBObjectModel, AWSDynamoDBModeling  {
