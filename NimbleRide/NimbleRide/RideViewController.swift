@@ -22,7 +22,6 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
     @IBOutlet weak var timerToggleButton: UIButton!
     @IBOutlet weak var calorieLabel: UILabel!
     @IBOutlet weak var voiceCommandButton: UIButton!
-    @IBOutlet weak var voiceImage: UIImageView!
     @IBOutlet weak var cadenceLabel: UIButton!
     @IBOutlet weak var batteryLabel: UIButton!
     
@@ -44,13 +43,7 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         
-        
-//        myUIImage = #imageLiteral(resourceName: "speaker2")
         myButton.setImage(myUIImage, for: UIControlState.normal)
-        
-        myUIImage = myUIImage.maskWithColor(color: .black)
-        
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -566,7 +559,6 @@ class MapRideViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         renderer.lineWidth = 3
         return renderer
     }
-    
     
 }
 
