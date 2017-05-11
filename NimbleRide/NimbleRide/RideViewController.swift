@@ -22,16 +22,18 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
     @IBOutlet weak var timerToggleButton: UIButton!
     @IBOutlet weak var calorieLabel: UILabel!
     @IBOutlet weak var voiceCommandButton: UIButton!
-//    @IBOutlet weak var cadenceLabel: UIButton!
+    @IBOutlet weak var voiceImage: UIImageView!
+    @IBOutlet weak var cadenceLabel: UIButton!
     @IBOutlet weak var batteryLabel: UIButton!
     
-    @IBOutlet weak var cadenceLabel: UILabel! = {
-       let cadenceLabels = UILabel()
-        cadenceLabels.text = "10"
-        return cadenceLabels
-    }()
+//    @IBOutlet weak var cadenceLabel: UILabel! = {
+//       let cadenceLabels = UILabel()
+//        cadenceLabels.text = "10"
+//        return cadenceLabels
+//    }()
     
     let locationManager = CLLocationManager()
+    var myUIImage: UIImage = #imageLiteral(resourceName: "speaker2").withRenderingMode(.alwaysTemplate)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +45,12 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         locationManager.startUpdatingLocation()
         
         
+//        myUIImage = #imageLiteral(resourceName: "speaker2")
+        myButton.setImage(myUIImage, for: UIControlState.normal)
+        
+        myUIImage = myUIImage.maskWithColor(color: .black)
+        
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -101,6 +109,10 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
     }
     
     @IBAction func timerResetButton (_ send: AnyObject){
+        timerResetFunc()
+    }
+    
+    func timerResetFunc() {
         myHistory.shared.time = timerLabel.text
         myHistory.shared.avgSpeed = (avgSpeedLabel.text! as NSString).doubleValue as NSNumber
         myHistory.shared.calBurned = (calorieLabel.text! as NSString).integerValue as NSNumber
@@ -125,10 +137,6 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         alertController.addAction(noAlertButton)
         self.present(alertController, animated: true, completion: nil)
         
-        timerResetFunc()
-    }
-    
-    func timerResetFunc() {
         timerLabel.text = "00:00:00"
         timerCount = 0
         timerFlag = 0
@@ -236,6 +244,13 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         print("Error" + error.localizedDescription)
     }
 
+    @IBAction func voiceButton(_ sender: Any) {
+        //        voiceCommandFunc()
+        //        session!.recognize(withType: SKTransactionSpeechTypeDictation, detection: .long, language: "eng-USA", delegate: self)
+        debugPrint("image tapped")
+    }
+    
+    @IBOutlet weak var myButton: UIButton!
     @IBAction func voiceCommandButton (_ send: AnyObject){
             voiceCommandFunc()
             session!.recognize(withType: SKTransactionSpeechTypeDictation, detection: .long, language: "eng-USA", delegate: self)
@@ -243,17 +258,20 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
 
     func voiceCommandFunc () {
         voiceFlag = ~voiceFlag
+
+        
         if (voiceFlag == 0){
-            voiceCommandButton.setTitle("Voice Command", for: .normal)
-            self.voiceCommandButton.setTitleColor(UIColor.red, for: .normal)
-            self.voiceCommandButton.sizeToFit()
-            self.voiceCommandButton.center.x = self.view.center.x
+            voiceCommandButton.setTitle("", for: .normal) //voice command
+            
+            myUIImage = myUIImage.maskWithColor(color: .green)
+            myButton.setImage(myUIImage, for: UIControlState.normal)
+            
         }
         else{
-            voiceCommandButton.setTitle("Command Running", for: .normal)
-            self.voiceCommandButton.setTitleColor(UIColor.green, for: .normal)
-            self.voiceCommandButton.sizeToFit()
-            self.voiceCommandButton.center.x = self.view.center.x
+            voiceCommandButton.setTitle("", for: .normal) //command running
+            myUIImage = myUIImage.maskWithColor(color: .red)
+            myButton.setImage(myUIImage, for: UIControlState.normal)
+            
         }
     }
 
@@ -415,6 +433,16 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
             timerToggleFunc()
         }
 
+        else if recognition.text.lowercased().range(of: "cadence") != nil{
+            textToSpeak = "Your cadence is" + cadenceLabel.title(for: .normal)!
+            timerToggleFunc()
+        }
+
+        else if recognition.text.lowercased().range(of: "battery") != nil{
+            textToSpeak = "Your battery is at" + batteryLabel.title(for: .normal)!
+            timerToggleFunc()
+        }
+
         else if (recognition.text.lowercased().range(of: "end") != nil) ||
                 (recognition.text.lowercased().range(of: "stop") != nil) ||
                 (recognition.text.lowercased().range(of: "complete") != nil) ||
@@ -542,5 +570,25 @@ class MapRideViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     
 }
 
-
-
+extension UIImage {
+    func maskWithColor(color: UIColor) -> UIImage {
+        
+        var maskImage = self.cgImage
+        let width = self.size.width
+        let height = self.size.height
+        let bounds = CGRect(x: 0, y: 0, width: width, height: height)
+        
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
+        let bitmapContext = CGContext(data: nil, width: Int(width), height: Int(height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo.rawValue)
+        
+        bitmapContext!.clip(to: bounds, mask: maskImage!)
+        bitmapContext!.setFillColor(color.cgColor)
+        bitmapContext!.fill(bounds)
+        
+        let cImage = bitmapContext!.makeImage()
+        let coloredImage = UIImage(cgImage: cImage!)
+        
+        return coloredImage
+    }
+}
