@@ -493,17 +493,9 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
 class MapRideViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapRide: MKMapView!
-    
-    var manager:CLLocationManager!
-    var myLocations: [CLLocation] = []
-    
-    
-    
     let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(metricsButtonTapped))
-
     
-    
-    var locationManager = CLLocationManager()
+        var locationManager = CLLocationManager()
     
     func navigationControllerSettingsSetup() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start", style: .plain, target: self, action: #selector(metricsButtonTapped))
@@ -511,89 +503,64 @@ class MapRideViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     func metricsButtonTapped() {
         debugPrint("DONE PRESSED")
         performSegue(withIdentifier: "Ride", sender: self)
-
+        
         
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
-        navigationControllerSettingsSetup()
+                    super.viewDidLoad()
         
-        mapRide.delegate = self
-        mapRide.showsUserLocation = true
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.delegate = self
+            navigationControllerSettingsSetup()
         
-        manager = CLLocationManager()
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.requestAlwaysAuthorization()
-        manager.startUpdatingLocation()
+                    mapRide.delegate = self
+                    mapRide.showsUserLocation = true
+                    locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                    locationManager.delegate = self
         
+                    //Check for Location Services
+                if (CLLocationManager.locationServicesEnabled()) {
+                        locationManager = CLLocationManager()
+                            locationManager.delegate = self
+                            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                            locationManager.requestAlwaysAuthorization()
+                            locationManager.requestWhenInUseAuthorization()
+                    }
         
-        //Check for Location Services
-        if (CLLocationManager.locationServicesEnabled()) {
-            locationManager = CLLocationManager()
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestAlwaysAuthorization()
-            locationManager.requestWhenInUseAuthorization()
-        }
+                locationManager.requestWhenInUseAuthorization()
+                if CLLocationManager.locationServicesEnabled() {
+                        locationManager.startUpdatingLocation()
+                    }
         
-        locationManager.requestWhenInUseAuthorization()
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.startUpdatingLocation()
-        }
-        
-        //Zoom to user location
-        let noLocation = CLLocationCoordinate2D()
-        let viewRegion = MKCoordinateRegionMakeWithDistance(noLocation, 200, 200)
-        mapRide.setRegion(viewRegion, animated: false)
-        mapRide.setUserTrackingMode(.follow, animated: true)
-        DispatchQueue.main.async {
-            self.locationManager.startUpdatingLocation()
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations:[CLLocation]) {
-     
-        myLocations.append(locations[0] as CLLocation)
-        
-        let spanX = 0.07
-        let spanY = 0.07
-        
-        let newRegion = MKCoordinateRegion(center: mapRide.userLocation.coordinate, span: MKCoordinateSpanMake(spanX, spanY))
-        mapRide.setRegion(newRegion, animated: true)
-        
-        if (myLocations.count > 1){
-            let sourceIndex = myLocations.count - 1
-            let destinationIndex = myLocations.count - 2
-            
-            let c1 = myLocations[sourceIndex].coordinate
-            let c2 = myLocations[destinationIndex].coordinate
-            var a = [c1, c2]
-            let polyline = MKPolyline(coordinates: &a, count: a.count)
-            mapRide.add(polyline)
-        }
-        
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-//        print("locations = \(locValue.latitude) \(locValue.longitude)")
-
+                //Zoom to user location
+                let noLocation = CLLocationCoordinate2D()
+                let viewRegion = MKCoordinateRegionMakeWithDistance(noLocation, 200, 200)
+                    mapRide.setRegion(viewRegion, animated: false)
+                    mapRide.setUserTrackingMode(.follow, animated: true)
+                    DispatchQueue.main.async {
+                            self.locationManager.startUpdatingLocation()
+                        }
     }
     
     
-    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
-        if !overlay.isKind(of: MKPolyline.self) {
-            return nil
-        }
-        
-        let polyline = overlay as! MKPolyline
-        let renderer = MKPolylineRenderer(polyline: polyline)
-        renderer.strokeColor = UIColor.black
-        renderer.lineWidth = 3
-        return renderer
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    
+        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        
+                let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+                print("locations = \(locValue.latitude) \(locValue.longitude)")
+        
+        
+            }
+    
     
 }
 
