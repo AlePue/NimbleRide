@@ -150,6 +150,8 @@ final class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDel
 
         peripheral.discoverServices([serviceUUID])
         print("TEST: CONNECTED")
+        BLEdata.connected = true
+        print("BLE CONNECTED, Cadence and Battery level enabled.")
     }
 
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
