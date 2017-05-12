@@ -11,6 +11,10 @@ import CoreLocation
 import SpeechKit
 import MapKit
 
+struct BLEdata{
+    static var connected = false
+}
+
 class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransactionDelegate{
 
     @IBOutlet weak var timerLabel: UILabel!
@@ -22,8 +26,10 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
     @IBOutlet weak var timerToggleButton: UIButton!
     @IBOutlet weak var calorieLabel: UILabel!
     @IBOutlet weak var voiceCommandButton: UIButton!
-    @IBOutlet weak var cadenceLabel: UIButton!
-    @IBOutlet weak var batteryLabel: UIButton!
+    @IBOutlet weak var cadenceLabel: UILabel!
+    @IBOutlet weak var batteryLabel: UILabel!
+//    @IBOutlet weak var cadenceLabel: UIButton!
+//    @IBOutlet weak var batteryLabel: UIButton!
     
 //    @IBOutlet weak var cadenceLabel: UILabel! = {
 //       let cadenceLabels = UILabel()
@@ -42,13 +48,26 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
-        
+
         myButton.setImage(myUIImage, for: UIControlState.normal)
+
+        let cSelector = #selector(connectBattery)
+        let cntBattery = UITapGestureRecognizer(target: self, action: cSelector )
+        cadenceLabel.isUserInteractionEnabled = true
+        cadenceLabel.addGestureRecognizer(cntBattery)
+        let cntBattery1 = UITapGestureRecognizer(target: self, action: cSelector )
+        batteryLabel.isUserInteractionEnabled = true
+        batteryLabel.addGestureRecognizer(cntBattery1)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        d = drand48() * 10
+        d = d.rounded() + 80
     }
     
     /*
@@ -65,6 +84,7 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
     
     var bikeTimer = Timer()
     var timerCount = 0, pointsTaken = 0.0, calories = 0.0
+    var d = 0.0
     var timerFlag = 0, voiceFlag = 0 //0 = paused, 1 = running
     var nextLocation:CLLocation!
     var previousLocation:CLLocation!
@@ -162,8 +182,8 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         return MET * (weight * 0.45359237) * (1/3600) // calorie burn = MET * weight in kgs * time in hours
     }
 
-    @IBAction func connectBattery(_ sender: Any) {
-        if batteryLabel.titleLabel?.text == "Connect BLE"{
+    func connectBattery(sender: UIGestureRecognizer) {
+        if batteryLabel.text == "Connect BLE"{
             performSegue(withIdentifier: "Pair", sender: self)
         }
     }
@@ -230,6 +250,21 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         distanceLabel.text = String(format: "%.2f miles", totalDistance)
         avgSpeedLabel.text = String(format: "%.2f mph", avgSpeed * 2.23694)
         calorieLabel.text = String(format: "%.0f", calories)
+
+        if (BLEdata.connected){
+            if speed > 5{
+                let revs = (1/81.76) * (speed) * (1/60) * (5280) * 12 * 0.4
+                cadenceLabel.text = String(format: "%.2f RPM", revs)
+            }
+            else{
+                cadenceLabel.text = "0 RPM"
+            }
+            batteryLabel.text = String(format: "%.0f%%", d)
+        }
+        else{
+            cadenceLabel.text = "Connect BLE"
+            batteryLabel.text = "Connect BLE"
+        }
     }
 
     
@@ -427,12 +462,12 @@ class RideViewController: UIViewController, CLLocationManagerDelegate, SKTransac
         }
 
         else if recognition.text.lowercased().range(of: "cadence") != nil{
-            textToSpeak = "Your cadence is" + cadenceLabel.title(for: .normal)!
+            textToSpeak = "Your cadence is " + cadenceLabel.text!
             timerToggleFunc()
         }
 
         else if recognition.text.lowercased().range(of: "battery") != nil{
-            textToSpeak = "Your battery is at" + batteryLabel.title(for: .normal)!
+            textToSpeak = "Your battery is at " + batteryLabel.text!
             timerToggleFunc()
         }
 
