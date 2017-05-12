@@ -22,14 +22,13 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
 
 
     override func viewDidLoad() {
+        // Do any additional setup after loading the view.
         super.viewDidLoad()
         
         collectionView?.register(FeedCell.self, forCellWithReuseIdentifier: cellId)
         collectionView?.alwaysBounceVertical = true
-        // Do any additional setup after loading the view.
         collectionView?.reloadData()
         
-        super.viewDidLoad()
         self.refreshControl = UIRefreshControl()
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
@@ -234,7 +233,7 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
                 let alertController = UIAlertController(title: "Load Failed", message: "Your rides could not be loaded. Try again?", preferredStyle: .alert)
                 let yesAlertButton = UIAlertAction(title: "Yes", style: .default, handler: {
                     action in
-                    self.loadDB(controller: controller, userId: userId)
+                    self.refresh(sender: self)
 
                 })
                 let noAlertButton = UIAlertAction(title: "No", style: .destructive, handler: nil)

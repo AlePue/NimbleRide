@@ -51,6 +51,17 @@ class FtueViewController: UIViewController {
 
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        self.loadDB(controller: self, userId: NSNumber(value: FtueViewController.FBuser.id))
+        for friend in FtueViewController.FBuser.friendList{
+            self.loadDB(controller: self, userId: NSNumber(value: friend))
+        }
+        
+        feedData.Data = feedData.Data.sorted { (History1: History, History2: History) -> Bool in
+            return History1.RideID?.compare(History2.RideID!) == ComparisonResult.orderedDescending
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
