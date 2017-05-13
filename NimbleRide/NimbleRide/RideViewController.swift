@@ -498,7 +498,7 @@ class MapRideViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         var locationManager = CLLocationManager()
     
     func navigationControllerSettingsSetup() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start", style: .plain, target: self, action: #selector(metricsButtonTapped))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start", style: .plain, target: self, action: #selector(metricsButtonTapped))
     }
     func metricsButtonTapped() {
         debugPrint("DONE PRESSED")
