@@ -169,17 +169,19 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
         hud?.mode = MBProgressHUDMode.text
         hud?.labelText = "Failed to connect"
         hud?.hide(true, afterDelay: 1.0)
-
+        BLEdata.connected = false
     }
     
     func serialIsReady(_ peripheral: CBPeripheral) {
         if let hud = progressHUD {
             hud.hide(false)
         }
-        
+
         NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadStartViewController"), object: self)
+        BLEdata.connected = true
+        self.performSegue(withIdentifier: "BLEride", sender: self)
     }
-    
+
     func serialDidChangeState() {
         if let hud = progressHUD {
             hud.hide(false)

@@ -509,11 +509,12 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTT-KK-T4g">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Turn on your bluetooth and hit connect to sync NimbleRide with your hardware" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RTT-KK-T4g">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="268"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="backgroundColor" red="0.32518914341926575" green="0.45073091983795166" blue="0.48868483304977417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -1249,6 +1250,7 @@
                     <connections>
                         <outlet property="tableView" destination="Uoh-aV-Ana" id="qoS-z1-3F1"/>
                         <outlet property="tryAgainButton" destination="ngm-6q-7QZ" id="6Wl-FV-rl5"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="BLEride" id="j8E-TN-Ulx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FyQ-OW-rPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1841,10 +1843,11 @@
         <image name="tabBatRideLogo" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qKf-Un-PES"/>
-        <segue reference="h81-lG-6dh"/>
-        <segue reference="jrY-Np-OiY"/>
         <segue reference="g8R-Fn-JLh"/>
+        <segue reference="jrY-Np-OiY"/>
+        <segue reference="j8E-TN-Ulx"/>
+        <segue reference="h81-lG-6dh"/>
+        <segue reference="qKf-Un-PES"/>
         <segue reference="R6e-vS-vTC"/>
     </inferredMetricsTieBreakers>
 </document>

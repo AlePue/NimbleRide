@@ -76,6 +76,7 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
         hud?.mode = MBProgressHUDMode.text
         hud?.labelText = "Disconnected"
         hud?.hide(true, afterDelay: 1.0)
+        BLEdata.connected = false
     }
     
     func serialDidChangeState() {
